@@ -39,17 +39,18 @@
   --error: oklch(62% 0.22 25);
   --info: oklch(65% 0.18 250);
 
-  /* Neutrals - High Performance White/Blacks */
-  --bg: oklch(99% 0.01 250);
-  /* #fbfbfd */
-  --surface: oklch(96% 0.01 250);
-  /* #f2f3f7 */
-  --surface-2: oklch(92% 0.01 250);
+  /* Neutrals - High Performance Whites */
+  --bg: oklch(99% 0.01 20);
+  /* #fcfaf8 */
+  --surface: oklch(97% 0.01 20);
+  /* #f7f3f0 */
+  --surface-2: oklch(94% 0.01 20);
 
-  --text: oklch(25% 0.02 260);
-  /* #171a22 */
-  --text-semi: oklch(45% 0.02 260);
-  --muted: color-mix(in oklch, var(--text), transparent 40%);
+  --text: oklch(20% 0.02 20);
+  /* #2a2624 */
+  --text-rgb: 42, 38, 36;
+  --text-semi: oklch(40% 0.02 20);
+  --muted: color-mix(in oklch, var(--text), transparent 45%);
 
   --border: color-mix(in oklch, var(--text), transparent 88%);
   --border-semi: color-mix(in oklch, var(--text), transparent 76%);
@@ -73,6 +74,16 @@
   --code-dot-red: oklch(65% 0.2 25);
   --code-dot-yellow: oklch(80% 0.18 85);
   --code-dot-green: oklch(75% 0.18 145);
+
+  /* Typora chrome */
+  --bg-color: var(--bg);
+  --side-bar-bg-color: var(--surface);
+  --item-hover-bg-color: var(--accent-soft);
+  --item-hover-text-color: var(--text);
+  --window-border: 1px solid var(--border);
+  --primary-color: var(--accent);
+  --text-color: var(--text);
+  --select-text-bg-color: var(--selection);
 
   /* RGB Helpers for advanced filters */
   --white-rgb: 255, 255, 255;
