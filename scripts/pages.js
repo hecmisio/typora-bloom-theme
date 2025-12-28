@@ -28,6 +28,9 @@ if (fs.existsSync(outDir)) {
 fs.mkdirSync(outDir, { recursive: true });
 
 copy(path.join(root, "index.html"), path.join(outDir, "index.html"));
+copy(path.join(root, "showcase.html"), path.join(outDir, "showcase.html"));
+copy(path.join(root, "site.css"), path.join(outDir, "site.css"));
+copy(path.join(root, "site.js"), path.join(outDir, "site.js"));
 copy(path.join(root, "netlify.toml"), path.join(outDir, "netlify.toml"));
 
 const distDir = path.join(root, "dist");
