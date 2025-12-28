@@ -743,6 +743,32 @@ sup.md-footnote {
   padding-left: 10px;
 }
 
+#typora-sidebar .file-node-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  display: inline-block;
+  flex: 0 0 18px;
+  background-color: currentColor;
+  background-image: none;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+}
+
+#typora-sidebar .file-list-item .file-node-icon {
+  -webkit-mask-image: var(--icon-document);
+  mask-image: var(--icon-document);
+}
+
+#typora-sidebar .file-library-node > .file-node-content .file-node-icon {
+  -webkit-mask-image: var(--icon-folder);
+  mask-image: var(--icon-folder);
+}
+
 .file-node-content:hover {
   background: rgba(var(--white-rgb), 0.04);
   color: var(--text);
