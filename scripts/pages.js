@@ -35,9 +35,9 @@ if (fs.existsSync(distDir)) {
   copyDir(distDir, path.join(outDir, "dist"));
 }
 
-const assetsDir = path.join(root, "typora-bloom-theme");
+const assetsDir = path.join(root, "bloom");
 if (fs.existsSync(assetsDir)) {
-  copyDir(assetsDir, path.join(outDir, "typora-bloom-theme"));
+  copyDir(assetsDir, path.join(outDir, "bloom"));
 }
 
 console.log("已生成 _pages 目录");

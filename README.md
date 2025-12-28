@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://typora-bloom-theme.webkubor.online/">
-    <img src="typora-bloom-theme/favicon.svg" alt="Bloom" width="120" />
+    <img src="bloom/favicon.svg" alt="Bloom" width="120" />
   </a>
 </p>
 
@@ -188,7 +188,7 @@ Bloom 希望你在使用时，**几乎感受不到主题本身的存在**。
    - `bloom-dark.css`
    - `bloom-forest.css`
    - `bloom-sea.css`
-   - `typora-bloom-theme/`（如存在）
+   - `bloom/`（如存在）
 
 ---
 

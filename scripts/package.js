@@ -9,8 +9,8 @@ const distDir = path.join(root, "dist");
 const files = ["bloom-light.css", "bloom-dark.css", "bloom-forest.css", "bloom-sea.css"].map((file) =>
   path.join(distDir, file)
 );
-if (fs.existsSync(path.join(root, "typora-bloom-theme"))) {
-  files.push("typora-bloom-theme");
+if (fs.existsSync(path.join(root, "bloom"))) {
+  files.push("bloom");
 }
 
 function run(cmd) {
