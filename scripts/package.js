@@ -10,7 +10,7 @@ const files = [
   "bloom-light.css",
   "bloom-dark.css",
   "bloom-forest.css",
-  "bloom-aurora.css",
+  "bloom-cyber.css",
   "bloom-spring.css",
   "bloom-mist.css",
   "bloom-verdant.css",

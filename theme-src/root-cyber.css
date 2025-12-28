@@ -14,14 +14,14 @@
   --space-3xl: calc(var(--space-unit) * 8);
 
   /* --- Modern Color System (OKLCH) --- */
-  /* International Klein Blue (IKB) approximation */
-  --accent: oklch(33% 0.17 263);
-  --accent-rgb: 0, 47, 167;
+  /* Cyber Blue - Ultra Bright & High Contrast */
+  --accent: oklch(78% 0.18 245);
+  --accent-rgb: 100, 231, 255;
 
   /* Dynamic States */
   --accent-hover: color-mix(in oklch, var(--accent), white 10%);
   --accent-active: color-mix(in oklch, var(--accent), white 20%);
-  --accent-soft: color-mix(in oklch, var(--accent), transparent 82%);
+  --accent-soft: color-mix(in oklch, var(--accent), transparent 85%);
 
   /* Semantic Colors */
   --success: oklch(75% 0.16 150);
@@ -29,10 +29,10 @@
   --error: oklch(65% 0.2 25);
   --info: oklch(70% 0.16 250);
 
-  /* Neutrals - Klein Blue Dark Base */
-  --bg: oklch(18% 0.02 263);
-  --surface: oklch(22% 0.02 263);
-  --surface-2: oklch(26% 0.02 263);
+  /* Neutrals - Cyber Dark Base (Deeper for contrast) */
+  --bg: oklch(12% 0.02 245);
+  --surface: oklch(16% 0.03 245);
+  --surface-2: oklch(20% 0.03 245);
 
   --text: oklch(92% 0.01 240);
   --text-rgb: 233, 237, 242;

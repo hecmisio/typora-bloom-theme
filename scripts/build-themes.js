@@ -9,7 +9,7 @@ const themes = [
   { name: "light", base: "base-light.css", vars: "root-light.css" },
   { name: "dark", base: "base-dark.css", vars: "root-dark.css" },
   { name: "forest", base: "base-dark.css", vars: "root-forest.css" },
-  { name: "aurora", base: "base-dark.css", vars: "root-aurora.css" },
+  { name: "cyber", base: "base-dark.css", vars: "root-cyber.css" },
   { name: "spring", base: "base-dark.css", vars: "root-spring.css" },
   { name: "mist", base: "base-light.css", vars: "root-mist.css" },
   { name: "verdant", base: "base-light.css", vars: "root-verdant.css" },

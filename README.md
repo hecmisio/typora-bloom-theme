@@ -10,7 +10,7 @@
 
 Bloom（绽放 / 成长）是一套为**长期写作**而设计的 Typora 主题。
 它包含八套主题：
-- **经典系列**：**Bloom Light（浅色）**、**Bloom Dark（深色）**、**Bloom Forest（森林绿）**、**Bloom Aurora（极光蓝）**、**Bloom Spring（粉紫）**。
+- **经典系列**：**Bloom Light（浅色）**、**Bloom Dark（深色）**、**Bloom Forest（森林绿）**、**Bloom Cyber（荧光蓝）**、**Bloom Spring（粉紫）**。
 - **莫兰迪系列**：**Bloom Mist（雾蓝）**、**Bloom Verdant（草木绿）**、**Bloom Stone（暖石灰）**。
 
 ![浅色](https://raw.githubusercontent.com/webkubor/upic-images/main/uPic/2025/12/%E6%88%AA%E5%B1%8F2025-12-19%2016.36.49.png)
@@ -55,8 +55,8 @@ Bloom 的设计灵感来自「一天的光」。
 - **Bloom Forest** —— 森林  
   深色基底，强调色偏绿，氛围更沉静  
 
-- **Bloom Aurora** —— 极光蓝  
-  深色基底，辅以明亮通透的极光蓝，具有极强的发光质感与高级感。  
+- **Bloom Cyber** —— 荧光蓝  
+  深色基底，辅以高亮度的电学/赛博蓝，具有极强的反光质感与顶级对比度。  
 
 - **Bloom Spring** —— 春季  
   深色基底，带有浪漫的粉紫色调  
@@ -200,7 +200,7 @@ Bloom 希望你在使用时，**几乎感受不到主题本身的存在**。
 2. 下载最新的 `Bloom-theme.zip`
 3. 解压后，将以下内容复制到 Typora 主题文件夹：
 
-   - `bloom-light.css` / `bloom-dark.css` / `bloom-forest.css` / `bloom-aurora.css` / `bloom-spring.css`
+   - `bloom-light.css` / `bloom-dark.css` / `bloom-forest.css` / `bloom-cyber.css` / `bloom-spring.css`
    - `bloom-mist.css` / `bloom-verdant.css` / `bloom-stone.css`
    - `bloom/`（如存在）
 
