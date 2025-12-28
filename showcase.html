@@ -54,16 +54,25 @@
           </svg>
           GitHub
         </a>
-        <div class="theme-toggle-group">
-          <button class="btn-toggle" type="button" id="btn-light" aria-pressed="true" title="清晨模式">
-            ☀️
+        <div class="theme-dropdown" id="theme-dropdown">
+          <button class="theme-trigger" id="theme-trigger">
+            <span id="current-theme-name">清晨模式</span>
+            <svg class="chevron" viewBox="0 0 24 24" width="16" height="16">
+              <path d="M7 10l5 5 5-5z" fill="currentColor" />
+            </svg>
           </button>
-          <button class="btn-toggle" type="button" id="btn-dark" aria-pressed="false" title="夜晚模式">
-            🌙
-          </button>
-          <button class="btn-toggle" type="button" id="btn-forest" title="森林绿">🌲</button>
-          <button class="btn-toggle" type="button" id="btn-sea" title="深海蓝">🌊</button>
-          <button class="btn-toggle" type="button" id="btn-spring" title="春季粉紫">🌸</button>
+          <div class="theme-menu" id="theme-menu">
+            <div class="theme-group">内置经典</div>
+            <button class="theme-item" data-theme="light">☀️ 清晨模式 (Light)</button>
+            <button class="theme-item" data-theme="dark">🌙 夜晚模式 (Dark)</button>
+            <button class="theme-item" data-theme="forest">🌲 森林绿 (Forest)</button>
+            <button class="theme-item" data-theme="aurora">🌌 极光蓝 (Aurora Blue)</button>
+            <div class="theme-group">莫兰迪色系</div>
+            <button class="theme-item" data-theme="mist">☁️ 莫兰迪·雾蓝</button>
+            <button class="theme-item" data-theme="verdant">🍃 莫兰迪·草木</button>
+            <button class="theme-item" data-theme="stone">🧱 莫兰迪·暖石</button>
+            <button class="theme-item" data-theme="spring">🌸 春季粉紫</button>
+          </div>
         </div>
       </div>
     </div>

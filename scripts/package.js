@@ -6,9 +6,16 @@ const root = path.resolve(__dirname, "..");
 const zipName = "Bloom-theme.zip";
 const zipPath = path.join(root, zipName);
 const distDir = path.join(root, "dist");
-const files = ["bloom-light.css", "bloom-dark.css", "bloom-forest.css", "bloom-sea.css", "bloom-spring.css"].map((file) =>
-  path.join(distDir, file)
-);
+const files = [
+  "bloom-light.css",
+  "bloom-dark.css",
+  "bloom-forest.css",
+  "bloom-aurora.css",
+  "bloom-spring.css",
+  "bloom-mist.css",
+  "bloom-verdant.css",
+  "bloom-stone.css",
+].map((file) => path.join(distDir, file));
 if (fs.existsSync(path.join(root, "bloom"))) {
   files.push("bloom");
 }

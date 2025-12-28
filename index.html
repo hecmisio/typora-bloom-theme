@@ -99,16 +99,25 @@
           </svg>
           GitHub
         </a>
-        <div class="theme-toggle-group">
-          <button class="btn-toggle" type="button" id="btn-light" aria-pressed="true" title="清晨模式">
-            ☀️
+        <div class="theme-dropdown" id="theme-dropdown">
+          <button class="theme-trigger" id="theme-trigger">
+            <span id="current-theme-name">清晨模式</span>
+            <svg class="chevron" viewBox="0 0 24 24" width="16" height="16">
+              <path d="M7 10l5 5 5-5z" fill="currentColor" />
+            </svg>
           </button>
-          <button class="btn-toggle" type="button" id="btn-dark" aria-pressed="false" title="夜晚模式">
-            🌙
-          </button>
-          <button class="btn-toggle" type="button" id="btn-forest" title="森林绿">🌲</button>
-          <button class="btn-toggle" type="button" id="btn-sea" title="深海蓝">🌊</button>
-          <button class="btn-toggle" type="button" id="btn-spring" title="春季粉紫">🌸</button>
+          <div class="theme-menu" id="theme-menu">
+            <div class="theme-group">内置经典</div>
+            <button class="theme-item" data-theme="light">☀️ 清晨模式 (Light)</button>
+            <button class="theme-item" data-theme="dark">🌙 夜晚模式 (Dark)</button>
+            <button class="theme-item" data-theme="forest">🌲 森林绿 (Forest)</button>
+            <button class="theme-item" data-theme="aurora">🌌 极光蓝 (Aurora Blue)</button>
+            <div class="theme-group">莫兰迪色系</div>
+            <button class="theme-item" data-theme="mist">☁️ 莫兰迪·雾蓝</button>
+            <button class="theme-item" data-theme="verdant">🍃 莫兰迪·草木</button>
+            <button class="theme-item" data-theme="stone">🧱 莫兰迪·暖石</button>
+            <button class="theme-item" data-theme="spring">🌸 春季粉紫</button>
+          </div>
         </div>
       </div>
     </div>
@@ -146,8 +155,10 @@
           <p class="hero-highlight-desc">层级明确、控件克制，代码块更好读。</p>
         </div>
         <div class="hero-highlight premium-card">
-          <p class="hero-highlight-title">五款主题一键切换</p>
-          <p class="hero-highlight-desc">Light / Dark / Forest / Sea / Spring，随场景切换。</p>
+          <p class="hero-highlight-title">八款主题一键切换</p>
+          <p class="hero-highlight-desc">
+            不仅有经典的清晨与夜晚模式，更新增了多款莫兰迪色系，让长期写作拥有更多舒心选择。
+          </p>
         </div>
       </div>
     </div>
@@ -201,7 +212,7 @@
         <p>完整 Markdown 演示与主题切换放在单独页面，避免首页信息拥挤。</p>
         <p><a href="showcase.html" class="btn btn-secondary">进入实时预览</a></p>
 
-        <h2 id="showcase">真实截图（Light / Dark / Forest / Sea）</h2>
+        <h2 id="showcase">真实截图（Light / Dark / Forest / Sea / Morandi）</h2>
         <p>不同设备与环境下的真实效果截图。</p>
         <div class="showcase-grid">
           <div class="showcase-item">
@@ -229,11 +240,12 @@
           <li>打开 Typora。</li>
           <li>进入：偏好设置 → 外观 → 打开主题文件夹。</li>
           <li>
-            复制主题文件：<code>bloom-light.css</code>、<code>bloom-dark.css</code>、<code>bloom-forest.css</code>、<code>bloom-sea.css</code>、<code>bloom-spring.css</code>（如有
-            <code>bloom/</code> 一并复制）。
+            复制主题文件：<code>bloom-light.css</code>、<code>bloom-dark.css</code>、<code>bloom-mist.css</code>...（全选
+            <code>bloom-*.css</code> 与
+            <code>bloom/</code> 文件夹）。
           </li>
-          <li>回到 Typora：主题 → 选择 <strong>Bloom Light</strong> / <strong>Bloom Dark</strong> / <strong>Bloom
-              Forest</strong> / <strong>Bloom Sea</strong> / <strong>Bloom Spring</strong>。</li>
+          <li>回到 Typora：主题 → 选择 <strong>Bloom Light</strong> / <strong>Bloom Dark</strong>... 或 <strong>Bloom
+              Morandi</strong> 各款。</li>
         </ol>
 
         <h3>从 Releases 下载（推荐）</h3>

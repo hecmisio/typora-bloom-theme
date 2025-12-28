@@ -1,9 +1,8 @@
 const themeLink = document.getElementById('theme-css');
-const btnLight = document.getElementById('btn-light');
-const btnDark = document.getElementById('btn-dark');
-const btnForest = document.getElementById('btn-forest');
-const btnSea = document.getElementById('btn-sea');
-const btnSpring = document.getElementById('btn-spring');
+const themeTrigger = document.getElementById('theme-trigger');
+const themeMenu = document.getElementById('theme-menu');
+const themeItems = document.querySelectorAll('.theme-item');
+const currentThemeDisplay = document.getElementById('current-theme-name');
 
 let currentTheme = 'light';
 
@@ -22,11 +21,12 @@ function setTheme(themeName) {
     themeLink.setAttribute('href', `dist/bloom-${themeName}.css`);
   }
 
-  // 更新按钮的按下状态
-  updateButtonStates(themeName);
+  // 更新界面文本与状态
+  updateThemeUI(themeName);
 
   // 设置系统的 color-scheme
-  document.documentElement.style.colorScheme = (themeName === 'light') ? 'light' : 'dark';
+  const darkThemes = ['dark', 'forest', 'sea', 'spring'];
+  document.documentElement.style.colorScheme = darkThemes.includes(themeName) ? 'dark' : 'light';
 
   currentTheme = themeName;
   updateDynamicFavicon();
@@ -40,8 +40,11 @@ function updateDynamicFavicon() {
     'light': { accent: '#ff4d8d', bg: '#fbfbfd' },
     'dark': { accent: '#ff4d8d', bg: '#171a22' },
     'forest': { accent: '#2dde8f', bg: '#181a1f' },
-    'sea': { accent: '#00b3ff', bg: '#10141d' },
-    'spring': { accent: '#998ab9', bg: '#1c1826' }
+    'aurora': { accent: '#0091ff', bg: '#1a1b26' },
+    'spring': { accent: '#998ab9', bg: '#1c1826' },
+    'mist': { accent: '#92A8B3', bg: '#F2F4F5' },
+    'verdant': { accent: '#A0B0A7', bg: '#F2F5F3' },
+    'stone': { accent: '#B1A49E', bg: '#F5F3F1' }
   };
 
   const colors = colorMap[currentTheme] || colorMap['light'];
@@ -76,30 +79,50 @@ function updateDynamicFavicon() {
   link.href = url;
 }
 
-// 抽离一个函数来统一管理所有按钮的 aria-pressed 状态
-function updateButtonStates(activeTheme) {
-  const buttons = {
-    'light': btnLight,
-    'dark': btnDark,
-    'forest': btnForest,
-    'sea': btnSea,
-    'spring': btnSpring
+// 统一管理主题 UI 状态
+function updateThemeUI(activeTheme) {
+  const themeLabels = {
+    'light': '☀️ 清晨模式',
+    'dark': '🌙 夜晚模式',
+    'forest': '🌲 森林绿',
+    'aurora': '🌌 极光蓝',
+    'spring': '🌸 春季粉紫',
+    'mist': '☁️ 莫兰迪·雾蓝',
+    'verdant': '🍃 莫兰迪·草木',
+    'stone': '🧱 莫兰迪·暖石'
   };
 
-  Object.keys(buttons).forEach(theme => {
-    if (buttons[theme]) {
-      buttons[theme].setAttribute('aria-pressed', String(theme === activeTheme));
-    }
+  // 更新触发器文字
+  if (currentThemeDisplay) {
+    currentThemeDisplay.textContent = themeLabels[activeTheme] || activeTheme;
+  }
+
+  // 更新菜单项选中状态
+  themeItems.forEach(item => {
+    item.classList.toggle('active', item.dataset.theme === activeTheme);
   });
 }
 
-updateButtonStates('light');
+// 下拉菜单交互
+if (themeTrigger && themeMenu) {
+  themeTrigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    themeMenu.classList.toggle('show');
+    themeTrigger.classList.toggle('active');
+  });
 
-if (btnLight) btnLight.addEventListener('click', () => setTheme('light'));
-if (btnDark) btnDark.addEventListener('click', () => setTheme('dark'));
-if (btnForest) btnForest.addEventListener('click', () => setTheme('forest'));
-if (btnSea) btnSea.addEventListener('click', () => setTheme('sea'));
-if (btnSpring) btnSpring.addEventListener('click', () => setTheme('spring'));
+  document.addEventListener('click', () => {
+    themeMenu.classList.remove('show');
+    themeTrigger.classList.remove('active');
+  });
+
+  themeItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const theme = item.dataset.theme;
+      setTheme(theme);
+    });
+  });
+}
 
 
 

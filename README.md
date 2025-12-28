@@ -9,7 +9,9 @@
 官网预览：<https://typora-bloom-theme.netlify.app/>
 
 Bloom（绽放 / 成长）是一套为**长期写作**而设计的 Typora 主题。
-它包含四套主题：**Bloom Light（浅色）**、**Bloom Dark（深色）**、**Bloom Forest（森林绿）**与**Bloom Sea（深海蓝）**。
+它包含八套主题：
+- **经典系列**：**Bloom Light（浅色）**、**Bloom Dark（深色）**、**Bloom Forest（森林绿）**、**Bloom Aurora（极光蓝）**、**Bloom Spring（粉紫）**。
+- **莫兰迪系列**：**Bloom Mist（雾蓝）**、**Bloom Verdant（草木绿）**、**Bloom Stone（暖石灰）**。
 
 ![浅色](https://raw.githubusercontent.com/webkubor/upic-images/main/uPic/2025/12/%E6%88%AA%E5%B1%8F2025-12-19%2016.36.49.png)
 
@@ -53,10 +55,24 @@ Bloom 的设计灵感来自「一天的光」。
 - **Bloom Forest** —— 森林  
   深色基底，强调色偏绿，氛围更沉静  
 
-- **Bloom Sea** —— 深海  
-  深色基底，强调色偏蓝，观感更清爽  
+- **Bloom Aurora** —— 极光蓝  
+  深色基底，辅以明亮通透的极光蓝，具有极强的发光质感与高级感。  
 
-四套主题在排版、比例、节奏上保持一致，只改变光感与色彩氛围。
+- **Bloom Spring** —— 春季  
+  深色基底，带有浪漫的粉紫色调  
+
+### 莫兰迪系列 (Morandi Series)
+
+莫兰迪色系以其低饱和度、带有灰调的色彩著称，旨在提供更高级的视觉质感和极佳的长时阅读舒适度：
+
+- **Bloom Mist** —— 雾蓝  
+  清冷、沉静，如薄雾笼罩的海面，最适合深度思考。
+- **Bloom Verdant** —— 草木  
+  柔和、治愈的豆沙绿，能有效缓解视觉疲劳。
+- **Bloom Stone** —— 暖石  
+  温润、极简的中性灰调，像米色的陶瓷，是最经久耐用的背景。
+
+八套主题在排版、比例、节奏上保持一致，只改变色彩氛围。
 
 ---
 
@@ -176,7 +192,7 @@ Bloom 希望你在使用时，**几乎感受不到主题本身的存在**。
    - `bloom-forest.css`  
    - `bloom-sea.css`  
 
-4. 回到 Typora：**主题 → 选择 `Bloom Light` / `Bloom Dark` / `Bloom Forest` / `Bloom Sea`**
+4. 回到 Typora：**主题 → 选择对应主题名称**
 
 ### 从 Releases 下载（推荐）
 
@@ -184,10 +200,8 @@ Bloom 希望你在使用时，**几乎感受不到主题本身的存在**。
 2. 下载最新的 `Bloom-theme.zip`
 3. 解压后，将以下内容复制到 Typora 主题文件夹：
 
-   - `bloom-light.css`
-   - `bloom-dark.css`
-   - `bloom-forest.css`
-   - `bloom-sea.css`
+   - `bloom-light.css` / `bloom-dark.css` / `bloom-forest.css` / `bloom-aurora.css` / `bloom-spring.css`
+   - `bloom-mist.css` / `bloom-verdant.css` / `bloom-stone.css`
    - `bloom/`（如存在）
 
 ---
