@@ -9,7 +9,8 @@ const themes = [
   { name: "light", base: "base-light.css", vars: "root-light.css" },
   { name: "dark", base: "base-dark.css", vars: "root-dark.css" },
   { name: "forest", base: "base-dark.css", vars: "root-forest.css" },
-  { name: "sea", base: "base-dark.css", vars: "root-sea.css" }
+  { name: "sea", base: "base-dark.css", vars: "root-sea.css" },
+  { name: "spring", base: "base-dark.css", vars: "root-spring.css" }
 ];
 
 function readSrc(file) {
