@@ -1,12 +1,12 @@
 # Bloom · Typora Theme
 
 <p align="center">
-  <a href="https://typora-bloom-theme.webkubor.online/">
+  <a href="https://typora-bloom-theme.netlify.app/">
     <img src="bloom/favicon.svg" alt="Bloom" width="120" />
   </a>
 </p>
 
-官网预览：<https://typora-bloom-theme.webkubor.online/>
+官网预览：<https://typora-bloom-theme.netlify.app/>
 
 Bloom（绽放 / 成长）是一套为**长期写作**而设计的 Typora 主题。
 它包含四套主题：**Bloom Light（浅色）**、**Bloom Dark（深色）**、**Bloom Forest（森林绿）**与**Bloom Sea（深海蓝）**。

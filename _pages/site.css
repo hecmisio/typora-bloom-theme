@@ -267,7 +267,8 @@
       }
 
       .sidebar {
-        order: -1;
+        order: 1;
+        /* Move sidebar to bottom on mobile */
         position: static !important;
       }
     }
@@ -797,29 +798,94 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+      .topbar-inner {
+        padding: 0 16px;
+      }
+
+      .brand-name {
+        display: none;
+        /* Hide brand name on very small screens to save space */
+      }
+
+      .toolbar .nav-link:not(.github) {
+        display: none;
+        /* Hide text links to keep header clean */
+      }
+
+      .theme-toggle-group {
+        gap: 2px;
+        padding: 2px;
+      }
+
+      .btn-toggle {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+      }
+
       .hero {
-        padding: 60px 24px;
+        padding: 48px 16px;
+      }
+
+      .hero-badge {
+        font-size: 11px;
+        padding: 6px 12px;
       }
 
       .hero-title {
-        font-size: 2.6em;
+        font-size: 2.2em;
       }
 
       .hero-subtitle {
-        font-size: 1.1em;
+        font-size: 1em;
+        margin-bottom: 1.5em;
       }
 
       .hero-actions {
         flex-direction: column;
+        align-items: center;
+        gap: 12px;
       }
 
       .hero-highlights {
         grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .hero-highlight {
+        padding: 24px;
       }
 
       .btn {
         width: 100%;
-        max-width: 300px;
+        max-width: 100%;
+      }
+
+      .layout {
+        padding: 32px 16px 80px;
+        gap: 32px;
+      }
+
+      .preview-container {
+        border-radius: 20px;
+      }
+
+      .md-hero-box {
+        padding: 24px;
+      }
+
+      .md-principle-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand-name {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: 1.8em;
       }
     }
 
