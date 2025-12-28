@@ -61,6 +61,13 @@
     --code-dot-yellow: oklch(78% 0.12 85);
     --code-dot-green: oklch(72% 0.12 145);
 
+    /* Code Token Colors */
+    --code-token-keyword: oklch(55% 0.12 240);
+    --code-token-string: oklch(60% 0.12 145);
+    --code-token-number: oklch(62% 0.12 75);
+    --code-token-blue: oklch(58% 0.12 250);
+    --code-muted-rgb: 120, 120, 120;
+
     /* Typora chrome */
     --bg-color: var(--bg);
     --side-bar-bg-color: var(--surface);

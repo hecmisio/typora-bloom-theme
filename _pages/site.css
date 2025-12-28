@@ -968,6 +968,41 @@
       letter-spacing: 0.02em;
     }
 
+    code[class*="language-"] {
+      background: transparent !important;
+      color: var(--code-ink) !important;
+      text-shadow: none !important;
+    }
+
+    /* CodeMirror syntax highlighting for showcase.html */
+    .cm-comment {
+      color: rgba(var(--code-muted-rgb), 0.55);
+      font-style: italic;
+    }
+
+    .cm-keyword {
+      color: var(--code-token-keyword);
+      font-weight: 700;
+    }
+
+    .cm-string {
+      color: var(--code-token-string);
+    }
+
+    .cm-number {
+      color: var(--code-token-number);
+    }
+
+    .cm-def,
+    .cm-property {
+      color: var(--code-token-blue);
+    }
+
+    .cm-variable,
+    .cm-operator {
+      color: var(--code-ink);
+    }
+
     .thanks-quote mark {
       background: transparent;
       color: var(--accent);
