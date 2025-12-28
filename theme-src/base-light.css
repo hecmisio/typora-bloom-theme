@@ -385,19 +385,6 @@ content,
   background: rgba(var(--accent-rgb), 0.25);
 }
 
-/* Typora fences language label (scoped to writing area only) */
-/* Language label handled by Typora code-tooltip (right top) */
-#write pre.md-fences[lang]::after,
-#write pre.md-fences[data-lang]::after,
-#write .md-fences[lang]::after,
-#write .md-fences[data-lang]::after,
-#write pre[mdtype="fences"][lang]::after,
-#write pre[mdtype="fences"][data-lang]::after,
-#write [mdtype="fences"][lang]::after,
-#write [mdtype="fences"][data-lang]::after {
-  content: "";
-}
-
 /* Typora built-in code toolbar (compat: .md-fences / pre.md-fences / #write pre.md-fences) */
 #write pre.md-fences .code-tooltip,
 #write pre[mdtype="fences"] .code-tooltip,
