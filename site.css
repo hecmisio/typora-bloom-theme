@@ -188,6 +188,14 @@
       gap: 16px;
     }
 
+    .brand-logo {
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .brand:hover .brand-logo {
+      transform: rotate(15deg) scale(1.1);
+    }
+
     .theme-toggle-group {
       display: flex;
       background: var(--surface);
