@@ -1085,3 +1085,60 @@
         font-size: 20px;
       }
     }
+
+    /* --- Recommendation Card --- */
+    .recommend-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 24px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .recommend-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    .recommend-tag {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .recommend-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0;
+    }
+
+    .recommend-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .recommend-link-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: var(--accent);
+      opacity: 0.3;
+      transition: opacity 0.3s ease;
+    }
+
+    .recommend-card:hover .recommend-link-icon {
+      opacity: 1;
+    }
