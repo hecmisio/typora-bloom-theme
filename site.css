@@ -488,6 +488,23 @@
       color: var(--accent);
     }
 
+    .sidebar-contact {
+      margin: 6px 0 18px;
+      font-size: 13px;
+      color: var(--text-semi);
+    }
+
+    .sidebar-contact a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .sidebar-contact a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
     /* Syntax Highlighting Simulation */
     .token.keyword {
       color: #ff79c6;
