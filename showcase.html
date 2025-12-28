@@ -13,6 +13,13 @@
 </head>
 
 <body>
+  <div class="bg-canvas-wrap">
+    <div class="bg-blob"></div>
+    <div class="bg-blob bg-blob-2"></div>
+    <div class="bg-blob bg-blob-3"></div>
+    <div class="bg-grain"></div>
+  </div>
+
   <header class="topbar">
     <div class="topbar-inner">
       <a href="index.html" class="brand" title="Bloom">
@@ -46,12 +53,12 @@
     </div>
   </header>
 
-  <section class="hero">
+  <section class="hero reveal">
     <div class="hero-inner">
-      <div class="hero-badge"><span class="hero-badge-dot"></span>Bloom · 实时预览</div>
-      <h1 class="hero-title">实时预览演示</h1>
-      <p class="hero-subtitle">完整 Markdown 内容 + 主题切换，实时查看排版与配色效果。</p>
-      <div class="hero-actions">
+      <div class="hero-badge reveal-delay-1"><span class="hero-badge-dot"></span>Bloom · 实时预览</div>
+      <h1 class="hero-title reveal-delay-2">实时预览演示</h1>
+      <p class="hero-subtitle reveal-delay-2">完整 Markdown 内容 + 主题切换，实时查看排版与配色效果。</p>
+      <div class="hero-actions reveal-delay-3">
         <a href="index.html#showcase" class="btn btn-secondary">查看真实截图</a>
       </div>
     </div>
@@ -94,8 +101,9 @@ var common = "普通字符串"
       </article>
     </main>
 
-    <aside class="sidebar">
-      <div class="sidebar-card">
+    <aside class="sidebar reveal-delay-3"
+      style="animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: 0.5s;">
+      <div class="sidebar-card premium-card">
         <div class="sidebar-title">文件树预览</div>
         <div class="file-tree">
           <div class="file-tree-item" data-type="folder">
@@ -112,13 +120,13 @@ var common = "普通字符串"
           </div>
         </div>
       </div>
-      <div class="sidebar-card">
+      <div class="sidebar-card premium-card">
         <div class="sidebar-title">提示</div>
         <p style="margin: 0; color: var(--text-semi); line-height: 1.7;">
           这页用于体验主题真实排版与交互，推荐切换四种主题对比效果。
         </p>
       </div>
-      <div class="sidebar-card">
+      <div class="sidebar-card premium-card">
         <div class="sidebar-title">下一步</div>
         <a href="index.html#showcase" class="btn btn-secondary">查看真实截图</a>
       </div>

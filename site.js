@@ -141,3 +141,71 @@
     }
 
     enhanceCodeBlocks();
+
+    // --- Advanced Interactions ---
+
+    // 1. Scroll Reveal Observer
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => revealObserver.observe(el));
+
+    // 2. 3D Card Tilt Effect
+    const premiumCards = document.querySelectorAll('.premium-card');
+    premiumCards.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+      });
+    });
+
+    // 3. Magnetic Download Button
+    const magneticBtn = document.getElementById('btn-download');
+    if (magneticBtn) {
+      document.addEventListener('mousemove', e => {
+        const rect = magneticBtn.getBoundingClientRect();
+        const mX = e.clientX;
+        const mY = e.clientY;
+        const bX = rect.left + rect.width / 2;
+        const bY = rect.top + rect.height / 2;
+        const dist = Math.sqrt(Math.pow(mX - bX, 2) + Math.pow(mY - bY, 2));
+
+        if (dist < 100) {
+          const x = (mX - bX) * 0.4;
+          const y = (mY - bY) * 0.4;
+          magneticBtn.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+          magneticBtn.style.boxShadow = `0 12px 30px var(--accent-2)`;
+        } else {
+          magneticBtn.style.transform = '';
+          magneticBtn.style.boxShadow = '';
+        }
+      });
+    }
+
+    // 4. Parallax Hero Badge
+    const hero = document.querySelector('.hero');
+    if (hero) {
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const badge = document.querySelector('.hero-badge');
+        if (badge) {
+          badge.style.transform = `translateY(${scrolled * 0.1}px)`;
+        }
+      });
+    }

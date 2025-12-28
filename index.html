@@ -10,10 +10,17 @@
   <link id="theme-css" rel="stylesheet" href="dist/bloom-light.css" />
   <link rel="stylesheet" href="site.css" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="27809ba1-2fa2-4d3c-9568-894ab511cf52"></script>
-  
+
 </head>
 
 <body>
+  <div class="bg-canvas-wrap">
+    <div class="bg-blob"></div>
+    <div class="bg-blob bg-blob-2"></div>
+    <div class="bg-blob bg-blob-3"></div>
+    <div class="bg-grain"></div>
+  </div>
+
   <header class="topbar">
     <div class="topbar-inner">
       <a href="#" class="brand" title="Bloom">
@@ -48,16 +55,17 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero reveal">
     <div class="hero-inner">
-      <div class="hero-badge"><span class="hero-badge-dot"></span>Premium Typora Theme · Light & Dark</div>
-      <h1 class="hero-title"><span class="hero-title-accent">Bloom</span> · 文字的绽放与成长</h1>
-      <p class="hero-subtitle">
+      <div class="hero-badge reveal-delay-1"><span class="hero-badge-dot"></span>Premium Typora Theme · Light & Dark
+      </div>
+      <h1 class="hero-title reveal-delay-2"><span class="hero-title-accent">Bloom</span> · 文字的绽放与成长</h1>
+      <p class="hero-subtitle reveal-delay-2">
         为长期写作而设计的 Typora 主题。追求安静、克制与温柔的表达——让文字始终成为视线的中心。
       </p>
-      <div class="hero-actions">
+      <div class="hero-actions reveal-delay-3">
         <a href="https://github.com/webkubor/typora-Bloom-theme/releases/latest/download/Bloom-theme.zip"
-          class="btn btn-primary">
+          class="btn btn-primary" id="btn-download">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="margin-right: 8px;">
             <path d="M8 11L4 7h2.5V2h3v5H12L8 11z" fill="currentColor" />
             <path d="M14 13v1H2v-1h12z" fill="currentColor" />
@@ -69,15 +77,15 @@
       </div>
 
       <div class="hero-highlights">
-        <div class="hero-highlight">
+        <div class="hero-highlight premium-card">
           <p class="hero-highlight-title">长期写作友好</p>
           <p class="hero-highlight-desc">低对比、稳定节奏，长时间写作更舒适。</p>
         </div>
-        <div class="hero-highlight">
+        <div class="hero-highlight premium-card">
           <p class="hero-highlight-title">代码阅读更清晰</p>
           <p class="hero-highlight-desc">层级明确、控件克制，代码块更好读。</p>
         </div>
-        <div class="hero-highlight">
+        <div class="hero-highlight premium-card">
           <p class="hero-highlight-title">四款主题一键切换</p>
           <p class="hero-highlight-desc">Light / Dark / Forest / Sea，随场景切换。</p>
         </div>
@@ -107,21 +115,21 @@
 
         <hr />
 
-        <h2 id="features">功能亮点</h2>
+        <h2 id="features" class="reveal-on-scroll">功能亮点</h2>
         <div class="md-principle-grid">
-          <div class="md-principle-card">
+          <div class="md-principle-card reveal-on-scroll premium-card">
             <h4><span style="font-size: 1.2em;">⌨️</span> 文字优先</h4>
             <p>排版比例与层级更清晰，注意力回到文字本身。</p>
           </div>
-          <div class="md-principle-card">
+          <div class="md-principle-card reveal-on-scroll premium-card">
             <h4><span style="font-size: 1.2em;">⏳</span> 长期可用</h4>
             <p>低对比、低噪点，长时间阅读与写作更省眼。</p>
           </div>
-          <div class="md-principle-card">
+          <div class="md-principle-card reveal-on-scroll premium-card">
             <h4><span style="font-size: 1.2em;">🧘</span> 情绪稳定</h4>
             <p>浅深两套基底，白天夜晚都保持舒适氛围。</p>
           </div>
-          <div class="md-principle-card">
+          <div class="md-principle-card reveal-on-scroll premium-card">
             <h4><span style="font-size: 1.2em;">🍃</span> 细节克制</h4>
             <p>控件与装饰保持简洁，界面干净不抢内容。</p>
           </div>
@@ -147,9 +155,7 @@
               alt="深色" />
           </div>
           <div class="showcase-item">
-            <img
-              src="https://raw.githubusercontent.com/webkubor/upic-images/main/uPic/2025/12/2yD1J7.png"
-              alt="森林" />
+            <img src="https://raw.githubusercontent.com/webkubor/upic-images/main/uPic/2025/12/2yD1J7.png" alt="森林" />
           </div>
           <div class="showcase-item">
             <img
@@ -162,9 +168,12 @@
         <ol>
           <li>打开 Typora。</li>
           <li>进入：偏好设置 → 外观 → 打开主题文件夹。</li>
-          <li>复制主题文件：<code>bloom-light.css</code>、<code>bloom-dark.css</code>、<code>bloom-forest.css</code>、<code>bloom-sea.css</code>（如有 <code>bloom/</code> 一并复制）。
+          <li>
+            复制主题文件：<code>bloom-light.css</code>、<code>bloom-dark.css</code>、<code>bloom-forest.css</code>、<code>bloom-sea.css</code>（如有
+            <code>bloom/</code> 一并复制）。
           </li>
-          <li>回到 Typora：主题 → 选择 <strong>Bloom Light</strong> / <strong>Bloom Dark</strong> / <strong>Bloom Forest</strong> / <strong>Bloom Sea</strong>。</li>
+          <li>回到 Typora：主题 → 选择 <strong>Bloom Light</strong> / <strong>Bloom Dark</strong> / <strong>Bloom
+              Forest</strong> / <strong>Bloom Sea</strong>。</li>
         </ol>
 
         <h3>从 Releases 下载（推荐）</h3>
@@ -175,36 +184,61 @@
         </ol>
         <p><a href="https://github.com/webkubor/typora-Bloom-theme/releases/latest" target="_blank">前往 Releases 下载</a>
         </p>
-
-        <h2 id="thanks">致谢</h2>
-        <p>感谢所有使用、反馈与分享 Bloom 的人。</p>
-        <p>如果这个主题在某个清晨或夜晚<br />让你愿意多写几行字，<br />那它的意义就已经成立了。</p>
+        <div class="thanks-section" id="thanks">
+          <div class="thanks-divider">
+            <div class="thanks-line"></div>
+            <div class="thanks-icon">🌱</div>
+            <div class="thanks-line"></div>
+          </div>
+          <div class="thanks-title">致谢</div>
+          <p class="thanks-quote">
+            感谢所有使用、反馈与分享 Bloom 的人。<br />
+            如果这个主题在某个<mark>清晨或夜晚</mark>，让你愿意多写几行字，<br />
+            那它的意义就已经成立了。
+          </p>
+          <div class="thanks-signature">
+            <span class="thanks-author">webkubor</span>
+            <span class="thanks-date">2025 · Bloom</span>
+          </div>
+        </div>
       </article>
     </main>
 
     <aside class="sidebar">
       <div class="sidebar-card">
         <div class="sidebar-title">主色规范</div>
-        <div class="palette">
-          <div class="color-item">
-            <div class="color-swatch" style="background: var(--accent);"></div>
-            <span class="color-name">强调色</span>
-            <span class="color-hex">#FF4D8D</span>
+        <div class="palette" style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="color-item" style="display: flex; align-items: center; gap: 16px;">
+            <div class="color-swatch"
+              style="width: 48px; height: 48px; border-radius: 14px; background: var(--accent); box-shadow: 0 8px 16px var(--accent-2);">
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <span class="color-name" style="font-size: 15px; font-weight: 700;">强调色</span>
+            </div>
           </div>
-          <div class="color-item">
-            <div class="color-swatch" style="background: var(--bg);"></div>
-            <span class="color-name">背景色</span>
-            <span class="color-hex">Variable</span>
+          <div class="color-item" style="display: flex; align-items: center; gap: 16px;">
+            <div class="color-swatch"
+              style="width: 48px; height: 48px; border-radius: 14px; background: var(--bg); border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <span class="color-name" style="font-size: 15px; font-weight: 700;">界面色</span>
+            </div>
           </div>
-          <div class="color-item">
-            <div class="color-swatch" style="background: var(--success);"></div>
-            <span class="color-name">成功色</span>
-            <span class="color-hex">#10B981</span>
+          <div class="color-item" style="display: flex; align-items: center; gap: 16px;">
+            <div class="color-swatch"
+              style="width: 48px; height: 48px; border-radius: 14px; background: var(--success); box-shadow: 0 8px 16px rgba(16, 185, 129, 0.2);">
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <span class="color-name" style="font-size: 15px; font-weight: 700;">成功色</span>
+            </div>
           </div>
-          <div class="color-item">
-            <div class="color-swatch" style="background: var(--warning);"></div>
-            <span class="color-name">进行中</span>
-            <span class="color-hex">#F59E0B</span>
+          <div class="color-item" style="display: flex; align-items: center; gap: 16px;">
+            <div class="color-swatch"
+              style="width: 48px; height: 48px; border-radius: 14px; background: var(--warning); box-shadow: 0 8px 16px rgba(245, 158, 11, 0.2);">
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <span class="color-name" style="font-size: 15px; font-weight: 700;">提示色</span>
+            </div>
           </div>
         </div>
       </div>
@@ -233,7 +267,7 @@
     </aside>
   </div>
 
-  
+
   <script src="site.js"></script>
 </body>
 
