@@ -207,7 +207,7 @@
       gap: 8px;
       padding: 8px 16px;
       background: var(--surface);
-      border: 1px solid var(--border);
+      border: none;
       border-radius: 100px;
       cursor: pointer;
       color: var(--text);
@@ -439,6 +439,193 @@
     .showcase-item:hover img {
       transform: scale(1.02);
       filter: saturate(1.05);
+    }
+
+    .showcase-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      margin: 24px 0 18px;
+    }
+
+    .showcase-group+.showcase-group {
+      margin-top: 56px;
+    }
+
+    .showcase-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      margin: 0 0 24px;
+      color: var(--text);
+      text-align: center;
+    }
+
+    /* 3D Showcase Container */
+    .showcase-cards {
+      position: relative;
+      width: min(100%, 1200px);
+      /* Make sure we have 3D space */
+      perspective: 1000px;
+      transform-style: preserve-3d;
+    }
+
+    /* Base Card Style */
+    .showcase-card {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: min(75%, 800px);
+      border-radius: 24px;
+      overflow: hidden;
+
+      /* Glassmorphism Border */
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: var(--bg);
+
+      /* Smooth transitions for all 3D props */
+      transition:
+        transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+        opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+        filter 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.6s ease;
+
+      /* Default state for inactive cards */
+      transform-origin: center center;
+
+      /* Using calc for the 3D positioning
+         --stack-offset: signed integer (e.g. -1, 0, 1)
+         --stack-distance: absolute integer (e.g. 1, 0, 1)
+      */
+      transform:
+        translateX(-50%)
+        /* Center alignment base */
+        translateX(calc(var(--stack-offset, 0) * 15%))
+        /* 3D spacing */
+        translateZ(calc(var(--stack-distance, 0) * -100px))
+        /* Depth */
+        rotateY(calc(var(--stack-offset, 0) * -15deg));
+      /* Rotation */
+
+      opacity: calc(1 - (var(--stack-distance, 0) * 0.15));
+      filter: saturate(calc(1 - (var(--stack-distance, 0) * 0.4))) brightness(calc(1 - (var(--stack-distance, 0) * 0.1)));
+
+      /* Inactive cards should not receive pointer events */
+      pointer-events: none;
+      z-index: calc(100 - var(--stack-distance, 0));
+
+      box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.15);
+    }
+
+    .showcase-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0.3) 0%, transparent 40%, transparent 60%, rgba(255, 255, 255, 0.1) 100%);
+      pointer-events: none;
+      mix-blend-mode: overlay;
+    }
+
+    /* Fix image scaling */
+    .showcase-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 24px;
+    }
+
+    /* Active Card Override */
+    .showcase-card.is-active {
+      transform: translateX(-50%) translateZ(0) rotateY(0);
+      opacity: 1;
+      filter: none;
+      pointer-events: auto;
+      box-shadow:
+        0 30px 60px -12px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+      z-index: 100;
+    }
+
+    /* Dot Navigation */
+    .showcase-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding: 12px 0;
+      margin-top: 10px;
+    }
+
+    .showcase-dot {
+      position: relative;
+      width: 36px;
+      height: 6px;
+      border-radius: 4px;
+      border: none;
+      background: var(--border);
+      /* Default inactive color */
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* Using pseudo-element to show the actual color bar */
+    .showcase-dot::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--dot-color);
+      opacity: 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      border-radius: 4px;
+    }
+
+    /* Hover State */
+    .showcase-dot:hover {
+      background: color-mix(in srgb, var(--border) 80%, black);
+      transform: scaleY(1.2);
+    }
+
+    /* Active State */
+    .showcase-dot.is-active {
+      width: 48px;
+      background: var(--surface);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .showcase-dot.is-active::before {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    .showcase-dot:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 900px) {
+      .showcase-card {
+        width: min(85%, 680px);
+        transform:
+          translateX(-50%) translateX(calc(var(--stack-offset, 0) * 10%)) translateZ(calc(var(--stack-distance, 0) * -80px)) rotateY(calc(var(--stack-offset, 0) * -10deg));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .showcase-cards {
+        perspective: 800px;
+      }
+
+      .showcase-card {
+        width: min(92%, 520px);
+        transform:
+          translateX(-50%) translateX(calc(var(--stack-offset, 0) * 8%)) translateZ(calc(var(--stack-distance, 0) * -60px)) rotateY(calc(var(--stack-offset, 0) * -8deg));
+      }
     }
 
     .sidebar {

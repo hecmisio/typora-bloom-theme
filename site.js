@@ -124,6 +124,65 @@ if (themeTrigger && themeMenu) {
   });
 }
 
+function initShowcaseStack(stack) {
+  const cards = Array.from(stack.querySelectorAll('.showcase-card'));
+  const dots = Array.from(stack.querySelectorAll('.showcase-dot'));
+  const track = stack.querySelector('.showcase-cards');
+  if (!cards.length || !dots.length) return;
+
+  const updateTrackHeight = (img, card) => {
+    if (!track || !img || !card) return;
+    const cardWidth = card.getBoundingClientRect().width;
+    if (!cardWidth) return;
+    const { naturalWidth, naturalHeight } = img;
+    if (!naturalWidth || !naturalHeight) return;
+    track.style.height = `${Math.round((cardWidth * naturalHeight) / naturalWidth)}px`;
+  };
+
+  const syncActiveHeight = () => {
+    const activeCard = cards.find(card => card.classList.contains('is-active'));
+    const activeImg = activeCard?.querySelector('img');
+    if (!activeImg || !activeCard) return;
+    if (activeImg.complete) {
+      updateTrackHeight(activeImg, activeCard);
+    } else {
+      activeImg.addEventListener('load', () => updateTrackHeight(activeImg, activeCard), { once: true });
+    }
+  };
+
+  const applyState = (activeIndex) => {
+    cards.forEach((card, index) => {
+      const offset = index - activeIndex;
+      const distance = Math.abs(offset);
+      card.style.setProperty('--stack-offset', offset);
+      card.style.setProperty('--stack-distance', distance);
+      card.style.zIndex = String(100 - distance);
+      card.classList.toggle('is-active', index === activeIndex);
+      card.setAttribute('aria-hidden', index === activeIndex ? 'false' : 'true');
+    });
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('is-active', index === activeIndex);
+      dot.setAttribute('aria-pressed', index === activeIndex ? 'true' : 'false');
+    });
+
+    syncActiveHeight();
+  };
+
+  const initialIndex = Math.max(
+    0,
+    cards.findIndex(card => card.classList.contains('is-active'))
+  );
+  applyState(initialIndex);
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => applyState(index));
+  });
+
+  syncActiveHeight();
+  window.addEventListener('resize', syncActiveHeight);
+}
+
 
 
 // Button hover effects
@@ -138,6 +197,8 @@ cards.forEach(btn => {
     btn.style.boxShadow = 'none';
   };
 });
+
+document.querySelectorAll('[data-showcase]').forEach(stack => initShowcaseStack(stack));
 
 function getCodeLanguage(codeEl, preEl) {
   const preLang = preEl?.getAttribute('lang') || preEl?.getAttribute('data-lang');

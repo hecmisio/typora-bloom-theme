@@ -212,32 +212,65 @@
         <p>完整 Markdown 演示与主题切换放在单独页面，避免首页信息拥挤。</p>
         <p><a href="showcase.html" class="btn btn-secondary">进入实时预览</a></p>
 
-        <h2 id="showcase">真实截图（Light / Dark / Forest / Cyber / Spring / Mist / Verdant / Stone）</h2>
-        <p>不同设备与环境下的真实效果截图。</p>
-        <div class="showcase-grid">
-          <div class="showcase-item">
-            <img src="screenshots/bloom-light.png" alt="浅色" />
+        <h2 id="showcase">真实截图</h2>
+        <p>八款主题 · 真实写作场景</p>
+        <div class="showcase-group">
+          <h3 class="showcase-title">浅色主题</h3>
+          <div class="showcase-stack" data-showcase>
+            <div class="showcase-cards">
+              <figure class="showcase-card is-active" data-theme="light" data-index="0">
+                <img src="screenshots/bloom-light.png" alt="浅色" />
+              </figure>
+              <figure class="showcase-card" data-theme="mist" data-index="1">
+                <img src="screenshots/bloom-mist.png" alt="雾蓝" />
+              </figure>
+              <figure class="showcase-card" data-theme="verdant" data-index="2">
+                <img src="screenshots/bloom-verdant.png" alt="草木" />
+              </figure>
+              <figure class="showcase-card" data-theme="stone" data-index="3">
+                <img src="screenshots/bloom-stone.png" alt="暖石" />
+              </figure>
+            </div>
+            <div class="showcase-dots" role="tablist" aria-label="浅色主题选择">
+              <button class="showcase-dot is-active" type="button" data-index="0" style="--dot-color: #ff4d8d"
+                aria-label="Bloom Light"></button>
+              <button class="showcase-dot" type="button" data-index="1" style="--dot-color: #92a8b3"
+                aria-label="Bloom Mist"></button>
+              <button class="showcase-dot" type="button" data-index="2" style="--dot-color: #a0b0a7"
+                aria-label="Bloom Verdant"></button>
+              <button class="showcase-dot" type="button" data-index="3" style="--dot-color: #b1a49e"
+                aria-label="Bloom Stone"></button>
+            </div>
           </div>
-          <div class="showcase-item">
-            <img src="screenshots/bloom-dark.png" alt="深色" />
-          </div>
-          <div class="showcase-item">
-            <img src="screenshots/bloom-forest.png" alt="森林" />
-          </div>
-          <div class="showcase-item">
-            <img src="screenshots/bloom-cyber.png" alt="荧光蓝" />
-          </div>
-          <div class="showcase-item">
-            <img src="screenshots/bloom-spring.png" alt="春季粉紫" />
-          </div>
-          <div class="showcase-item">
-            <img src="screenshots/bloom-mist.png" alt="雾蓝" />
-          </div>
-          <div class="showcase-item">
-            <img src="screenshots/bloom-verdant.png" alt="草木" />
-          </div>
-          <div class="showcase-item">
-            <img src="screenshots/bloom-stone.png" alt="暖石" />
+        </div>
+
+        <div class="showcase-group">
+          <h3 class="showcase-title">深色主题</h3>
+          <div class="showcase-stack" data-showcase>
+            <div class="showcase-cards">
+              <figure class="showcase-card is-active" data-theme="dark" data-index="0">
+                <img src="screenshots/bloom-dark.png" alt="深色" />
+              </figure>
+              <figure class="showcase-card" data-theme="forest" data-index="1">
+                <img src="screenshots/bloom-forest.png" alt="森林" />
+              </figure>
+              <figure class="showcase-card" data-theme="cyber" data-index="2">
+                <img src="screenshots/bloom-cyber.png" alt="荧光蓝" />
+              </figure>
+              <figure class="showcase-card" data-theme="spring" data-index="3">
+                <img src="screenshots/bloom-spring.png" alt="春季粉紫" />
+              </figure>
+            </div>
+            <div class="showcase-dots" role="tablist" aria-label="深色主题选择">
+              <button class="showcase-dot is-active" type="button" data-index="0" style="--dot-color: #ff4d8d"
+                aria-label="Bloom Dark"></button>
+              <button class="showcase-dot" type="button" data-index="1" style="--dot-color: #2dde8f"
+                aria-label="Bloom Forest"></button>
+              <button class="showcase-dot" type="button" data-index="2" style="--dot-color: #64e7ff"
+                aria-label="Bloom Cyber"></button>
+              <button class="showcase-dot" type="button" data-index="3" style="--dot-color: #998ab9"
+                aria-label="Bloom Spring"></button>
+            </div>
           </div>
         </div>
 
