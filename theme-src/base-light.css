@@ -665,6 +665,11 @@ sup.md-footnote {
   mask-image: var(--icon-folder);
 }
 
+#typora-sidebar .file-library-file-node>.file-node-content .file-node-icon {
+  -webkit-mask-image: var(--icon-document);
+  mask-image: var(--icon-document);
+}
+
 /* Math */
 .md-math-block {
   margin: var(--space-xl) 0;

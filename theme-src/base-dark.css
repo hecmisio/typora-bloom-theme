@@ -800,6 +800,11 @@ a:hover {
   mask-image: var(--icon-folder);
 }
 
+#typora-sidebar .file-library-file-node>.file-node-content .file-node-icon {
+  -webkit-mask-image: var(--icon-document);
+  mask-image: var(--icon-document);
+}
+
 .file-node-content:hover {
   background: rgba(var(--white-rgb), 0.04);
   color: var(--text);
