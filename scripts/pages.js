@@ -43,4 +43,9 @@ if (fs.existsSync(assetsDir)) {
   copyDir(assetsDir, path.join(outDir, "bloom"));
 }
 
+const screenshotsDir = path.join(root, "screenshots");
+if (fs.existsSync(screenshotsDir)) {
+  copyDir(screenshotsDir, path.join(outDir, "screenshots"));
+}
+
 console.log("已生成 _pages 目录");

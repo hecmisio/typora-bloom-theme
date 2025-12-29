@@ -13,13 +13,21 @@ Bloom（绽放 / 成长）是一套为**长期写作**而设计的 Typora 主题
 - **经典系列**：**Bloom Light（浅色）**、**Bloom Dark（深色）**、**Bloom Forest（森林绿）**、**Bloom Cyber（荧光蓝）**、**Bloom Spring（粉紫）**。
 - **莫兰迪系列**：**Bloom Mist（雾蓝）**、**Bloom Verdant（草木绿）**、**Bloom Stone（暖石灰）**。
 
-![浅色](https://raw.githubusercontent.com/webkubor/upic-images/main/uPic/2025/12/%E6%88%AA%E5%B1%8F2025-12-19%2016.36.49.png)
+![浅色](screenshots/bloom-light.png)
 
-![深色](https://raw.githubusercontent.com/webkubor/upic-images/main/uPic/2025/12/%E6%88%AA%E5%B1%8F2025-12-19%2016.38.47.png)
+![深色](screenshots/bloom-dark.png)
 
-![森林](https://raw.githubusercontent.com/webkubor/upic-images/main/uPic/2025/12/2yD1J7.png)
+![森林](screenshots/bloom-forest.png)
 
-![深蓝](https://raw.githubusercontent.com/webkubor/upic-images/main/uPic/2025/12/%E6%88%AA%E5%B1%8F2025-12-26%2000.13.48.png)
+![荧光蓝](screenshots/bloom-cyber.png)
+
+![春季粉紫](screenshots/bloom-spring.png)
+
+![雾蓝](screenshots/bloom-mist.png)
+
+![草木](screenshots/bloom-verdant.png)
+
+![暖石](screenshots/bloom-stone.png)
 
 
 它追求安静、克制与温柔的表达——  
