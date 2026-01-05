@@ -37,11 +37,75 @@ Bloom（绽放）是一套为**长期写作**设计的 Typora 主题。它追求
 
 ---
 
-## 视觉与设计
+## 主题截图展示
+
+### 🌤 浅色主题
+
+<details open>
+<summary>花瓣 (Petal) - 暖粉白 + 玫瑰粉</summary>
 
 ![花瓣浅色](screenshots/bloom-petal.png)
-![花瓣深色](screenshots/bloom-petal-dark.png)
-![暗夜草木](screenshots/bloom-verdant-dark.png)
+</details>
+
+<details>
+<summary>雾蓝 (Mist) - 冷浅灰 + 深雾蓝</summary>
+
+![雾蓝浅色](screenshots/bloom-mist.png)
+</details>
+
+<details>
+<summary>草木 (Verdant) - 极浅淡绿 + 豆沙绿</summary>
+
+![草木浅色](screenshots/bloom-verdant.png)
+</details>
+
+<details>
+<summary>暖石 (Stone) - 暖米白 + 红棕土</summary>
+
+![暖石浅色](screenshots/bloom-stone.png)
+</details>
+
+<details>
+<summary>琥珀橙 (Amber Orange) - 现代琥珀橙</summary>
+
+![琥珀橙浅色](screenshots/bloom-amber.png)
+</details>
+
+### 🌙 深色主题
+
+<details>
+<summary>花瓣暗夜 (Petal Dark) - 深玫瑰黑 + 玫瑰粉</summary>
+
+![花瓣暗夜](screenshots/bloom-petal-dark.png)
+</details>
+
+<details>
+<summary>雾蓝暗夜 (Mist Dark) - 莫兰迪雾蓝暗色版</summary>
+
+![雾蓝暗夜](screenshots/bloom-mist-dark.png)
+</details>
+
+<details>
+<summary>草木暗夜 (Verdant Dark) - 深墨绿 + 莫兰迪绿</summary>
+
+![草木暗夜](screenshots/bloom-verdant-dark.png)
+</details>
+
+<details>
+<summary>琥珀橙暗夜 (Amber Orange Dark) - 篝火般的琥珀橙</summary>
+
+![琥珀橙暗夜](screenshots/bloom-amber-dark.png)
+</details>
+
+<details>
+<summary>薰衣草紫 (Spring) - 深紫黑 + 薰衣草紫</summary>
+
+![薰衣草紫](screenshots/bloom-spring.png)
+</details>
+
+---
+
+## 视觉与设计
 
 ### 设计原则
 1. **文字优先**：所有设计都应为内容让路，不抢表达。
