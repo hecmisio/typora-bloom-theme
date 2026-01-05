@@ -13,7 +13,7 @@
     --space-2xl: calc(var(--space-unit) * 6);
     --space-3xl: calc(var(--space-unit) * 8);
 
-    /* --- Morandi Terracotta (Modern Amber) --- */
+    /* --- Morandi Amber (Modern Amber) --- */
     --accent: oklch(60% 0.14 65);
     --accent-rgb: 195, 135, 75;
 

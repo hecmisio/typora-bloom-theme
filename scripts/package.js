@@ -15,8 +15,8 @@ const files = [
   "bloom-mist.css",
   "bloom-verdant.css",
   "bloom-stone.css",
-  "bloom-terracotta.css",
-  "bloom-terracotta-dark.css",
+  "bloom-amber.css",
+  "bloom-amber-dark.css",
 ].map((file) => path.join(distDir, file));
 if (fs.existsSync(path.join(root, "bloom"))) {
   files.push("bloom");

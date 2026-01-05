@@ -14,8 +14,8 @@ const themes = [
   { name: "mist", base: "base-light.css", vars: "root-mist.css" },
   { name: "verdant", base: "base-light.css", vars: "root-verdant.css" },
   { name: "stone", base: "base-light.css", vars: "root-stone.css" },
-  { name: "terracotta", base: "base-light.css", vars: "root-terracotta.css" },
-  { name: "terracotta-dark", base: "base-dark.css", vars: "root-terracotta-dark.css" }
+  { name: "amber", base: "base-light.css", vars: "root-amber.css" },
+  { name: "amber-dark", base: "base-dark.css", vars: "root-amber-dark.css" }
 ];
 
 function readSrc(file) {
