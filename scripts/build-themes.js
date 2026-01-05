@@ -6,14 +6,16 @@ const srcDir = path.join(root, "theme-src");
 const distDir = path.join(root, "dist");
 
 const themes = [
-  { name: "light", base: "base-light.css", vars: "root-light.css" },
-  { name: "dark", base: "base-dark.css", vars: "root-dark.css" },
-  { name: "forest", base: "base-dark.css", vars: "root-forest.css" },
+  { name: "petal", base: "base-light.css", vars: "root-petal.css" },
+  { name: "petal-dark", base: "base-dark.css", vars: "root-petal-dark.css" },
+  { name: "verdant-dark", base: "base-dark.css", vars: "root-verdant-dark.css" },
   { name: "cyber", base: "base-dark.css", vars: "root-cyber.css" },
   { name: "spring", base: "base-dark.css", vars: "root-spring.css" },
   { name: "mist", base: "base-light.css", vars: "root-mist.css" },
   { name: "verdant", base: "base-light.css", vars: "root-verdant.css" },
-  { name: "stone", base: "base-light.css", vars: "root-stone.css" }
+  { name: "stone", base: "base-light.css", vars: "root-stone.css" },
+  { name: "terracotta", base: "base-light.css", vars: "root-terracotta.css" },
+  { name: "terracotta-dark", base: "base-dark.css", vars: "root-terracotta-dark.css" }
 ];
 
 function readSrc(file) {

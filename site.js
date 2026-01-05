@@ -4,7 +4,7 @@ const themeMenu = document.getElementById('theme-menu');
 const themeItems = document.querySelectorAll('.theme-item');
 const currentThemeDisplay = document.getElementById('current-theme-name');
 
-let currentTheme = 'light';
+let currentTheme = 'petal';
 
 // 修改后的设置函数
 function setTheme(themeName) {
@@ -25,7 +25,12 @@ function setTheme(themeName) {
   updateThemeUI(themeName);
 
   // 设置系统的 color-scheme
-  const darkThemes = ['dark', 'forest', 'sea', 'spring'];
+  const darkThemes = ['petal-dark',
+    "verdant-dark",
+    "terracotta-dark",
+    "cyber",
+    "spring",
+  ];
   document.documentElement.style.colorScheme = darkThemes.includes(themeName) ? 'dark' : 'light';
 
   currentTheme = themeName;
@@ -37,9 +42,9 @@ function setTheme(themeName) {
  */
 function updateDynamicFavicon() {
   const colorMap = {
-    'light': { accent: '#ff4d8d', bg: '#fbfbfd' },
-    'dark': { accent: '#ff4d8d', bg: '#171a22' },
-    'forest': { accent: '#2dde8f', bg: '#181a1f' },
+    'petal': { accent: '#a8828e', bg: '#f9f6f7' },
+    'petal-dark': { accent: '#b9919e', bg: '#252023' },
+    'verdant-dark': { accent: '#99b3a3', bg: '#202522' },
     'cyber': { accent: '#64e7ff', bg: '#0d1117' },
     'spring': { accent: '#998ab9', bg: '#1c1826' },
     'mist': { accent: '#92A8B3', bg: '#F2F4F5' },
@@ -82,11 +87,11 @@ function updateDynamicFavicon() {
 // 统一管理主题 UI 状态
 function updateThemeUI(activeTheme) {
   const themeLabels = {
-    'light': '☀️ 清晨模式',
-    'dark': '🌙 夜晚模式',
-    'forest': '🌲 森林绿',
-    'cyber': '✨ 荧光蓝',
-    'spring': '🌸 春季粉紫',
+    'petal': '🌸 花瓣 (Petal)',
+    'petal-dark': '🔮 花瓣·暗夜',
+    'verdant-dark': '🌲 草木·暗夜',
+    'cyber': '✨ 青蓝 (Cyber)',
+    'spring': '🌸 薰衣草紫',
     'mist': '☁️ 莫兰迪·雾蓝',
     'verdant': '🍃 莫兰迪·草木',
     'stone': '🧱 莫兰迪·暖石'
