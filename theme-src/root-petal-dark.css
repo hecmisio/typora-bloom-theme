@@ -13,9 +13,9 @@
     --space-2xl: calc(var(--space-unit) * 6);
     --space-3xl: calc(var(--space-unit) * 8);
 
-    /* --- Morandi Petal Dark (Rose Pink) --- */
-    --accent: oklch(62% 0.08 354);
-    --accent-rgb: 185, 145, 158;
+    /* --- Morandi Petal Dark (Optimized Rose) --- */
+    --accent: oklch(75% 0.18 350);
+    --accent-rgb: 255, 170, 200;
 
     /* Dynamic States */
     --accent-hover: color-mix(in oklch, var(--accent), white 8%);
@@ -28,14 +28,14 @@
     --error: oklch(62% 0.12 25);
     --info: oklch(65% 0.1 250);
 
-    /* Neutrals - Petal Dark Base (deep rose tint) */
-    --bg: oklch(14% 0.02 354);
-    --surface: oklch(22% 0.02 354);
-    --surface-2: oklch(28% 0.02 354);
+    /* Neutrals - Petal Dark Base (enhanced for warmth) */
+    --bg: oklch(20% 0.02 350);
+    --surface: oklch(28% 0.03 350);
+    --surface-2: oklch(34% 0.04 350);
 
-    --text: oklch(90% 0.01 354);
-    --text-rgb: 228, 220, 224;
-    --text-semi: oklch(75% 0.02 354);
+    --text: oklch(98% 0.01 350);
+    --text-rgb: 255, 245, 248;
+    --text-semi: oklch(86% 0.02 350);
     --muted: color-mix(in oklch, var(--text), transparent 30%);
 
     --border: color-mix(in oklch, var(--text), transparent 88%);
@@ -53,7 +53,7 @@
     --selection: color-mix(in oklch, var(--accent), transparent 65%);
 
     /* Code Layer */
-    --code-bg: oklch(10% 0.02 354);
+    --code-bg: oklch(14% 0.02 354);
     --code-text: var(--text-semi);
     --code-ink: var(--text);
     --code-dot-red: oklch(65% 0.12 25);
@@ -61,7 +61,7 @@
     --code-dot-green: oklch(72% 0.12 145);
 
     /* Code Token Colors */
-    --code-token-keyword: oklch(70% 0.1 354);
+    --code-token-keyword: oklch(82% 0.18 350);
     --code-token-string: oklch(72% 0.1 145);
     --code-token-number: oklch(75% 0.1 75);
     --code-token-blue: oklch(70% 0.1 250);

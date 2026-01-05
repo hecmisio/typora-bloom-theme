@@ -13,9 +13,9 @@
     --space-2xl: calc(var(--space-unit) * 6);
     --space-3xl: calc(var(--space-unit) * 8);
 
-    /* --- Morandi Terracotta (Earthy Orange) --- */
-    --accent: oklch(55% 0.10 45);
-    --accent-rgb: 178, 126, 96;
+    /* --- Morandi Terracotta (Modern Amber) --- */
+    --accent: oklch(60% 0.14 65);
+    --accent-rgb: 195, 135, 75;
 
     /* Dynamic States */
     --accent-hover: color-mix(in oklch, var(--accent), black 8%);

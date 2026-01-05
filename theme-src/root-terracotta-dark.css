@@ -13,9 +13,9 @@
     --space-2xl: calc(var(--space-unit) * 6);
     --space-3xl: calc(var(--space-unit) * 8);
 
-    /* --- Morandi Terracotta Dark (Deep Clay) --- */
-    --accent: oklch(65% 0.10 45);
-    --accent-rgb: 212, 149, 112;
+    /* --- Morandi Terracotta Dark (Modern Amber) --- */
+    --accent: oklch(75% 0.16 65);
+    --accent-rgb: 235, 175, 120;
 
     /* Dynamic States */
     --accent-hover: color-mix(in oklch, var(--accent), white 8%);
@@ -29,13 +29,13 @@
     --info: oklch(65% 0.1 250);
 
     /* Neutrals - Terracotta Dark Base (deep clay tint) */
-    --bg: oklch(14% 0.02 45);
-    --surface: oklch(22% 0.02 45);
-    --surface-2: oklch(28% 0.02 45);
+    --bg: oklch(18% 0.02 45);
+    --surface: oklch(26% 0.02 45);
+    --surface-2: oklch(32% 0.02 45);
 
-    --text: oklch(90% 0.01 45);
-    --text-rgb: 232, 222, 215;
-    --text-semi: oklch(75% 0.02 45);
+    --text: oklch(96% 0.01 45);
+    --text-rgb: 245, 238, 235;
+    --text-semi: oklch(82% 0.02 45);
     --muted: color-mix(in oklch, var(--text), transparent 30%);
 
     --border: color-mix(in oklch, var(--text), transparent 88%);
@@ -53,7 +53,7 @@
     --selection: color-mix(in oklch, var(--accent), transparent 65%);
 
     /* Code Layer */
-    --code-bg: oklch(10% 0.02 45);
+    --code-bg: oklch(14% 0.02 45);
     --code-text: var(--text-semi);
     --code-ink: var(--text);
     --code-dot-red: oklch(65% 0.12 25);
@@ -61,7 +61,7 @@
     --code-dot-green: oklch(72% 0.12 145);
 
     /* Code Token Colors */
-    --code-token-keyword: oklch(70% 0.1 45);
+    --code-token-keyword: oklch(78% 0.12 45);
     --code-token-string: oklch(72% 0.1 145);
     --code-token-number: oklch(75% 0.1 75);
     --code-token-blue: oklch(70% 0.1 250);

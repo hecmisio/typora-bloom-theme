@@ -15,8 +15,8 @@
 
     /* --- Modern Color System (OKLCH) --- */
     /* Main Accent: Lavender Pink (derived from #8F84AB but more vibrant for Bloom) */
-    --accent: oklch(68% 0.14 295);
-    --accent-rgb: 153, 138, 185;
+    --accent: oklch(75% 0.16 295);
+    --accent-rgb: 175, 155, 215;
 
     /* Dynamic States */
     --accent-hover: color-mix(in oklch, var(--accent), white 8%);
@@ -30,13 +30,13 @@
     --info: oklch(70% 0.16 250);
 
     /* Neutrals - Spring Night Base (Deep Purple Tint) */
-    --bg: oklch(14% 0.02 295);
-    --surface: oklch(22% 0.02 295);
-    --surface-2: oklch(28% 0.02 295);
+    --bg: oklch(18% 0.02 295);
+    --surface: oklch(26% 0.02 295);
+    --surface-2: oklch(32% 0.03 295);
 
-    --text: oklch(92% 0.01 295);
-    --text-rgb: 235, 232, 240;
-    --text-semi: oklch(82% 0.02 295);
+    --text: oklch(96% 0.01 295);
+    --text-rgb: 245, 240, 248;
+    --text-semi: oklch(84% 0.02 295);
     --muted: color-mix(in oklch, var(--text), transparent 30%);
 
     --border: color-mix(in oklch, var(--text), transparent 88%);
@@ -54,7 +54,7 @@
     --selection: color-mix(in oklch, var(--accent), transparent 65%);
 
     /* Code Layer */
-    --code-bg: oklch(18% 0.02 295);
+    --code-bg: oklch(14% 0.02 295);
     --code-text: var(--text-semi);
     --code-ink: var(--text);
     --code-dot-red: oklch(65% 0.2 25);
@@ -62,7 +62,7 @@
     --code-dot-green: oklch(75% 0.18 145);
 
     /* Code Token Colors */
-    --code-token-keyword: oklch(68% 0.14 295);
+    --code-token-keyword: oklch(78% 0.16 295);
     --code-token-string: oklch(75% 0.16 145);
     --code-token-number: oklch(78% 0.18 75);
     --code-token-blue: oklch(72% 0.18 250);

@@ -42,19 +42,22 @@ function setTheme(themeName) {
  */
 function updateDynamicFavicon() {
   const colorMap = {
-    'petal': { accent: '#a8828e', bg: '#f9f6f7' },
-    'petal-dark': { accent: '#b9919e', bg: '#252023' },
-    'verdant-dark': { accent: '#99b3a3', bg: '#202522' },
-    'cyber': { accent: '#64e7ff', bg: '#0d1117' },
-    'spring': { accent: '#998ab9', bg: '#1c1826' },
-    'mist': { accent: '#92A8B3', bg: '#F2F4F5' },
-    'verdant': { accent: '#A0B0A7', bg: '#F2F5F3' },
-    'stone': { accent: '#B1A49E', bg: '#F5F3F1' }
-  };
+    'petal': { accent: '#e8859b', bg: '#fdf9fa' },
+    'petal-dark': '#ffaac8', bg: '#332c32'
+  },
+  'verdant-dark': { accent: '#99b3a3', bg: '#202522' },
+  'cyber': { accent: '#64e7ff', bg: '#0d1117' },
+  'spring': { accent: '#998ab9', bg: '#1c1826' },
+  'mist': { accent: '#92A8B3', bg: '#F2F4F5' },
+  'verdant': { accent: '#A0B0A7', bg: '#F2F5F3' },
+  'stone': { accent: '#B1A49E', bg: '#F5F3F1' },
+  'terracotta': { accent: '#c3874b', bg: '#fbf8f6' },
+  'terracotta-dark': { accent: '#ebaf78', bg: '#1c1816' }
+};
 
-  const colors = colorMap[currentTheme] || colorMap['light'];
+const colors = colorMap[currentTheme] || colorMap['light'];
 
-  const svg = `
+const svg = `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
       <defs>
         <linearGradient id="f" x1="0" y1="0" x2="1" y2="1">
@@ -72,16 +75,16 @@ function updateDynamicFavicon() {
       </g>
     </svg>`.trim();
 
-  const blob = new Blob([svg], { type: 'image/svg+xml' });
-  const url = URL.createObjectURL(blob);
+const blob = new Blob([svg], { type: 'image/svg+xml' });
+const url = URL.createObjectURL(blob);
 
-  let link = document.querySelector("link[rel*='icon']");
-  if (!link) {
-    link = document.createElement('link');
-    link.rel = 'icon';
-    document.head.appendChild(link);
-  }
-  link.href = url;
+let link = document.querySelector("link[rel*='icon']");
+if (!link) {
+  link = document.createElement('link');
+  link.rel = 'icon';
+  document.head.appendChild(link);
+}
+link.href = url;
 }
 
 // 统一管理主题 UI 状态
