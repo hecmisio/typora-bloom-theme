@@ -29,9 +29,9 @@
   --info: oklch(70% 0.16 250);
 
   /* Neutrals - Deep Matte Inks */
-  --bg: oklch(22% 0.02 260);
-  --surface: oklch(26% 0.02 260);
-  --surface-2: oklch(30% 0.02 260);
+  --bg: oklch(14% 0.02 260);
+  --surface: oklch(22% 0.02 260);
+  --surface-2: oklch(28% 0.02 260);
 
   --text: oklch(92% 0.01 260);
   --text-rgb: 235, 237, 242;

@@ -14,8 +14,8 @@
   --space-3xl: calc(var(--space-unit) * 8);
 
   /* --- Modern Color System (OKLCH) --- */
-  /* Cyber Blue - Ultra Bright & High Contrast */
-  --accent: oklch(78% 0.18 245);
+  /* Cyber Blue - Optimized to reduce chromostereopsis */
+  --accent: oklch(75% 0.14 230);
   --accent-rgb: 100, 231, 255;
 
   /* Dynamic States */

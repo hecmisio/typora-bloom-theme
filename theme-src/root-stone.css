@@ -13,8 +13,8 @@
     --space-2xl: calc(var(--space-unit) * 6);
     --space-3xl: calc(var(--space-unit) * 8);
 
-    /* --- Morandi Stone (Neutral) --- */
-    --accent: oklch(65% 0.04 40);
+    /* --- Morandi Stone (Neutral) - Deepened for better contrast --- */
+    --accent: oklch(50% 0.06 40);
     --accent-rgb: 177, 164, 158;
 
     /* Dynamic States */

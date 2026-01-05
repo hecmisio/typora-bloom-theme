@@ -30,10 +30,10 @@
   --info: oklch(70% 0.16 250);
 
   /* Neutrals - Forest Dark Base */
-  --bg: oklch(22% 0.01 160);
-  /* #181a1f with subtle green tint */
-  --surface: oklch(26% 0.01 160);
-  --surface-2: oklch(30% 0.01 160);
+  --bg: oklch(14% 0.01 160);
+  /* Deep forest base */
+  --surface: oklch(22% 0.01 160);
+  --surface-2: oklch(28% 0.01 160);
 
   --text: oklch(92% 0.01 160);
   --text-rgb: 233, 242, 235;
