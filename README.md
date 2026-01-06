@@ -1,18 +1,18 @@
 # Bloom · Typora Theme
 
 <p align="center">
-  <a href="https://typora-bloom-theme.netlify.app/">
+  <a href="https://typora-bloom-theme.webkubor.online">
     <img src="bloom/favicon.svg" alt="Bloom" width="120" />
   </a>
 </p>
 
-官网预览：<https://typora-bloom-theme.netlify.app/>
+官网预览：<https://typora-bloom-theme.webkubor.online>
 
 Bloom（绽放）是一套为**长期写作**设计的 Typora 主题。它追求安静、克制与温柔的表达——不过度装饰，不喧宾夺主，让文字始终成为视线的中心。
 
-目前包含 **11 套精心调配的莫兰迪配色**（5 套浅色 + 6 套深色）：
-- **浅色系**：花瓣 (Petal), 雾蓝 (Mist), 草木 (Verdant), 暖石 (Stone), 琥珀 (Amber)
-- **深色系**：花瓣暗夜 (Petal Dark), 雾蓝暗夜 (Mist Dark), 草木暗夜 (Verdant Dark), 琥珀暗夜 (Amber Dark), 青蓝 (Cyber), 薰衣草紫 (Spring)
+目前包含 **11 套精心调配的莫兰迪配色**（6 套浅色 + 5 套深色）：
+- **浅色系**：花瓣 (Petal), 雾蓝 (Mist), 草木 (Verdant), 暖石 (Stone), 琥珀 (Amber), 薰衣草紫 (Spring)
+- **深色系**：花瓣暗夜 (Petal Dark), 雾蓝暗夜 (Mist Dark), 草木暗夜 (Verdant Dark), 琥珀暗夜 (Amber Dark), 薰衣草紫暗夜 (Spring Dark)
 
 ---
 
@@ -24,16 +24,17 @@ Bloom（绽放）是一套为**长期写作**设计的 Typora 主题。它追求
 
 | 分类 | 主题 | 背景 (Bg) | 强调色 (Accent) | 文字 (Text) | 风格描述 |
 |:---|:---|:---|:---|:---|:---|
-| **🌤 浅色 (5)** | **花瓣 Petal** | `L98% C0.01 H350` | `L64% C0.22 H350` | `L25% C0.02 H350` | 暖粉白 + 玫瑰粉 · 柔和温润 |
+| **🌤 浅色 (6)** | **花瓣 Petal** | `L98% C0.01 H350` | `L64% C0.22 H350` | `L25% C0.02 H350` | 暖粉白 + 玫瑰粉 · 柔和温润 |
 | | **雾蓝 Mist** | `L96% C0.01 H240` | `L50% C0.08 H240` | `L25% C0.02 H240` | 冷浅灰 + 深雾蓝 · 深邃克制 |
 | | **草木 Verdant** | `L96% C0.01 H160` | `L50% C0.07 H160` | `L25% C0.02 H160` | 极浅淡绿 + 豆沙绿 · 治愈草木色 |
 | | **暖石 Stone** | `L96% C0.01 H60` | `L50% C0.06 H40` | `L25% C0.02 H40` | 暖米白 + 红棕土 · 温润如陶瓷 |
 | | **琥珀橙 Amber Orange** | `L98% C0.01 H65` | `L60% C0.14 H65` | `L25% C0.02 H65` | 现代琥珀橙，清爽有活力的写作体验 |
+| | **薰衣草紫 Spring** | `L96% C0.01 H295` | `L60% C0.14 H295` | `L25% C0.02 H295` | 淡雅紫白 + 薰衣草紫 · 浪漫的日间花海 |
 | **🌙 深色 (5)** | **花瓣暗夜 Petal Dark** | `L20% C0.02 H350` | `L75% C0.18 H350` | `L98% C0.01 H350` | 深玫瑰黑 + 玫瑰粉 · 安静的夜间粉调 |
 | | **雾蓝暗夜 Mist Dark** | `L20% C0.02 H240` | `L72% C0.12 H240` | `L96% C0.01 H240` | 莫兰迪雾蓝暗色版，护眼且深邃 |
 | | **草木暗夜 Verdant Dark** | `L18% C0.02 H160` | `L72% C0.12 H160` | `L96% C0.01 H160` | 深墨绿 + 莫兰迪绿 · 幽静的暗夜森林 |
 | | **琥珀橙暗夜 Amber Orange Dark** | `L20% C0.02 H65` | `L75% C0.16 H65` | `L98% C0.01 H65` | 篝火般的琥珀橙，高对比度极客风 |
-| | **薰衣草紫 Spring** | `L18% C0.02 H295` | `L75% C0.14 H295` | `L96% C0.01 H295` | 深紫黑 + 薰衣草紫 · 浪漫的夜间花海 |
+| | **薰衣草紫暗夜 Spring Dark** | `L18% C0.02 H295` | `L75% C0.14 H295` | `L96% C0.01 H295` | 深紫黑 + 薰衣草紫 · 浪漫的夜间花海 |
 
 ---
 
@@ -71,6 +72,12 @@ Bloom（绽放）是一套为**长期写作**设计的 Typora 主题。它追求
 ![琥珀橙浅色](screenshots/bloom-amber.png)
 </details>
 
+<details>
+<summary>薰衣草紫 (Spring) - 淡雅紫白 + 薰衣草紫</summary>
+
+![薰衣草紫浅色](screenshots/bloom-spring.png)
+</details>
+
 ### 🌙 深色主题
 
 <details>
@@ -98,9 +105,9 @@ Bloom（绽放）是一套为**长期写作**设计的 Typora 主题。它追求
 </details>
 
 <details>
-<summary>薰衣草紫 (Spring) - 深紫黑 + 薰衣草紫</summary>
+<summary>薰衣草紫暗夜 (Spring Dark) - 深紫黑 + 薰衣草紫</summary>
 
-![薰衣草紫](screenshots/bloom-spring.png)
+![薰衣草紫暗夜](screenshots/bloom-spring-dark.png)
 </details>
 
 ---

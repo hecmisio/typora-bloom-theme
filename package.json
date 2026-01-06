@@ -2,7 +2,7 @@
   "name": "typora-bloom-theme",
   "private": true,
   "version": "1.1.1",
-  "homepage": "https://typora-bloom-theme.netlify.app/",
+  "homepage": "https://typora-bloom-theme.webkubor.online",
   "scripts": {
     "build": "node scripts/build-themes.js",
     "preview": "npm run build && node scripts/preview.js",
