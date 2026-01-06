@@ -1,12 +1,12 @@
 # Bloom · Typora Theme
 
 <p align="center">
-  <a href="https://typora-bloom-theme.netlify.app/">
+  <a href="https://typora-bloom-theme.webkubor.online">
     <img src="bloom/favicon.svg" alt="Bloom" width="120" />
   </a>
 </p>
 
-官网预览：<https://typora-bloom-theme.netlify.app/>
+官网预览：<https://typora-bloom-theme.webkubor.online>
 
 Bloom（绽放）是一套为**长期写作**设计的 Typora 主题。它追求安静、克制与温柔的表达——不过度装饰，不喧宾夺主，让文字始终成为视线的中心。
 
