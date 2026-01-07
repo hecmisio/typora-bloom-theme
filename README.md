@@ -10,9 +10,9 @@
 
 Bloom（绽放）是一套为**长期写作**设计的 Typora 主题。它追求安静、克制与温柔的表达——不过度装饰，不喧宾夺主，让文字始终成为视线的中心。
 
-目前包含 **11 套精心调配的莫兰迪配色**（6 套浅色 + 5 套深色）：
+目前包含 **12 套精心调配的莫兰迪配色**（6 套浅色 + 6 套深色）：
 - **浅色系**：花瓣 (Petal), 雾蓝 (Mist), 草木 (Verdant), 暖石 (Stone), 琥珀 (Amber), 薰衣草紫 (Spring)
-- **深色系**：花瓣暗夜 (Petal Dark), 雾蓝暗夜 (Mist Dark), 草木暗夜 (Verdant Dark), 琥珀暗夜 (Amber Dark), 薰衣草紫暗夜 (Spring Dark)
+- **深色系**：花瓣暗夜 (Petal Dark), 雾蓝暗夜 (Mist Dark), 草木暗夜 (Verdant Dark), 暖石暗夜 (Stone Dark), 琥珀暗夜 (Amber Dark), 薰衣草紫暗夜 (Spring Dark)
 
 ---
 
@@ -30,9 +30,10 @@ Bloom（绽放）是一套为**长期写作**设计的 Typora 主题。它追求
 | | **暖石 Stone** | `L96% C0.01 H60` | `L50% C0.06 H40` | `L25% C0.02 H40` | 暖米白 + 红棕土 · 温润如陶瓷 |
 | | **琥珀橙 Amber Orange** | `L98% C0.01 H65` | `L60% C0.14 H65` | `L25% C0.02 H65` | 现代琥珀橙，清爽有活力的写作体验 |
 | | **薰衣草紫 Spring** | `L96% C0.01 H295` | `L60% C0.14 H295` | `L25% C0.02 H295` | 淡雅紫白 + 薰衣草紫 · 浪漫的日间花海 |
-| **🌙 深色 (5)** | **花瓣暗夜 Petal Dark** | `L20% C0.02 H350` | `L75% C0.18 H350` | `L98% C0.01 H350` | 深玫瑰黑 + 玫瑰粉 · 安静的夜间粉调 |
+| **🌙 深色 (6)** | **花瓣暗夜 Petal Dark** | `L20% C0.02 H350` | `L75% C0.18 H350` | `L98% C0.01 H350` | 深玫瑰黑 + 玫瑰粉 · 安静的夜间粉调 |
 | | **雾蓝暗夜 Mist Dark** | `L20% C0.02 H240` | `L72% C0.12 H240` | `L96% C0.01 H240` | 莫兰迪雾蓝暗色版，护眼且深邃 |
 | | **草木暗夜 Verdant Dark** | `L18% C0.02 H160` | `L72% C0.12 H160` | `L96% C0.01 H160` | 深墨绿 + 莫兰迪绿 · 幽静的暗夜森林 |
+| | **暖石暗夜 Stone Dark** | `L20% C0.02 H40` | `L75% C0.12 H40` | `L96% C0.01 H40` | 深暖棕 + 红棕土 · 沉稳的陶土色 |
 | | **琥珀橙暗夜 Amber Orange Dark** | `L20% C0.02 H65` | `L75% C0.16 H65` | `L98% C0.01 H65` | 篝火般的琥珀橙，高对比度极客风 |
 | | **薰衣草紫暗夜 Spring Dark** | `L18% C0.02 H295` | `L75% C0.14 H295` | `L96% C0.01 H295` | 深紫黑 + 薰衣草紫 · 浪漫的夜间花海 |
 
@@ -96,6 +97,12 @@ Bloom（绽放）是一套为**长期写作**设计的 Typora 主题。它追求
 <summary>草木暗夜 (Verdant Dark) - 深墨绿 + 莫兰迪绿</summary>
 
 ![草木暗夜](screenshots/bloom-verdant-dark.png)
+</details>
+
+<details>
+<summary>暖石暗夜 (Stone Dark) - 深暖棕 + 红棕土</summary>
+
+![暖石暗夜](screenshots/bloom-stone-dark.png)
 </details>
 
 <details>

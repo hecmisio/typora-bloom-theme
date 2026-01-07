@@ -15,6 +15,7 @@ const themes = [
   { name: "mist-dark", base: "base-dark.css", vars: "root-mist-dark.css" },
   { name: "verdant", base: "base-light.css", vars: "root-verdant.css" },
   { name: "stone", base: "base-light.css", vars: "root-stone.css" },
+  { name: "stone-dark", base: "base-dark.css", vars: "root-stone-dark.css" },
   { name: "amber", base: "base-light.css", vars: "root-amber.css" },
   { name: "amber-dark", base: "base-dark.css", vars: "root-amber-dark.css" }
 ];
