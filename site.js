@@ -30,7 +30,9 @@ function setTheme(themeName) {
     "verdant-dark",
     "amber-dark",
     "spring-dark",
-    "stone-dark"
+    "stone-dark",
+    "ripple-dark",
+    "ink-dark"
   ];
   document.documentElement.style.colorScheme = darkThemes.includes(themeName) ? 'dark' : 'light';
 
@@ -51,6 +53,10 @@ function updateDynamicFavicon() {
     'verdant-dark': { accent: '#99b3a3', bg: '#202522' },
     'stone': { accent: '#B1A49E', bg: '#F5F3F1' },
     'stone-dark': { accent: '#dab39b', bg: '#33302e' },
+    'ripple': { accent: '#5fa8b2', bg: '#fcfdfe' },
+    'ripple-dark': { accent: '#9bd7da', bg: '#262d2e' },
+    'ink': { accent: '#cc584d', bg: '#fbfbfb' },
+    'ink-dark': { accent: '#e26b5f', bg: '#242424' },
     'amber': { accent: '#c3874b', bg: '#fbf8f6' },
     'amber-dark': { accent: '#ebaf78', bg: '#25201d' },
     'spring': { accent: '#A873C4', bg: '#fcf9fd' },
@@ -100,6 +106,10 @@ function updateThemeUI(activeTheme) {
     'verdant-dark': '🌲 草木·暗夜',
     'stone': '🧱 暖石 (Stone)',
     'stone-dark': '🪨 暖石·暗夜',
+    'ripple': '🌊 涟漪 (Ripple)',
+    'ripple-dark': '🌊 涟漪·暗夜',
+    'ink': '🖋️ 水墨 (Ink)',
+    'ink-dark': '🖋️ 水墨·暗夜',
     'amber': '💎 琥珀 (Amber)',
     'amber-dark': '🔥 琥珀·暗夜',
     'spring': '🌸 紫语 (Spring)',
