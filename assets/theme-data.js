@@ -76,26 +76,26 @@ window.THEME_CONFIG = {
     "text": "#eeeeee"
   },
   "amber": {
-    "name": "💎 琥珀 (Amber)",
+    "name": "💎 琥珀橙 (Amber)",
     "accent": "#c3874b",
     "bg": "#fbf8f6",
     "text": "#333333"
   },
   "amber-dark": {
-    "name": "🔥 琥珀·暗夜",
+    "name": "🔥 琥珀橙·暗夜",
     "accent": "#ebaf78",
     "bg": "#25201d",
     "text": "#eeeeee",
     "hue": 45
   },
   "spring": {
-    "name": "🌸 紫语 (Spring)",
+    "name": "🌸 薰衣草紫 (Spring)",
     "accent": "#A873C4",
     "bg": "#fcf9fd",
     "text": "#333333"
   },
   "spring-dark": {
-    "name": "🔮 紫语·暗夜",
+    "name": "🔮 薰衣草紫·暗夜",
     "accent": "#bfa9f5",
     "bg": "#2e2a33",
     "text": "#eeeeee"
