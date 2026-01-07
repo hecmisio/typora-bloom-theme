@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://typora-bloom-theme.webkubor.online">
-    <img src="bloom/favicon.svg" alt="Bloom" width="120" />
+    <img src="assets/favicon.svg" alt="Bloom" width="120" />
   </a>
 </p>
 
@@ -36,86 +36,6 @@ Bloom（绽放）是一套为**长期写作**设计的 Typora 主题。它追求
 | | **暖石暗夜 Stone Dark** | `L20% C0.02 H40` | `L75% C0.12 H40` | `L96% C0.01 H40` | 深暖棕 + 红棕土 · 沉稳的陶土色 |
 | | **琥珀橙暗夜 Amber Orange Dark** | `L20% C0.02 H65` | `L75% C0.16 H65` | `L98% C0.01 H65` | 篝火般的琥珀橙，高对比度极客风 |
 | | **薰衣草紫暗夜 Spring Dark** | `L18% C0.02 H295` | `L75% C0.14 H295` | `L96% C0.01 H295` | 深紫黑 + 薰衣草紫 · 浪漫的夜间花海 |
-
----
-
-## 主题截图展示
-
-### 🌤 浅色主题
-
-<details open>
-<summary>花瓣 (Petal) - 暖粉白 + 玫瑰粉</summary>
-
-![花瓣浅色](screenshots/bloom-petal.png)
-</details>
-
-<details>
-<summary>雾蓝 (Mist) - 冷浅灰 + 深雾蓝</summary>
-
-![雾蓝浅色](screenshots/bloom-mist.png)
-</details>
-
-<details>
-<summary>草木 (Verdant) - 极浅淡绿 + 豆沙绿</summary>
-
-![草木浅色](screenshots/bloom-verdant.png)
-</details>
-
-<details>
-<summary>暖石 (Stone) - 暖米白 + 红棕土</summary>
-
-![暖石浅色](screenshots/bloom-stone.png)
-</details>
-
-<details>
-<summary>琥珀橙 (Amber Orange) - 现代琥珀橙</summary>
-
-![琥珀橙浅色](screenshots/bloom-amber.png)
-</details>
-
-<details>
-<summary>薰衣草紫 (Spring) - 淡雅紫白 + 薰衣草紫</summary>
-
-![薰衣草紫浅色](screenshots/bloom-spring.png)
-</details>
-
-### 🌙 深色主题
-
-<details>
-<summary>花瓣暗夜 (Petal Dark) - 深玫瑰黑 + 玫瑰粉</summary>
-
-![花瓣暗夜](screenshots/bloom-petal-dark.png)
-</details>
-
-<details>
-<summary>雾蓝暗夜 (Mist Dark) - 莫兰迪雾蓝暗色版</summary>
-
-![雾蓝暗夜](screenshots/bloom-mist-dark.png)
-</details>
-
-<details>
-<summary>草木暗夜 (Verdant Dark) - 深墨绿 + 莫兰迪绿</summary>
-
-![草木暗夜](screenshots/bloom-verdant-dark.png)
-</details>
-
-<details>
-<summary>暖石暗夜 (Stone Dark) - 深暖棕 + 红棕土</summary>
-
-![暖石暗夜](screenshots/bloom-stone-dark.png)
-</details>
-
-<details>
-<summary>琥珀橙暗夜 (Amber Orange Dark) - 篝火般的琥珀橙</summary>
-
-![琥珀橙暗夜](screenshots/bloom-amber-dark.png)
-</details>
-
-<details>
-<summary>薰衣草紫暗夜 (Spring Dark) - 深紫黑 + 薰衣草紫</summary>
-
-![薰衣草紫暗夜](screenshots/bloom-spring-dark.png)
-</details>
 
 ---
 

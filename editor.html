@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bloom 主题色编辑器 | Theme Color Editor</title>
 
-    <link rel="icon" href="bloom/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link id="theme-css" rel="stylesheet" href="dist/bloom-petal.css" />
     <link rel="stylesheet" href="site.css" />
-    <script src="./bloom/marked.min.js"></script>
+    <script src="./assets/marked.min.js"></script>
     <style>
         .editor-layout {
             display: grid;
@@ -276,12 +276,124 @@
 
                 // 绑定事件
                 const input = div.querySelector(`#${key}-input`);
+                const picker = div.querySelector(`#${key}-picker`);
+                const hex = toHexString(currentColors[key]);
+                if (picker && hex) picker.value = hex;
+
                 input.oninput = (e) => {
                     currentColors[key] = e.target.value;
                     updateColors();
                     document.getElementById(`${key}-value`).textContent = e.target.value;
+                    const nextHex = toHexString(e.target.value);
+                    if (picker && nextHex) picker.value = nextHex;
                 };
+
+                if (picker) {
+                    picker.oninput = (e) => {
+                        currentColors[key] = e.target.value;
+                        updateColors();
+                        input.value = e.target.value;
+                        document.getElementById(`${key}-value`).textContent = e.target.value;
+                    };
+                }
             });
+        }
+
+        function clampByte(value) {
+            return Math.max(0, Math.min(255, Math.round(value)));
+        }
+
+        function parseHexColor(value) {
+            const hex = value.trim();
+            const short = hex.match(/^#([0-9a-f]{3})$/i);
+            if (short) {
+                const digits = short[1].split('');
+                return digits.map((ch) => parseInt(ch + ch, 16));
+            }
+            const long = hex.match(/^#([0-9a-f]{6})$/i);
+            if (long) {
+                return [
+                    parseInt(long[1].slice(0, 2), 16),
+                    parseInt(long[1].slice(2, 4), 16),
+                    parseInt(long[1].slice(4, 6), 16)
+                ];
+            }
+            return null;
+        }
+
+        function parseRgbColor(value) {
+            const match = value.match(/rgb\\(\\s*([0-9.]+)\\s*,\\s*([0-9.]+)\\s*,\\s*([0-9.]+)\\s*\\)/i);
+            if (!match) return null;
+            return [Number(match[1]), Number(match[2]), Number(match[3])].map(clampByte);
+        }
+
+        function parseOklchColor(value) {
+            const match = value.match(/oklch\\(\\s*([0-9.]+)%\\s+([0-9.]+)\\s+([0-9.]+)\\s*\\)/i);
+            if (!match) return null;
+            return {
+                L: Number(match[1]) / 100,
+                C: Number(match[2]),
+                H: Number(match[3])
+            };
+        }
+
+        function oklchToRgb(L, C, H) {
+            const hRad = (H * Math.PI) / 180;
+            const a = C * Math.cos(hRad);
+            const b = C * Math.sin(hRad);
+
+            const l_ = L + 0.3963377774 * a + 0.2158037573 * b;
+            const m_ = L - 0.1055613458 * a - 0.0638541728 * b;
+            const s_ = L - 0.0894841775 * a - 1.291485548 * b;
+
+            const l = l_ ** 3;
+            const m = m_ ** 3;
+            const s = s_ ** 3;
+
+            let r = 4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s;
+            let g = -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s;
+            let bOut = -0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s;
+
+            const rgb = [r, g, bOut].map((channel) => {
+                const clamped = Math.max(0, Math.min(1, channel));
+                const srgb = clamped <= 0.0031308
+                    ? 12.92 * clamped
+                    : 1.055 * clamped ** (1 / 2.4) - 0.055;
+                return clampByte(srgb * 255);
+            });
+
+            return rgb;
+        }
+
+        function toRgb(value) {
+            const hex = parseHexColor(value);
+            if (hex) return hex;
+            const rgb = parseRgbColor(value);
+            if (rgb) return rgb;
+            const oklch = parseOklchColor(value);
+            if (oklch) return oklchToRgb(oklch.L, oklch.C, oklch.H);
+            return null;
+        }
+
+        function getRelativeLuminance(value) {
+            const rgb = toRgb(value);
+            if (!rgb) return null;
+            const linear = rgb.map((channel) => {
+                const srgb = channel / 255;
+                return srgb <= 0.04045 ? srgb / 12.92 : ((srgb + 0.055) / 1.055) ** 2.4;
+            });
+            return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2];
+        }
+
+        function toRgbString(value) {
+            const rgb = toRgb(value);
+            return rgb ? rgb.join(', ') : null;
+        }
+
+        function toHexString(value) {
+            const rgb = toRgb(value);
+            if (!rgb) return null;
+            return `#${rgb.map((channel) => channel.toString(16).padStart(2, '0')).join('')}`;
         }
 
         // 更新 CSS 变量
@@ -293,25 +405,33 @@
             root.style.setProperty('--bg', currentColors.bg);
             root.style.setProperty('--text', currentColors.text);
 
-            // 判断是否为深色主题（背景亮度 < 50%）
-            const isDark = currentColors.bg.includes('oklch') &&
-                parseInt(currentColors.bg.match(/\d+/)[0]) < 50;
+            const accentRgb = toRgbString(currentColors.accent);
+            if (accentRgb) {
+                root.style.setProperty('--accent-rgb', accentRgb);
+            }
+
+            const textRgb = toRgbString(currentColors.text);
+            if (textRgb) {
+                root.style.setProperty('--text-rgb', textRgb);
+            }
+
+            // 判断是否为深色主题（背景亮度 < 0.5）
+            const bgLuma = getRelativeLuminance(currentColors.bg);
+            const isDark = bgLuma !== null ? bgLuma < 0.5 : false;
 
             // 根据背景色自动计算衍生颜色
             if (isDark) {
-                // 深色主题
-                root.style.setProperty('--surface', currentColors.bg.replace(/\d+%/, (m) => `${parseInt(m) + 6}%`));
-                root.style.setProperty('--text-semi', currentColors.text.replace(/\d+%/, '65%'));
-                root.style.setProperty('--code-bg', currentColors.bg.replace(/\d+%/, (m) => `${parseInt(m) + 4}%`));
-                root.style.setProperty('--code-text', currentColors.text.replace(/\d+%/, '75%'));
-                root.style.setProperty('--code-ink', currentColors.text);
+                root.style.setProperty('--surface', 'color-mix(in oklch, var(--bg), white 6%)');
+                root.style.setProperty('--text-semi', 'color-mix(in oklch, var(--text), black 30%)');
+                root.style.setProperty('--code-bg', 'color-mix(in oklch, var(--bg), white 4%)');
+                root.style.setProperty('--code-text', 'color-mix(in oklch, var(--text), black 22%)');
+                root.style.setProperty('--code-ink', 'var(--text)');
             } else {
-                // 浅色主题
-                root.style.setProperty('--surface', currentColors.bg.replace(/\d+%/, (m) => `${parseInt(m) - 2}%`));
-                root.style.setProperty('--text-semi', currentColors.text.replace(/\d+%/, '45%'));
-                root.style.setProperty('--code-bg', currentColors.bg.replace(/\d+%/, (m) => `${parseInt(m) - 2}%`));
-                root.style.setProperty('--code-text', currentColors.text.replace(/\d+%/, '45%'));
-                root.style.setProperty('--code-ink', currentColors.text);
+                root.style.setProperty('--surface', 'color-mix(in oklch, var(--bg), black 2%)');
+                root.style.setProperty('--text-semi', 'color-mix(in oklch, var(--text), white 45%)');
+                root.style.setProperty('--code-bg', 'color-mix(in oklch, var(--bg), black 2%)');
+                root.style.setProperty('--code-text', 'color-mix(in oklch, var(--text), white 35%)');
+                root.style.setProperty('--code-ink', 'var(--text)');
             }
         }
 
@@ -320,8 +440,11 @@
             ['accent', 'bg', 'text'].forEach(key => {
                 const input = document.getElementById(`${key}-input`);
                 const value = document.getElementById(`${key}-value`);
+                const picker = document.getElementById(`${key}-picker`);
                 if (input) input.value = currentColors[key];
                 if (value) value.textContent = currentColors[key];
+                const hex = toHexString(currentColors[key]);
+                if (picker && hex) picker.value = hex;
             });
         }
 

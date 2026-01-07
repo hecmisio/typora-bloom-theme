@@ -3,6 +3,7 @@
 :root {
   color-scheme: light;
   --header-h: 64px;
+  --accent-2: color-mix(in oklch, var(--accent), var(--bg) 65%);
 }
 
 body {
