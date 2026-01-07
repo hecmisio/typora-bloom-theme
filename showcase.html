@@ -9,6 +9,7 @@
   <link rel="icon" href="bloom/favicon.svg" type="image/svg+xml" />
   <link id="theme-css" rel="stylesheet" href="dist/bloom-petal.css" />
   <link rel="stylesheet" href="site.css" />
+  <script src="./bloom/marked.min.js"></script>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="27809ba1-2fa2-4d3c-9568-894ab511cf52"></script>
 </head>
 
@@ -100,36 +101,9 @@
   <div class="layout">
     <main class="preview-container">
       <article id="write">
-        <h2 id="live-demo">Markdown 预览（可切换主题）</h2>
-        <p>点击顶部主题按钮即可即时切换，观察排版、层级、代码块与高亮表现。</p>
-
-        <h1>一级标题</h1>
-        <h2>🎧 二级标题</h2>
-        <h3>三级标题</h3>
-        <h4>四级标题</h4>
-        <h5>五级标题</h5>
-        <h6>六级标题</h6>
-
-        <ul class="task-list">
-          <li class="task-list-item"><input type="checkbox" checked /> 232323</li>
-          <li class="task-list-item"><input type="checkbox" checked /> 我是<mark>高亮块</mark></li>
-        </ul>
-
-        <blockquote>
-          <p>引用内容</p>
-        </blockquote>
-
-        <pre class="md-fences" mdtype="fences"><code class="language-js">console.log("hello world!")
-// 测试
-var common = "普通字符串"
-</code></pre>
-
-        <p><sup class="md-footnote">1</sup> 232323</p>
-        <div class="md-footnotes">
-          <ol>
-            <li class="md-footnote-item">232323</li>
-          </ol>
-          <p><a href="https://www.baidu.com" title="百度">www.baidu.com</a></p>
+        <!-- Dynamic content will be loaded here -->
+        <div style="text-align: center; padding: 3rem 0; color: var(--text-semi);">
+          <p>正在加载 Markdown 内容...</p>
         </div>
       </article>
     </main>

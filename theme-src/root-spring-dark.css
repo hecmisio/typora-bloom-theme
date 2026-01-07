@@ -47,7 +47,7 @@
     --shadow-lg: 0 30px 80px color-mix(in oklch, var(--bg), black 60%);
 
     /* Typography */
-    --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    --font-sans: "MiSans", "PingFang SC", "Microsoft YaHei", sans-serif;
     --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 
     /* Selection */

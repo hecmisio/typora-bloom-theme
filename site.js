@@ -311,3 +311,80 @@ if (hero) {
     }
   });
 }
+
+// --- Dynamic Markdown Loading ---
+
+/**
+ * Process GitHub Alerts syntax
+ * Converts [!NOTE], [!TIP], etc. to blockquotes with data-type attributes
+ */
+function processGitHubAlerts(html) {
+  return html.replace(
+    /<blockquote>\s*<p>\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]/gi,
+    (match, type) => {
+      // Remove the [!TYPE] text from the content
+      const processed = match.replace(/\[!.*?\]\s*/i, '');
+      return `<blockquote data-type="alert-${type.toLowerCase()}">${processed.replace('<blockquote>', '')}`;
+    }
+  );
+}
+
+/**
+ * Load and render Markdown from typora.md
+ */
+async function loadMarkdown() {
+  const writeContainer = document.querySelector('#write');
+  if (!writeContainer) return;
+
+  try {
+    // Load typora.md
+    const response = await fetch('typora.md');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const markdown = await response.text();
+    
+    // Configure marked options
+    if (typeof marked !== 'undefined') {
+      marked.setOptions({
+        gfm: true,
+        breaks: true,
+        headerIds: true,
+        mangle: false
+      });
+      
+      // Render Markdown to HTML
+      let html = marked.parse(markdown);
+      
+      // Process GitHub Alerts
+      html = processGitHubAlerts(html);
+      
+      // Insert into DOM
+      writeContainer.innerHTML = html;
+      
+      // Re-enhance code blocks after content loads
+      enhanceCodeBlocks();
+      
+      console.log('✅ Markdown loaded successfully from typora.md');
+    } else {
+      throw new Error('marked.js library not loaded');
+    }
+  } catch (error) {
+    console.error('❌ Failed to load Markdown:', error);
+    writeContainer.innerHTML = `
+      <div style="text-align: center; padding: 3rem 0; color: var(--text-semi);">
+        <h3>加载失败</h3>
+        <p>无法加载 typora.md 文件</p>
+        <p style="font-size: 0.9em; opacity: 0.7;">${error.message}</p>
+      </div>
+    `;
+  }
+}
+
+// Load Markdown when page is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', loadMarkdown);
+} else {
+  loadMarkdown();
+}
