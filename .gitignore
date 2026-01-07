@@ -1,6 +1,7 @@
 dist/
 .codex/
 node_modules/
+.github
 .specify/
 _pages/
 Bloom-theme

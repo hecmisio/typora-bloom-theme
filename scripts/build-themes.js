@@ -5,24 +5,7 @@ const root = path.resolve(__dirname, "..");
 const srcDir = path.join(root, "theme-src");
 const distDir = path.join(root, "dist");
 
-const themes = [
-  { name: "petal", base: "base-light.css", vars: "root-petal.css" },
-  { name: "petal-dark", base: "base-dark.css", vars: "root-petal-dark.css" },
-  { name: "verdant-dark", base: "base-dark.css", vars: "root-verdant-dark.css" },
-  { name: "spring", base: "base-light.css", vars: "root-spring.css" },
-  { name: "spring-dark", base: "base-dark.css", vars: "root-spring-dark.css" },
-  { name: "mist", base: "base-light.css", vars: "root-mist.css" },
-  { name: "mist-dark", base: "base-dark.css", vars: "root-mist-dark.css" },
-  { name: "verdant", base: "base-light.css", vars: "root-verdant.css" },
-  { name: "stone", base: "base-light.css", vars: "root-stone.css" },
-  { name: "stone-dark", base: "base-dark.css", vars: "root-stone-dark.css" },
-  { name: "ripple", base: "base-light.css", vars: "root-ripple.css" },
-  { name: "ripple-dark", base: "base-dark.css", vars: "root-ripple-dark.css" },
-  { name: "ink", base: "base-light.css", vars: "root-ink.css" },
-  { name: "ink-dark", base: "base-dark.css", vars: "root-ink-dark.css" },
-  { name: "amber", base: "base-light.css", vars: "root-amber.css" },
-  { name: "amber-dark", base: "base-dark.css", vars: "root-amber-dark.css" }
-];
+const themes = require("./theme-list");
 
 function readSrc(file) {
   const filePath = path.join(srcDir, file);

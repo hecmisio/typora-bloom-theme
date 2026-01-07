@@ -201,27 +201,11 @@
         </main>
     </div>
 
-    <script src="site.js"></script>
+    <script src="assets/theme-data.js"></script>
+  <script src="site.js"></script>
     <script>
         // 16 套主题预设配置
-        const THEME_PRESETS = {
-            petal: { name: '🌸 花瓣', accent: 'oklch(64% 0.22 350)', bg: 'oklch(98% 0.01 350)', text: 'oklch(25% 0.02 354)' },
-            'petal-dark': { name: '🔮 花瓣暗夜', accent: 'oklch(75% 0.18 350)', bg: 'oklch(20% 0.02 350)', text: 'oklch(98% 0.01 350)' },
-            mist: { name: '☁️ 雾蓝', accent: 'oklch(50% 0.08 240)', bg: 'oklch(96% 0.01 240)', text: 'oklch(25% 0.02 240)' },
-            'mist-dark': { name: '💠 雾蓝暗夜', accent: 'oklch(72% 0.12 240)', bg: 'oklch(20% 0.02 240)', text: 'oklch(96% 0.01 240)' },
-            verdant: { name: '🍃 草木', accent: 'oklch(50% 0.07 160)', bg: 'oklch(96% 0.01 160)', text: 'oklch(25% 0.02 160)' },
-            'verdant-dark': { name: '🌲 草木暗夜', accent: 'oklch(72% 0.12 160)', bg: 'oklch(18% 0.02 160)', text: 'oklch(96% 0.01 160)' },
-            stone: { name: '🧱 暖石', accent: 'oklch(50% 0.06 40)', bg: 'oklch(96% 0.01 60)', text: 'oklch(25% 0.02 40)' },
-            'stone-dark': { name: '🪨 暖石暗夜', accent: 'oklch(75% 0.12 40)', bg: 'oklch(20% 0.02 40)', text: 'oklch(96% 0.01 40)' },
-            amber: { name: '💎 琥珀', accent: 'oklch(60% 0.14 65)', bg: 'oklch(98% 0.01 65)', text: 'oklch(25% 0.02 65)' },
-            'amber-dark': { name: '🔥 琥珀暗夜', accent: 'oklch(75% 0.16 65)', bg: 'oklch(20% 0.02 65)', text: 'oklch(98% 0.01 65)' },
-            spring: { name: '🌸 薰衣草', accent: 'oklch(60% 0.14 295)', bg: 'oklch(96% 0.01 295)', text: 'oklch(25% 0.02 295)' },
-            'spring-dark': { name: '🔮 薰衣草暗夜', accent: 'oklch(75% 0.14 295)', bg: 'oklch(18% 0.02 295)', text: 'oklch(96% 0.01 295)' },
-            ripple: { name: '🌊 涟漪', accent: 'oklch(50% 0.10 195)', bg: 'oklch(98% 0.01 195)', text: 'oklch(25% 0.02 195)' },
-            'ripple-dark': { name: '🌊 涟漪暗夜', accent: 'oklch(72% 0.14 195)', bg: 'oklch(18% 0.02 195)', text: 'oklch(96% 0.01 195)' },
-            ink: { name: '🖋️ 水墨', accent: 'oklch(58% 0.18 30)', bg: 'oklch(99% 0.005 30)', text: 'oklch(20% 0.01 30)' },
-            'ink-dark': { name: '🖋️ 水墨暗夜', accent: 'oklch(72% 0.16 30)', bg: 'oklch(15% 0.01 30)', text: 'oklch(96% 0.005 30)' }
-        };
+        const THEME_PRESETS = window.THEME_CONFIG || {};
 
         let currentColors = { ...THEME_PRESETS.petal };
 

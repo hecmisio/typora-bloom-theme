@@ -3,13 +3,11 @@ const path = require('path');
 
 const root = path.resolve(__dirname, '..');
 const srcDir = path.join(root, 'theme-src');
+const allThemes = require('./theme-list');
 
-const darkThemes = [
-    { file: 'root-mist-dark.css', hue: 240 },
-    { file: 'root-verdant-dark.css', hue: 160 },
-    { file: 'root-amber-dark.css', hue: 45 },
-    { file: 'root-petal-dark.css', hue: 350 }
-];
+const darkThemes = allThemes
+    .filter(t => t.hue !== undefined && t.vars)
+    .map(t => ({ file: t.vars, hue: t.hue }));
 
 // 深度变量亮度
 const DEPTH_1_L = 30; // 顶部稍亮

@@ -192,77 +192,63 @@ content,
 /* GitHub Alerts Support */
 /* Typora adds data-type attributes to blockquotes starting with [!NOTE], [!TIP], etc. */
 
-/* NOTE - Blue */
+#write blockquote[data-type^="alert-"] {
+  padding: var(--space-md) var(--space-lg);
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+#write blockquote[data-type^="alert-"]::before {
+  content: none;
+}
+
+#write blockquote[data-type^="alert-"] > p:first-child,
+#write blockquote[data-type^="alert-"] > p.md-alert-title {
+  margin: 0 0 var(--space-xs);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--alert-color);
+  opacity: 0.72;
+  text-transform: uppercase;
+}
+
+#write blockquote[data-type^="alert-"] .md-alert-icon,
+#write blockquote[data-type^="alert-"] .md-alert-title-icon,
+#write blockquote[data-type^="alert-"] .md-alert-icon::before,
+#write blockquote[data-type^="alert-"] .md-alert-title-icon::before {
+  display: none;
+}
+
+/* NOTE */
 #write blockquote[data-type="alert-note"] {
-  --alert-color: oklch(60% 0.15 240);
-  --alert-bg: oklch(96% 0.02 240);
+  --alert-color: oklch(62% 0.06 240);
+  --alert-bg: oklch(97% 0.01 240);
+  --alert-border: oklch(90% 0.02 240);
   background: var(--alert-bg);
-  border-left-color: var(--alert-color);
+  border: 1px solid var(--alert-border);
+  border-left: 3px solid var(--alert-color);
 }
 
-#write blockquote[data-type="alert-note"]::before {
-  content: "ℹ";
-  font-size: 36px;
-  color: var(--alert-color);
-  opacity: 0.12;
-}
-
-/* TIP - Green */
+/* TIP */
 #write blockquote[data-type="alert-tip"] {
-  --alert-color: oklch(55% 0.14 160);
-  --alert-bg: oklch(96% 0.02 160);
+  --alert-color: oklch(60% 0.05 160);
+  --alert-bg: oklch(97% 0.01 160);
+  --alert-border: oklch(90% 0.02 160);
   background: var(--alert-bg);
-  border-left-color: var(--alert-color);
+  border: 1px solid var(--alert-border);
+  border-left: 3px solid var(--alert-color);
 }
 
-#write blockquote[data-type="alert-tip"]::before {
-  content: "💡";
-  font-size: 32px;
-  opacity: 0.15;
-}
-
-/* IMPORTANT - Purple */
-#write blockquote[data-type="alert-important"] {
-  --alert-color: oklch(58% 0.18 295);
-  --alert-bg: oklch(96% 0.02 295);
-  background: var(--alert-bg);
-  border-left-color: var(--alert-color);
-}
-
-#write blockquote[data-type="alert-important"]::before {
-  content: "⚠";
-  font-size: 36px;
-  color: var(--alert-color);
-  opacity: 0.12;
-}
-
-/* WARNING - Orange */
-#write blockquote[data-type="alert-warning"] {
-  --alert-color: oklch(62% 0.16 65);
-  --alert-bg: oklch(96% 0.02 65);
-  background: var(--alert-bg);
-  border-left-color: var(--alert-color);
-}
-
-#write blockquote[data-type="alert-warning"]::before {
-  content: "⚠";
-  font-size: 36px;
-  color: var(--alert-color);
-  opacity: 0.12;
-}
-
-/* CAUTION - Red */
+/* WARNING + IMPORTANT + CAUTION */
+#write blockquote[data-type="alert-warning"],
+#write blockquote[data-type="alert-important"],
 #write blockquote[data-type="alert-caution"] {
-  --alert-color: oklch(58% 0.20 15);
-  --alert-bg: oklch(96% 0.02 15);
+  --alert-color: oklch(70% 0.06 65);
+  --alert-bg: oklch(97% 0.01 65);
+  --alert-border: oklch(90% 0.02 65);
   background: var(--alert-bg);
-  border-left-color: var(--alert-color);
-}
-
-#write blockquote[data-type="alert-caution"]::before {
-  content: "🚫";
-  font-size: 32px;
-  opacity: 0.15;
+  border: 1px solid var(--alert-border);
+  border-left: 3px solid var(--alert-color);
 }
 
 /* Lists */

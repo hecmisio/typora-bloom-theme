@@ -6,18 +6,10 @@ const root = path.resolve(__dirname, "..");
 const zipName = "Bloom-theme.zip";
 const zipPath = path.join(root, zipName);
 const distDir = path.join(root, "dist");
-const files = [
-  "bloom-petal.css",
-  "bloom-petal-dark.css",
-  "bloom-verdant-dark.css",
-  "bloom-spring.css",
-  "bloom-mist.css",
-  "bloom-mist-dark.css",
-  "bloom-verdant.css",
-  "bloom-stone.css",
-  "bloom-amber.css",
-  "bloom-amber-dark.css",
-].map((file) => path.join(distDir, file));
+const themes = require("./theme-list");
+
+const files = themes.map((theme) => path.join(distDir, `bloom-${theme.name}.css`));
+
 if (fs.existsSync(path.join(root, "bloom"))) {
   files.push("bloom");
 }
