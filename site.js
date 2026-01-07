@@ -190,6 +190,7 @@ function enhanceCodeBlocks() {
     const lang = getCodeLanguage(code, pre);
     pre.dataset.lang = lang;
     pre.classList.add('has-toolbar');
+    pre.classList.add('md-fences'); // 注入类名以匹配 Typora 原生样式（如彩色圆点）
 
     const toolbar = document.createElement('div');
     toolbar.className = 'code-toolbar';
@@ -225,6 +226,15 @@ function enhanceCodeBlocks() {
     toolbar.appendChild(copyBtn);
     pre.insertBefore(toolbar, pre.firstChild);
     pre.dataset.enhanced = 'true';
+  });
+}
+
+function enhanceTaskLists() {
+  const items = document.querySelectorAll('#write li');
+  items.forEach(item => {
+    if (item.querySelector('input[type="checkbox"]')) {
+      item.classList.add('task-list-item');
+    }
   });
 }
 
@@ -351,6 +361,7 @@ async function loadMarkdown() {
       
       // Re-enhance code blocks after content loads
       enhanceCodeBlocks();
+      enhanceTaskLists();
       
       console.log('✅ Markdown loaded successfully from typora.md');
     } else {
