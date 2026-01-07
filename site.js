@@ -29,7 +29,8 @@ function setTheme(themeName) {
     "mist-dark",
     "verdant-dark",
     "amber-dark",
-    "spring",
+    "spring-dark",
+    "stone-dark"
   ];
   document.documentElement.style.colorScheme = darkThemes.includes(themeName) ? 'dark' : 'light';
 
@@ -44,18 +45,19 @@ function updateDynamicFavicon() {
   const colorMap = {
     'petal': { accent: '#e8859b', bg: '#fdf9fa' },
     'petal-dark': { accent: '#ffaac8', bg: '#332c32' },
-    'mist-dark': { accent: '#9bb9d7', bg: '#333840' },
-    'verdant-dark': { accent: '#99b3a3', bg: '#202522' },
-    'cyber': { accent: '#64e7ff', bg: '#0d1117' },
-    'spring': { accent: '#bfa9f5', bg: '#282430' },
     'mist': { accent: '#92A8B3', bg: '#F2F4F5' },
+    'mist-dark': { accent: '#9bb9d7', bg: '#333840' },
     'verdant': { accent: '#A0B0A7', bg: '#F2F5F3' },
+    'verdant-dark': { accent: '#99b3a3', bg: '#202522' },
     'stone': { accent: '#B1A49E', bg: '#F5F3F1' },
+    'stone-dark': { accent: '#dab39b', bg: '#33302e' },
     'amber': { accent: '#c3874b', bg: '#fbf8f6' },
-    'amber-dark': { accent: '#ebaf78', bg: '#25201d' }
+    'amber-dark': { accent: '#ebaf78', bg: '#25201d' },
+    'spring': { accent: '#A873C4', bg: '#fcf9fd' },
+    'spring-dark': { accent: '#bfa9f5', bg: '#2e2a33' }
   };
 
-  const colors = colorMap[currentTheme] || colorMap['light'];
+  const colors = colorMap[currentTheme] || colorMap['petal'];
 
   const svg = `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
@@ -92,14 +94,16 @@ function updateThemeUI(activeTheme) {
   const themeLabels = {
     'petal': '🌸 花瓣 (Petal)',
     'petal-dark': '🔮 花瓣·暗夜',
-    'verdant-dark': '🌲 草木·暗夜',
-    'spring': '🌸 薰衣草紫',
-    'mist': '☁️ 莫兰迪·雾蓝',
+    'mist': '☁️ 雾蓝 (Mist)',
     'mist-dark': '💠 雾蓝·暗夜',
-    'verdant': '🍃 莫兰迪·草木',
-    'stone': '🧱 莫兰迪·暖石',
-    'amber': '💎 琥珀橙 (Amber Orange)',
-    'amber-dark': '🔥 琥珀橙·暗夜'
+    'verdant': '🍃 草木 (Verdant)',
+    'verdant-dark': '🌲 草木·暗夜',
+    'stone': '🧱 暖石 (Stone)',
+    'stone-dark': '🪨 暖石·暗夜',
+    'amber': '💎 琥珀 (Amber)',
+    'amber-dark': '🔥 琥珀·暗夜',
+    'spring': '🌸 紫语 (Spring)',
+    'spring-dark': '🔮 紫语·暗夜'
   };
 
   // 更新触发器文字
