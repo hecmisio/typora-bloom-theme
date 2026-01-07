@@ -29,9 +29,13 @@
     --info: oklch(65% 0.1 250);
 
     /* Neutrals - Petal Dark Base (enhanced for warmth) */
-    --bg: oklch(20% 0.02 350);
-    --surface: oklch(28% 0.03 350);
-    --surface-2: oklch(34% 0.04 350);
+    /* Page Depth Gradient */
+    --page-depth-1: oklch(30% 0.02 350);
+    --page-depth-2: oklch(28% 0.02 350);
+
+    --bg: oklch(28% 0.02 350);
+    --surface: oklch(34% 0.02 350);
+    --surface-2: oklch(40% 0.02 350);
 
     --text: oklch(98% 0.01 350);
     --text-rgb: 255, 245, 248;
@@ -53,7 +57,7 @@
     --selection: color-mix(in oklch, var(--accent), transparent 65%);
 
     /* Code Layer */
-    --code-bg: oklch(14% 0.02 354);
+    --code-bg: oklch(24% 0.02 350);
     --code-text: var(--text-semi);
     --code-ink: var(--text);
     --code-dot-red: oklch(65% 0.12 25);

@@ -29,9 +29,13 @@
     --info: oklch(65% 0.1 250);
 
     /* Neutrals - Terracotta Dark Base (deep clay tint) */
-    --bg: oklch(18% 0.02 45);
-    --surface: oklch(26% 0.02 45);
-    --surface-2: oklch(32% 0.02 45);
+    /* Page Depth Gradient */
+    --page-depth-1: oklch(30% 0.02 45);
+    --page-depth-2: oklch(28% 0.02 45);
+
+    --bg: oklch(28% 0.02 45);
+    --surface: oklch(34% 0.02 45);
+    --surface-2: oklch(40% 0.02 45);
 
     --text: oklch(96% 0.01 45);
     --text-rgb: 245, 238, 235;
@@ -53,7 +57,7 @@
     --selection: color-mix(in oklch, var(--accent), transparent 65%);
 
     /* Code Layer */
-    --code-bg: oklch(14% 0.02 45);
+    --code-bg: oklch(24% 0.02 45);
     --code-text: var(--text-semi);
     --code-ink: var(--text);
     --code-dot-red: oklch(65% 0.12 25);

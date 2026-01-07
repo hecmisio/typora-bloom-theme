@@ -29,9 +29,13 @@
     --info: oklch(65% 0.1 250);
 
     /* Neutrals - Verdant Dark Base (Deep Sage tint) */
-    --bg: oklch(18% 0.02 160);
-    --surface: oklch(26% 0.02 160);
-    --surface-2: oklch(32% 0.02 160);
+    /* Page Depth Gradient */
+    --page-depth-1: oklch(30% 0.02 160);
+    --page-depth-2: oklch(28% 0.02 160);
+
+    --bg: oklch(28% 0.02 160);
+    --surface: oklch(34% 0.02 160);
+    --surface-2: oklch(40% 0.02 160);
 
     --text: oklch(96% 0.01 160);
     --text-rgb: 235, 245, 238;
@@ -53,7 +57,7 @@
     --selection: color-mix(in oklch, var(--accent), transparent 65%);
 
     /* Code Layer */
-    --code-bg: oklch(14% 0.02 160);
+    --code-bg: oklch(24% 0.02 160);
     --code-text: var(--text-semi);
     --code-ink: var(--text);
     --code-dot-red: oklch(65% 0.12 25);
