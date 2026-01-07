@@ -27,6 +27,7 @@
     --warning: oklch(78% 0.1 75);
     --error: oklch(62% 0.12 25);
     --info: oklch(65% 0.1 250);
+    --important: oklch(75% 0.14 280);
 
     /* Neutrals - Terracotta Dark Base (deep clay tint) */
     /* Page Depth Gradient */

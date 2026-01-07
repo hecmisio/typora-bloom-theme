@@ -27,6 +27,7 @@
     --warning: oklch(78% 0.05 75);
     --error: oklch(62% 0.15 25);
     --info: oklch(65% 0.05 250);
+    --important: oklch(75% 0.14 280);
 
     /* Neutrals - Ink Dark Base (Obsidian) */
     --bg: oklch(14% 0.005 240);

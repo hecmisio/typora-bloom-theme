@@ -219,36 +219,59 @@ content,
   display: none;
 }
 
-/* NOTE */
+/* --- ALERTS & CALLOUTS --- */
+/* Common Alert Styles */
+#write blockquote[data-type] {
+  border-radius: 8px;
+  padding: 1em 1em 1em 1.2em;
+  margin: 1.5em 0;
+  border: 1px solid transparent;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+#write blockquote[data-type] p {
+  margin: 0;
+}
+
+/* NOTE (Blue) */
 #write blockquote[data-type="alert-note"] {
-  --alert-color: oklch(62% 0.06 240);
-  --alert-bg: oklch(97% 0.01 240);
-  --alert-border: oklch(90% 0.02 240);
-  background: var(--alert-bg);
-  border: 1px solid var(--alert-border);
-  border-left: 3px solid var(--alert-color);
+  --alert-color: var(--info);
+  background: color-mix(in srgb, var(--alert-color), var(--bg) 90%);
+  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 80%);
+  border-left: 4px solid var(--alert-color);
 }
 
-/* TIP */
+/* TIP (Green) */
 #write blockquote[data-type="alert-tip"] {
-  --alert-color: oklch(60% 0.05 160);
-  --alert-bg: oklch(97% 0.01 160);
-  --alert-border: oklch(90% 0.02 160);
-  background: var(--alert-bg);
-  border: 1px solid var(--alert-border);
-  border-left: 3px solid var(--alert-color);
+  --alert-color: var(--success);
+  background: color-mix(in srgb, var(--alert-color), var(--bg) 90%);
+  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 80%);
+  border-left: 4px solid var(--alert-color);
 }
 
-/* WARNING + IMPORTANT + CAUTION */
-#write blockquote[data-type="alert-warning"],
-#write blockquote[data-type="alert-important"],
+/* WARNING (Orange) */
+#write blockquote[data-type="alert-warning"] {
+  --alert-color: var(--warning);
+  background: color-mix(in srgb, var(--alert-color), var(--bg) 88%);
+  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 75%);
+  border-left: 4px solid var(--alert-color);
+}
+
+/* IMPORTANT (Purple) */
+#write blockquote[data-type="alert-important"] {
+  --alert-color: var(--important);
+  background: color-mix(in srgb, var(--alert-color), var(--bg) 90%);
+  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 80%);
+  border-left: 4px solid var(--alert-color);
+}
+
+/* CAUTION (Red) */
 #write blockquote[data-type="alert-caution"] {
-  --alert-color: oklch(70% 0.06 65);
-  --alert-bg: oklch(97% 0.01 65);
-  --alert-border: oklch(90% 0.02 65);
-  background: var(--alert-bg);
-  border: 1px solid var(--alert-border);
-  border-left: 3px solid var(--alert-color);
+  --alert-color: var(--error);
+  background: color-mix(in srgb, var(--alert-color), var(--bg) 88%);
+  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 75%);
+  border-left: 4px solid var(--alert-color);
 }
 
 /* Lists */

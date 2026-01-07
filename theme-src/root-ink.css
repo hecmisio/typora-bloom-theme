@@ -27,6 +27,7 @@
     --warning: oklch(75% 0.05 75);
     --error: oklch(60% 0.15 25);
     --info: oklch(62% 0.05 250);
+    --important: oklch(65% 0.16 280);
 
     /* Neutrals - Ink Light Base (Paper White) */
     --bg: oklch(97% 0.002 240);

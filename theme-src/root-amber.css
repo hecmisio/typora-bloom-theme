@@ -27,6 +27,7 @@
     --warning: oklch(75% 0.1 75);
     --error: oklch(60% 0.12 25);
     --info: oklch(62% 0.1 250);
+    --important: oklch(65% 0.16 280);
 
     /* Neutrals - Terracotta Light Base (warm clay tint) */
     --bg: oklch(97% 0.01 45);

@@ -27,6 +27,7 @@
     --warning: oklch(78% 0.08 75);
     --error: oklch(62% 0.1 25);
     --info: oklch(65% 0.08 250);
+    --important: oklch(65% 0.16 280);
 
     /* Neutrals - Verdant Light Base */
     --bg: oklch(96% 0.01 160);

@@ -28,6 +28,7 @@
     --warning: oklch(80% 0.16 75);
     --error: oklch(65% 0.2 25);
     --info: oklch(70% 0.16 250);
+    --important: oklch(75% 0.14 280);
 
     /* Neutrals - Spring Night Base (Deep Purple Tint) */
     --bg: oklch(18% 0.02 295);
