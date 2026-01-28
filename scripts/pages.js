@@ -27,11 +27,13 @@ if (fs.existsSync(outDir)) {
 }
 fs.mkdirSync(outDir, { recursive: true });
 
-copy(path.join(root, "index.html"), path.join(outDir, "index.html"));
-copy(path.join(root, "showcase.html"), path.join(outDir, "showcase.html"));
-copy(path.join(root, "site.css"), path.join(outDir, "site.css"));
-copy(path.join(root, "site.js"), path.join(outDir, "site.js"));
-copy(path.join(root, "netlify.toml"), path.join(outDir, "netlify.toml"));
+const websiteDir = path.join(root, "website");
+
+copy(path.join(websiteDir, "index.html"), path.join(outDir, "index.html"));
+copy(path.join(websiteDir, "showcase.html"), path.join(outDir, "showcase.html"));
+copy(path.join(websiteDir, "site.css"), path.join(outDir, "site.css"));
+copy(path.join(websiteDir, "site.js"), path.join(outDir, "site.js"));
+copy(path.join(root, "netlify.toml"), path.join(outDir, "netlify.toml")); // netlify.toml stays in root
 
 const distDir = path.join(root, "dist");
 if (fs.existsSync(distDir)) {
@@ -44,13 +46,13 @@ if (fs.existsSync(assetsDir)) {
 }
 
 // Fix: Copy assets directory (images, scripts, etc.)
-const staticAssetsDir = path.join(root, "assets");
+const staticAssetsDir = path.join(websiteDir, "assets");
 if (fs.existsSync(staticAssetsDir)) {
   copyDir(staticAssetsDir, path.join(outDir, "assets"));
 }
 
 // Fix: Copy typora.md for showcase preview
-const typoraMd = path.join(root, "typora.md");
+const typoraMd = path.join(websiteDir, "typora.md");
 if (fs.existsSync(typoraMd)) {
   copy(typoraMd, path.join(outDir, "typora.md"));
 }

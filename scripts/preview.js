@@ -28,8 +28,8 @@ function openBrowser(url) {
     platform === "darwin"
       ? `open "${url}"`
       : platform === "win32"
-      ? `start "" "${url}"`
-      : `xdg-open "${url}"`;
+        ? `start "" "${url}"`
+        : `xdg-open "${url}"`;
   try {
     execSync(cmd, { stdio: "ignore", shell: true });
   } catch {
@@ -40,12 +40,20 @@ function openBrowser(url) {
 function safePath(urlPath) {
   const clean = decodeURIComponent(urlPath.split("?")[0]);
   const normalized = path.normalize(clean).replace(/^([/\\])+/, "");
-  const resolved = path.resolve(root, normalized);
-  const relative = path.relative(root, resolved);
-  if (relative.startsWith("..") || path.isAbsolute(relative)) {
-    return null;
+
+  // 1. Try to serve from root/dist for compiled CSS (mapped path)
+  if (normalized.startsWith("dist") || normalized.startsWith("bloom")) {
+    return path.resolve(root, normalized);
   }
-  return resolved;
+
+  // 2. Try to serve from root/website for web files
+  const websitePath = path.resolve(root, "website", normalized);
+  if (fs.existsSync(websitePath)) {
+    return websitePath;
+  }
+
+  // Fallback (rarely needed if structure is clean)
+  return null;
 }
 
 const server = http.createServer((req, res) => {
