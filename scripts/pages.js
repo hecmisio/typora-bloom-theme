@@ -29,8 +29,33 @@ fs.mkdirSync(outDir, { recursive: true });
 
 const websiteDir = path.join(root, "website");
 
-copy(path.join(websiteDir, "index.html"), path.join(outDir, "index.html"));
-copy(path.join(websiteDir, "showcase.html"), path.join(outDir, "showcase.html"));
+const themes = require('./theme-list');
+const defaultTheme = themes.find(t => t.default) || themes[0];
+
+const processHtml = (html) => {
+  let processed = html;
+  // Replace CSS link
+  processed = processed.replace(
+    /<link id="theme-css" rel="stylesheet" href="[^"]+" \/>/,
+    `<link id="theme-css" rel="stylesheet" href="dist/bloom-${defaultTheme.name}.css" />`
+  );
+  // Replace Theme Name Display
+  processed = processed.replace(
+    /<span id="current-theme-name">[^<]+<\/span>/,
+    `<span id="current-theme-name">${defaultTheme.label}</span>`
+  );
+  return processed;
+};
+
+const copyAndProcessHtml = (src, dest) => {
+  const content = fs.readFileSync(src, 'utf8');
+  const processed = processHtml(content);
+  fs.mkdirSync(path.dirname(dest), { recursive: true });
+  fs.writeFileSync(dest, processed);
+};
+
+copyAndProcessHtml(path.join(websiteDir, "index.html"), path.join(outDir, "index.html"));
+copyAndProcessHtml(path.join(websiteDir, "showcase.html"), path.join(outDir, "showcase.html"));
 copy(path.join(websiteDir, "site.css"), path.join(outDir, "site.css"));
 copy(path.join(websiteDir, "site.js"), path.join(outDir, "site.js"));
 copy(path.join(root, "netlify.toml"), path.join(outDir, "netlify.toml")); // netlify.toml stays in root

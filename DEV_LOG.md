@@ -1,15 +1,43 @@
-# 开发日志 (DEV_LOG)
+# 开发指南与日志 (Developer Guide & Log)
 
-## 2026-01-07 提示框 (Alert) 系统重构
+## 🛠 开发指南 (Developer Guide)
 
-### 1. 样式重构：从 GitHub 风格转向 Bloom 质感
+### 目录结构
+- `theme-src/`: 主题源文件 (base + root)
+- `website/`: 文档/官网源码 (HTML/Assets)
+- `dist/`: 构建生成的主题文件 (发布产物)
+- `bloom/`: 主题包内资源 (仅主题所需，如字体)
+- `scripts/`: 构建与工具脚本
+
+### 常用命令
+- `npm run dev`: 启动本地预览服务器 (支持热重载 CSS)
+- `npm run build`: 构建主题 (生成 `dist/` 和 `_pages/`)
+- `npm run package`: 构建并打包 ZIP 发布文件
+- `npm run release`: 自动化发布流程 (打包 + 提交 + Tag + 推送)
+
+### 发布流程
+1. 修改 `VERSION.txt` 版本号
+2. 执行 `npm run release`
+
+---
+
+## 📅 开发日志 (Changelog)
+
+### 2026-01-28 项目重构
+- **结构优化**: 将官网文件移入 `website/` 目录，根目录更清爽。
+- **修复**: 修复 `scripts/pages.js` 部署脚本丢失 assets 问题。
+- **修复**: 修复 GitHub Issue #1 (Mist Dark 下 Mermaid 时序图不可见) [Issue Link](https://github.com/webkubor/typora-Bloom-theme/issues/1)。
+
+### 2026-01-07 提示框 (Alert) 系统重构
+
+#### 1. 样式重构：从 GitHub 风格转向 Bloom 质感
 - **现状：** 原有的 Warning/Caution/Important 使用 GitHub 风格的硬朗色块，且共用同一组黄色变量，导致视觉区分度低，且与 Bloom 主题的柔和风格不搭。
 - **重构：**
     - **形态：** 引入 **12px 圆角** 与 **半透明背景** (`color-mix`)，营造磨砂玻璃质感。
     - **边框：** 去除生硬的实线边框，改为半透明柔和边框。
     - **区分：** 彻底拆分三种警告类型，分别赋予独立色相。
 
-### 2. 语义化变量补完
+#### 2. 语义化变量补完
 - **问题：** 主题变量中缺少统一的“紫色/重要”语义色，导致 Important 样式无法根据主题自动适配。
 - **解决：**
     - 编写脚本批量更新所有 **16 个 root-*.css** 文件。
@@ -18,44 +46,44 @@
         - 深色系：`oklch(75% 0.14 280)` (明亮紫)
     - 确保了 Important 提示框在 Verdant、Amber、Petal 等不同色调主题下都能呈现协调的视觉效果。
 
-### 3. 全局适配
+#### 3. 全局适配
 - 统一了 Note (Info), Tip (Success), Warning (Warning), Caution (Error), Important (Important) 五种提示框的实现逻辑。
 - 全部采用 `var(--semantic-color)` + `color-mix` 的动态生成策略，实现 **16 种主题** 的 100% 自动适配。
 
-## 2026-01-05 配色方案优化
+### 2026-01-05 配色方案优化
 
-### 问题诊断
+#### 问题诊断
 
-#### 1. 致命的对比度隐患 (Accessibility Risk)
+**1. 致命的对比度隐患 (Accessibility Risk)**
 
-**Mist & Stone 的 Accent 问题：**
+*Mist & Stone 的 Accent 问题：*
 - 现状：背景 L=96%，Accent L=65%
 - 问题：强调色用于文字链接时对比度太低，视力稍弱的用户看不清链接
 - 修复：Accent 亮度从 65% 降至 50%
 
-**Cyber 的"蓝光晕影"效应：**
+*Cyber 的"蓝光晕影"效应：*
 - 现状：背景极黑 (12%)，Accent 是高饱和霓虹蓝 (Chroma 0.18, Hue 245)
 - 问题：Chromostereopsis（色立体视觉）导致文字边缘模糊、重影
 - 修复：降低 Chroma 0.18 → 0.14，Hue 从 245 调整到 230（偏青）
 
-#### 2. 深色模式的"层级缺失" (Hierarchy Issues)
+**2. 深色模式的"层级缺失" (Hierarchy Issues)**
 
 - 现状：深色系背景亮度统一设为 L=22%
 - 问题：L=22% 约等于 #303030，作为全局背景太亮，缺乏深邃感
 - 修复：全局背景从 22% 降至 14%
 
-#### 3. Spring 的单色问题 (Monochrome Flatness)
+**3. Spring 的单色问题 (Monochrome Flatness)**
 
 - 现状：背景、文字、强调色全部锁定在 Hue=295
 - 问题：用户难以区分装饰、按钮、状态提示
 - 保留：暂不修改，保持单色风格设计意图
 
-#### 4. 色域映射风险 (Gamut Mapping)
+**4. 色域映射风险 (Gamut Mapping)**
 
 - Verdant & Forest 使用高饱和绿色，在 sRGB 覆盖率低的屏幕上可能失真
 - 保留：暂不修改，后续可增加 fallback 机制
 
-### 修复数值
+#### 修复数值
 
 | 主题 | 变量 | 原值 | 新值 |
 |:---|:---|:---|:---|
@@ -67,14 +95,14 @@
 | Stone | --accent | oklch(65% 0.04 40) | oklch(50% 0.06 40) |
 | Verdant | --accent | oklch(68% 0.05 160) | oklch(50% 0.07 160) |
 
-### 层级变量更新
+#### 层级变量更新
 
 深色主题需要更新 `--surface` 以保持与 `--bg` 的层级差：
 - `--bg` = 14% → `--surface` = 22%
 
-## 2026-01-07 薰衣草紫补完计划
+### 2026-01-07 薰衣草紫补完计划
 
-### 1. 新增 Spring (浅色薰衣草紫)
+#### 1. 新增 Spring (浅色薰衣草紫)
 - **需求：** 补全 5 浅 + 5 深的非对称缺口（原 Stone 浅 / Spring 深）。
 - **实现：** 
     - 重命名原 `Spring` 为 `Spring Dark`。
@@ -82,13 +110,13 @@
     - 色相统一为 H=295。
     - 背景 L=96%，强调色 L=60% C=0.14 (比深色版 L75% 更深以保证白底对比度)。
 
-### 2. 新增 Stone Dark (暖石暗夜)
+#### 2. 新增 Stone Dark (暖石暗夜)
 - **需求：** 达成 6 浅 + 6 深 (12 套) 的完美对称结构。
 - **实现：**
     - 新增 `Stone Dark` 主题，基于 Mist Dark 模板。
     - 色相 H=40，背景 L=20%，强调色 L=75%。
 
-### 3. 新增 Ripple (涟漪) 与 Ink (水墨)
+#### 3. 新增 Ripple (涟漪) 与 Ink (水墨)
 - **需求：** 进一步扩展色彩空间，引入青色系与水墨单色系。
 - **实现：**
     - `Ripple` (青碧)：H=195，填补了蓝绿之间的缺口，清冷高级。

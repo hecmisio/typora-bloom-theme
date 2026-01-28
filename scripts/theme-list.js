@@ -10,6 +10,7 @@ module.exports = [
   },
   {
     name: "petal-dark",
+    default: true,
     base: "base-dark.css",
     vars: "root-petal-dark.css",
     label: "🔮 花瓣·暗夜",

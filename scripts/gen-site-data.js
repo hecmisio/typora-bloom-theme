@@ -17,8 +17,11 @@ themes.forEach(theme => {
     };
 });
 
+const defaultTheme = themes.find(t => t.default) || themes[0];
+
 const fileContent = `// Auto-generated from scripts/theme-list.js
 window.THEME_CONFIG = ${JSON.stringify(themeConfig, null, 2)};
+window.THEME_DEFAULT = "${defaultTheme.name}";
 `;
 
 if (!fs.existsSync(assetsDir)) {

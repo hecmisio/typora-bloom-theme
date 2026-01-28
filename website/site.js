@@ -20,7 +20,7 @@ const themeMenu = document.getElementById('theme-menu');
 const themeItems = document.querySelectorAll('.theme-item');
 const currentThemeDisplay = document.getElementById('current-theme-name');
 
-let currentTheme = 'petal';
+let currentTheme = window.THEME_DEFAULT || 'petal';
 
 // 修改后的设置函数
 function setTheme(themeName) {
@@ -56,14 +56,14 @@ function setTheme(themeName) {
 function updateDynamicFavicon() {
   // Use global configuration or fallback to empty object if not loaded
   const config = window.THEME_CONFIG || {};
-  
+
   // Fallback defaults if config is missing (e.g. if script failed to load)
   const defaultColors = { accent: '#e8859b', bg: '#fdf9fa' };
-  
+
   const themeData = config[currentTheme] || config['petal'] || defaultColors;
   const colors = {
-      accent: themeData.accent || defaultColors.accent,
-      bg: themeData.bg || defaultColors.bg
+    accent: themeData.accent || defaultColors.accent,
+    bg: themeData.bg || defaultColors.bg
   };
 
   const svg = `
@@ -338,9 +338,9 @@ async function loadMarkdown() {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    
+
     const markdown = await response.text();
-    
+
     // Configure marked options
     if (typeof marked !== 'undefined') {
       marked.setOptions({
@@ -349,20 +349,20 @@ async function loadMarkdown() {
         headerIds: true,
         mangle: false
       });
-      
+
       // Render Markdown to HTML
       let html = marked.parse(markdown);
-      
+
       // Process GitHub Alerts
       html = processGitHubAlerts(html);
-      
+
       // Insert into DOM
       writeContainer.innerHTML = html;
-      
+
       // Re-enhance code blocks after content loads
       enhanceCodeBlocks();
       enhanceTaskLists();
-      
+
       console.log('✅ Markdown loaded successfully from typora.md');
     } else {
       throw new Error('marked.js library not loaded');
