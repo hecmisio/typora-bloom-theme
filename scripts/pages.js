@@ -43,6 +43,18 @@ if (fs.existsSync(assetsDir)) {
   copyDir(assetsDir, path.join(outDir, "bloom"));
 }
 
+// Fix: Copy assets directory (images, scripts, etc.)
+const staticAssetsDir = path.join(root, "assets");
+if (fs.existsSync(staticAssetsDir)) {
+  copyDir(staticAssetsDir, path.join(outDir, "assets"));
+}
+
+// Fix: Copy typora.md for showcase preview
+const typoraMd = path.join(root, "typora.md");
+if (fs.existsSync(typoraMd)) {
+  copy(typoraMd, path.join(outDir, "typora.md"));
+}
+
 const screenshotsDir = path.join(root, "screenshots");
 if (fs.existsSync(screenshotsDir)) {
   copyDir(screenshotsDir, path.join(outDir, "screenshots"));
