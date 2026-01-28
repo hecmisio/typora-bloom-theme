@@ -992,3 +992,59 @@ a:hover {
   border-color: transparent !important;
   box-shadow: none !important;
 }
+
+/* --- Mermaid Diagram Support for Dark Themes (Issue #1) --- */
+.mermaid text {
+  fill: var(--text) !important;
+}
+
+/* Flowchart & Sequence Nodes */
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node polygon,
+.mermaid .node path,
+.mermaid .actor {
+  fill: var(--surface) !important;
+  stroke: var(--accent) !important;
+  stroke-width: 1.5px !important;
+}
+
+/* Sequence Diagram Specifics */
+.mermaid .messageLine0,
+.mermaid .messageLine1 {
+  stroke: var(--accent) !important;
+  stroke-width: 1.5px;
+}
+
+.mermaid .messageText {
+  fill: var(--text) !important;
+  stroke: none !important;
+  font-size: 14px !important;
+}
+
+.mermaid marker {
+  fill: var(--accent) !important;
+  stroke: var(--accent) !important;
+}
+
+.mermaid marker path {
+  fill: var(--accent) !important;
+  stroke: var(--accent) !important;
+}
+
+.mermaid .loopText,
+.mermaid .noteText {
+  fill: var(--text) !important;
+  stroke: none !important;
+}
+
+.mermaid .note {
+  fill: rgba(var(--accent-rgb), 0.1) !important;
+  stroke: var(--accent) !important;
+}
+
+/* Edge Paths */
+.mermaid .edgePath .path {
+  stroke: var(--text-semi) !important;
+}
