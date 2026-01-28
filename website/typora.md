@@ -42,3 +42,15 @@ console.log(`今晚的心情：${night} / ${heart}`);
 
 > [!CAUTION]
 > 别为了取悦谁删掉自己，草稿也要留一点真实。
+
+## 图表 (Mermaid)
+
+```mermaid
+sequenceDiagram
+    participant Me as 我
+    participant Moon as 月亮
+    Me->>Moon: 今晚为何不圆？
+    Moon-->>Me: 为了让你写满遗憾。
+    Note right of Moon: (这也是一种圆满)
+    Me->>Me: ...沉默
+```
