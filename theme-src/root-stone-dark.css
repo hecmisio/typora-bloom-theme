@@ -14,8 +14,8 @@
     --space-3xl: calc(var(--space-unit) * 8);
 
     /* --- Morandi Stone Dark (Warm Earthy Dark) --- */
-    --accent: oklch(75% 0.12 40);
-    --accent-rgb: 218, 179, 155;
+    --accent: oklch(75% 0.12 30);
+    --accent-rgb: 220, 180, 160;
 
     /* Dynamic States */
     --accent-hover: color-mix(in oklch, var(--accent), white 8%);
@@ -30,11 +30,11 @@
     --important: oklch(75% 0.14 280);
 
     /* Neutrals - Stone Dark Base (Warm brown tint) */
-    --bg: oklch(20% 0.02 40);
-    --surface: oklch(28% 0.02 40);
-    --surface-2: oklch(34% 0.03 40);
+    --bg: oklch(20% 0.02 30);
+    --surface: oklch(28% 0.02 30);
+    --surface-2: oklch(34% 0.03 30);
 
-    --text: oklch(96% 0.01 40);
+    --text: oklch(96% 0.01 30);
     --text-rgb: 245, 242, 238;
     --text-semi: oklch(82% 0.02 40);
     --muted: color-mix(in oklch, var(--text), transparent 30%);
@@ -55,7 +55,7 @@
     --selection: color-mix(in oklch, var(--accent), transparent 75%);
 
     /* Code Layer */
-    --code-bg: oklch(14% 0.01 40);
+    --code-bg: oklch(14% 0.01 30);
     --code-text: var(--text-semi);
     --code-ink: var(--text);
     --code-dot-red: oklch(65% 0.15 25);

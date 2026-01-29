@@ -13,9 +13,9 @@
     --space-2xl: calc(var(--space-unit) * 6);
     --space-3xl: calc(var(--space-unit) * 8);
 
-    /* --- Morandi Stone (Neutral) - Deepened for better contrast --- */
-    --accent: oklch(50% 0.06 40);
-    --accent-rgb: 177, 164, 158;
+    /* --- Morandi Stone (Taupe/Warm Grey) --- */
+    --accent: oklch(50% 0.06 30);
+    --accent-rgb: 180, 160, 155;
 
     /* Dynamic States */
     --accent-hover: color-mix(in oklch, var(--accent), black 8%);
@@ -29,12 +29,12 @@
     --info: oklch(62% 0.08 250);
     --important: oklch(65% 0.16 280);
 
-    /* Neutrals - Stone Light Base */
-    --bg: oklch(96% 0.01 60);
-    --surface: oklch(94% 0.01 60);
-    --surface-2: oklch(91% 0.01 60);
+    /* Neutrals - Stone Light Base (Taupe Tint) */
+    --bg: oklch(96% 0.01 30);
+    --surface: oklch(94% 0.01 30);
+    --surface-2: oklch(91% 0.01 30);
 
-    --text: oklch(25% 0.02 40);
+    --text: oklch(25% 0.02 30);
     --text-rgb: 71, 65, 62;
     --text-semi: oklch(45% 0.02 40);
     --muted: color-mix(in oklch, var(--text), transparent 45%);
