@@ -211,8 +211,8 @@ content,
   content: none;
 }
 
-#write blockquote[data-type^="alert-"] > p:first-child,
-#write blockquote[data-type^="alert-"] > p.md-alert-title {
+#write blockquote[data-type^="alert-"]>p:first-child,
+#write blockquote[data-type^="alert-"]>p.md-alert-title {
   margin: 0 0 var(--space-xs);
   font-size: 12px;
   font-weight: 600;
@@ -825,11 +825,28 @@ a:hover {
 
 /* Math */
 .md-math-block {
-  margin: var(--space-lg) 0;
+  margin: var(--space-xl) 0;
   padding: var(--space-md);
   background: var(--surface);
   border-radius: 12px;
   overflow-x: auto;
+}
+
+/* Fix: macOS Title Bar / Header "White Strip" Issue */
+body.mac-seamless-mode titlebar,
+body.mac-seamless-mode header,
+titlebar,
+header,
+.title-bar {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  opacity: 0.9;
+}
+
+/* Ensure Sidebar fits the theme */
+#typora-sidebar {
+  color: var(--text);
+  background: transparent;
 }
 
 /* Scrollbar */
@@ -994,57 +1011,43 @@ a:hover {
 }
 
 /* --- Mermaid Diagram Support for Dark Themes (Issue #1) --- */
-.mermaid text {
-  fill: var(--text) !important;
+:root {
+  --mermaid-theme: night;
 }
 
-/* Flowchart & Sequence Nodes */
-.mermaid .node rect,
-.mermaid .node circle,
-.mermaid .node ellipse,
-.mermaid .node polygon,
-.mermaid .node path,
-.mermaid .actor {
-  fill: var(--surface) !important;
+#write .mermaid {
+  background: rgba(var(--white-rgb), 0.02) !important;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+#write .mermaid text {
+  fill: var(--text) !important;
+  font-family: var(--font-sans) !important;
+}
+
+/* 
+   We rely on --mermaid-theme: night for internal coloring (lines, actors).
+   Replacements below are minimal overrides only if needed for high contrast text 
+   or background blending. 
+*/
+
+#write .mermaid .node rect,
+#write .mermaid .node circle,
+#write .mermaid .node polygon,
+#write .mermaid .node path {
+  fill: var(--bg) !important;
   stroke: var(--accent) !important;
   stroke-width: 1.5px !important;
 }
 
-/* Sequence Diagram Specifics */
-.mermaid .messageLine0,
-.mermaid .messageLine1 {
-  stroke: var(--accent) !important;
-  stroke-width: 1.5px;
-}
-
-.mermaid .messageText {
+/* Ensure text is always readable */
+#write .mermaid text.actor {
   fill: var(--text) !important;
-  stroke: none !important;
-  font-size: 14px !important;
-}
-
-.mermaid marker {
-  fill: var(--accent) !important;
-  stroke: var(--accent) !important;
-}
-
-.mermaid marker path {
-  fill: var(--accent) !important;
-  stroke: var(--accent) !important;
-}
-
-.mermaid .loopText,
-.mermaid .noteText {
-  fill: var(--text) !important;
-  stroke: none !important;
-}
-
-.mermaid .note {
-  fill: rgba(var(--accent-rgb), 0.1) !important;
-  stroke: var(--accent) !important;
 }
 
 /* Edge Paths */
-.mermaid .edgePath .path {
+#write .mermaid .edgePath .path {
   stroke: var(--text-semi) !important;
+  stroke-width: 1.5px !important;
 }

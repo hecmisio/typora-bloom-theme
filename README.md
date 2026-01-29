@@ -16,6 +16,13 @@ Bloom（绽放）是一套为**长期写作**设计的 Typora 主题。它追求
 
 ---
 
+## 📚 参考资料 Reference
+
+- [Typora Write Custom Theme (中文)](https://theme.typora.io/doc/zh/Write-Custom-Theme/) - 官方主题开发文档
+- [Typora Theme Gallery](https://theme.typora.io/) - 官方主题库
+
+## 📄 协议 License
+
 ## 主题系列 (Theme Variants)
 
 所有主题均基于 **OKLCH 色彩空间** 重新设计，统一莫兰迪低饱和风格，极致护眼。

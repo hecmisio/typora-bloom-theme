@@ -31,21 +31,22 @@
     --important: oklch(75% 0.14 280);
 
     /* Neutrals - Spring Night Base (Deep Violet Tint) */
-    --bg: oklch(18% 0.02 285);
-    --surface: oklch(26% 0.02 285);
-    --surface-2: oklch(32% 0.03 285);
+    /* Lightened from 18% to 24% for better readability */
+    --bg: oklch(24% 0.03 285);
+    --surface: oklch(30% 0.03 285);
+    --surface-2: oklch(36% 0.04 285);
 
     --text: oklch(96% 0.01 285);
     --text-rgb: 245, 240, 248;
-    --text-semi: oklch(84% 0.02 295);
+    --text-semi: oklch(86% 0.02 295);
     --muted: color-mix(in oklch, var(--text), transparent 30%);
 
-    --border: color-mix(in oklch, var(--text), transparent 88%);
-    --border-semi: color-mix(in oklch, var(--text), transparent 78%);
+    --border: color-mix(in oklch, var(--text), transparent 85%);
+    --border-semi: color-mix(in oklch, var(--text), transparent 75%);
 
     /* Effects */
-    --shadow: 0 16px 48px color-mix(in oklch, var(--bg), black 50%);
-    --shadow-lg: 0 30px 80px color-mix(in oklch, var(--bg), black 60%);
+    --shadow: 0 16px 48px color-mix(in oklch, var(--bg), black 40%);
+    --shadow-lg: 0 30px 80px color-mix(in oklch, var(--bg), black 50%);
 
     /* Typography */
     --font-sans: "MiSans", "PingFang SC", "Microsoft YaHei", sans-serif;

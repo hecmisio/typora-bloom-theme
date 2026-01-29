@@ -202,8 +202,8 @@ content,
   content: none;
 }
 
-#write blockquote[data-type^="alert-"] > p:first-child,
-#write blockquote[data-type^="alert-"] > p.md-alert-title {
+#write blockquote[data-type^="alert-"]>p:first-child,
+#write blockquote[data-type^="alert-"]>p.md-alert-title {
   margin: 0 0 var(--space-xs);
   font-size: 12px;
   font-weight: 600;
@@ -796,6 +796,94 @@ sup.md-footnote {
   background: var(--surface);
   border-radius: 12px;
   overflow-x: auto;
+}
+
+/* Fix: macOS Title Bar / Header Visibility */
+body.mac-seamless-mode titlebar,
+body.mac-seamless-mode header,
+titlebar,
+header,
+.title-bar {
+  color: var(--text) !important;
+  opacity: 0.9;
+}
+
+/* Sidebar Title Visibility */
+#typora-sidebar {
+  color: var(--text);
+}
+
+/* --- Mermaid Diagram Support for Light Themes --- */
+#write .mermaid {
+  background: var(--surface) !important;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+#write .mermaid text {
+  fill: var(--text) !important;
+  font-family: var(--font-sans) !important;
+}
+
+/* Flowchart & Sequence Nodes */
+#write .mermaid .node rect,
+#write .mermaid .node circle,
+#write .mermaid .node ellipse,
+#write .mermaid .node polygon,
+#write .mermaid .node path,
+#write .mermaid .actor,
+#write .mermaid rect.actor,
+#write .mermaid g.actor rect {
+  fill: var(--bg) !important;
+  stroke: var(--accent) !important;
+  stroke-width: 1.5px !important;
+}
+
+#write .mermaid text.actor {
+  fill: var(--text) !important;
+}
+
+/* Sequence Diagram Specifics */
+#write .mermaid line,
+#write .mermaid .actor-line,
+#write .mermaid .messageLine0,
+#write .mermaid .messageLine1 {
+  stroke: var(--accent) !important;
+  stroke-width: 1.5px !important;
+  fill: none;
+}
+
+#write .mermaid .messageText {
+  fill: var(--text) !important;
+  stroke: none !important;
+  font-size: 14px !important;
+}
+
+#write .mermaid marker {
+  fill: var(--accent) !important;
+  stroke: var(--accent) !important;
+}
+
+#write .mermaid marker path {
+  fill: var(--accent) !important;
+  stroke: var(--accent) !important;
+}
+
+#write .mermaid .loopText,
+#write .mermaid .noteText {
+  fill: var(--text) !important;
+  stroke: none !important;
+}
+
+#write .mermaid .note {
+  fill: rgba(var(--accent-rgb), 0.08) !important;
+  stroke: var(--accent) !important;
+}
+
+/* Edge Paths */
+#write .mermaid .edgePath .path {
+  stroke: var(--text-semi) !important;
+  stroke-width: 1.5px !important;
 }
 
 /* --- Focus Mode & Submerged Experience --- */
