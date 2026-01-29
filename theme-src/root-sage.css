@@ -13,9 +13,9 @@
     --space-2xl: calc(var(--space-unit) * 6);
     --space-3xl: calc(var(--space-unit) * 8);
 
-    /* --- Morandi Magenta (Modern Magenta) --- */
-    --accent: oklch(60% 0.16 330);
-    --accent-rgb: 210, 80, 140;
+    /* --- Morandi Sage (Olive Green) --- */
+    --accent: oklch(62% 0.11 115);
+    --accent-rgb: 138, 154, 91;
 
     /* Dynamic States */
     --accent-hover: color-mix(in oklch, var(--accent), black 8%);
@@ -29,13 +29,13 @@
     --info: oklch(62% 0.1 250);
     --important: oklch(65% 0.16 280);
 
-    /* Neutrals - Magenta Light Base (Cool pink tint) */
-    --bg: oklch(97% 0.01 330);
-    --surface: oklch(95% 0.01 330);
-    --surface-2: oklch(92% 0.01 330);
+    /* Neutrals - Sage Light Base (Warm Olive Tint) */
+    --bg: oklch(97% 0.01 115);
+    --surface: oklch(95% 0.01 115);
+    --surface-2: oklch(92% 0.01 115);
 
-    --text: oklch(25% 0.02 330);
-    --text-rgb: 70, 56, 62;
+    --text: oklch(25% 0.02 115);
+    --text-rgb: 60, 65, 55;
     --text-semi: oklch(45% 0.02 45);
     --muted: color-mix(in oklch, var(--text), transparent 45%);
 
@@ -63,7 +63,7 @@
     --code-dot-green: oklch(72% 0.12 145);
 
     /* Code Syntax Highlighting Tokens */
-    --code-token-keyword: oklch(55% 0.12 330);
+    --code-token-keyword: oklch(55% 0.12 115);
     --code-token-string: oklch(52% 0.12 140);
     --code-token-number: oklch(58% 0.12 30);
     --code-token-blue: oklch(48% 0.12 260);

@@ -63,30 +63,31 @@ window.THEME_CONFIG = {
     "bg": "#262d2e",
     "text": "#eeeeee"
   },
-  "ink": {
-    "name": "🖋️ 水墨 (Ink)",
-    "accent": "#cc584d",
-    "bg": "#fbfbfb",
+  "cinnabar": {
+    "name": "🧧 丹红 (Cinnabar)",
+    "accent": "#d74b4b",
+    "bg": "#fbf2f2",
     "text": "#333333"
   },
-  "ink-dark": {
-    "name": "🖋️ 水墨·暗夜",
-    "accent": "#e26b5f",
-    "bg": "#242424",
-    "text": "#eeeeee"
-  },
-  "magenta": {
-    "name": "🌺 洋红 (Magenta)",
-    "accent": "#d2508c",
-    "bg": "#fcf8fa",
-    "text": "#333333"
-  },
-  "magenta-dark": {
-    "name": "🎆 洋红·暗夜",
-    "accent": "#eb78b4",
-    "bg": "#2b252b",
+  "cinnabar-dark": {
+    "name": "🏮 丹红·暗夜",
+    "accent": "#dc5050",
+    "bg": "#2b2525",
     "text": "#eeeeee",
-    "hue": 330
+    "hue": 25
+  },
+  "sage": {
+    "name": "🌿 鼠尾草 (Sage)",
+    "accent": "#8a9a5b",
+    "bg": "#fcfef8",
+    "text": "#333333"
+  },
+  "sage-dark": {
+    "name": "🍃 鼠尾草·暗夜",
+    "accent": "#b0b98c",
+    "bg": "#2b2f28",
+    "text": "#eeeeee",
+    "hue": 115
   },
   "spring": {
     "name": "🌸 薰衣草紫 (Spring)",

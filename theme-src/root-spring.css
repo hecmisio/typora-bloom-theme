@@ -13,14 +13,14 @@
     --space-2xl: calc(var(--space-unit) * 6);
     --space-3xl: calc(var(--space-unit) * 8);
 
-    /* --- Morandi Spring (Lavender) - Light Version --- */
-    --accent: oklch(60% 0.14 295);
-    --accent-rgb: 168, 115, 196;
+    /* --- Morandi Spring (Silky Lavender) --- */
+    --accent: oklch(65% 0.16 285);
+    --accent-rgb: 160, 115, 215;
 
     /* Dynamic States */
     --accent-hover: color-mix(in oklch, var(--accent), black 8%);
     --accent-active: color-mix(in oklch, var(--accent), black 15%);
-    --accent-soft: color-mix(in oklch, var(--accent), transparent 88%);
+    --accent-soft: color-mix(in oklch, var(--accent), transparent 85%);
 
     /* Semantic Colors - Muted for Morandi */
     --success: oklch(70% 0.1 150);
@@ -29,13 +29,13 @@
     --info: oklch(62% 0.1 250);
     --important: oklch(65% 0.16 280);
 
-    /* Neutrals - Spring Light Base */
-    --bg: oklch(96% 0.01 295);
-    --surface: oklch(94% 0.01 295);
-    --surface-2: oklch(91% 0.01 295);
+    /* Neutrals - Spring Light Base (Clean Lavender Hint) */
+    --bg: oklch(97% 0.005 285);
+    --surface: oklch(95% 0.005 285);
+    --surface-2: oklch(92% 0.01 285);
 
-    --text: oklch(25% 0.02 295);
-    --text-rgb: 65, 58, 70;
+    --text: oklch(25% 0.02 285);
+    --text-rgb: 60, 58, 75;
     --text-semi: oklch(45% 0.02 295);
     --muted: color-mix(in oklch, var(--text), transparent 45%);
 
@@ -63,7 +63,7 @@
     --code-dot-green: oklch(72% 0.12 145);
 
     /* Code Syntax Highlighting Tokens - Standardized Light */
-    --code-token-keyword: oklch(55% 0.22 300);
+    --code-token-keyword: oklch(55% 0.22 290);
     --code-token-string: oklch(52% 0.18 140);
     --code-token-number: oklch(58% 0.20 40);
     --code-token-blue: oklch(48% 0.22 260);
