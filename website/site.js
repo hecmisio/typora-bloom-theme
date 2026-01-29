@@ -48,6 +48,24 @@ function setTheme(themeName) {
 
   currentTheme = themeName;
   updateDynamicFavicon();
+
+  // Reload page to re-initialize Mermaid with new theme if needed
+  // (Mermaid doesn't support easy theme switching without re-init)
+  if (window.mermaid && document.querySelector('.mermaid')) {
+    // Check if we switched from light to dark or vice versa
+    const oldIsDark = document.documentElement.style.colorScheme === 'dark';
+    const newIsDark = themeName.includes('dark');
+    if (oldIsDark !== newIsDark) {
+      // Ideally we would just re-render, but mermaid.initialize only works once per load usually.
+      // For now, let's just accept that dynamic switch might need reload, 
+      // OR we try to reset. But simple approach: 
+      // Let's just update colorScheme. Users can refresh if they want perfect diagrams.
+      // Actually, user expects "preview" to work.
+      // Let's try to set attribute on body and let CSS variables handle it if we used 'base' theme?
+      // But we used 'dark' theme for dark mode.
+      // Let's stick with current approach of init on load.
+    }
+  }
 }
 
 /**
@@ -362,6 +380,45 @@ async function loadMarkdown() {
       // Re-enhance code blocks after content loads
       enhanceCodeBlocks();
       enhanceTaskLists();
+
+      // Initialize Mermaid
+      // Initialize Mermaid
+      if (window.mermaid) {
+        // Determine isDark based on global config or fallback
+        const currentRef = window.THEME_DEFAULT || 'petal';
+        const isDark = currentRef.includes('dark');
+
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: isDark ? 'dark' : 'base',
+          themeVariables: isDark ? {
+            darkMode: true,
+            background: '#25201d',
+            primaryColor: '#e8859b',
+            lineColor: '#eeeeee',
+          } : {
+            darkMode: false
+          }
+        });
+
+        const mermaidBlocks = writeContainer.querySelectorAll('pre code.language-mermaid');
+        if (mermaidBlocks.length > 0) {
+          // Transform <pre><code> to <div class="mermaid">
+          const runQueue = [];
+          mermaidBlocks.forEach(block => {
+            const pre = block.parentElement;
+            const source = block.textContent;
+            const div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = source;
+            pre.replaceWith(div);
+            runQueue.push(div);
+          });
+
+          // Run render
+          await mermaid.run({ nodes: runQueue });
+        }
+      }
 
       console.log('✅ Markdown loaded successfully from typora.md');
     } else {

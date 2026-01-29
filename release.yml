@@ -1,3 +1,10 @@
+## v1.3.2 · 2026-01-28
+- **[Fix]** 修复 Mermaid 时序图在暗色主题下线条与文字可见性低的问题 (Issue #1)。
+- **[Refactor]** 工程结构重构：将官网源码（HTML/CSS/JS/Assets）收敛至 `website/` 目录，根目录更清爽。
+- **[Refactor]** 主题配置 SSOT：通过 `theme-list.js` 单一数据源控制全局默认主题，一键切换。
+- **[Feat]** 官网预览页新增 Mermaid 图表实时渲染支持。
+- **[Fix]** 修复 README.md 中的资源文件引用路径。
+
 ## v1.3.1 · 2026-01-07
 - **Alert 系统重构**：从 GitHub 风格的硬朗色块全面进化为 **Bloom 磨砂质感**，拥有 12px 圆角、半透明背景与柔和边框。
 - **语义化适配 (16/16)**：彻底重构 Alert 颜色逻辑，引入 `--important` 等语义变量，实现 Note/Tip/Warning/Caution/Important 五种提示框在 **全部 16 款主题** 下的 100% 自动色彩适配。

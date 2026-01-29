@@ -101,3 +101,4 @@ window.THEME_CONFIG = {
     "text": "#eeeeee"
   }
 };
+window.THEME_DEFAULT = "petal-dark";

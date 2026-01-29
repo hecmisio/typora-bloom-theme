@@ -3,7 +3,7 @@ const path = require('path');
 const themes = require('./theme-list');
 
 const root = path.resolve(__dirname, '..');
-const assetsDir = path.join(root, 'assets');
+const assetsDir = path.join(root, 'website', 'assets');
 
 // 生成 site.js 需要的配置对象
 const themeConfig = {};

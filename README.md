@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://typora-bloom-theme.webkubor.online">
-    <img src="assets/favicon.svg" alt="Bloom" width="120" />
+    <img src="website/assets/favicon.svg" alt="Bloom" width="120" />
   </a>
 </p>
 
