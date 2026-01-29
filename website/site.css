@@ -644,14 +644,13 @@ h6 {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg,
-      var(--accent-2) 0%,
-      transparent 50%,
-      rgba(var(--accent-rgb), 0.05) 100%);
+  background: radial-gradient(circle at 50% -20%, var(--accent-2) 0%, transparent 60%);
   border-bottom: 1px solid var(--border);
-  padding: 80px 24px;
+  padding: 100px 24px 140px;
+  /* Increased padding */
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  /* Allow 3D tilt to overflow */
 }
 
 .hero::before {
@@ -659,10 +658,14 @@ h6 {
   position: absolute;
   top: -50%;
   right: -10%;
-  width: 600px;
-  height: 600px;
+  width: 800px;
+  /* Larger, softer blob */
+  height: 800px;
   background: radial-gradient(circle, var(--accent-2) 0%, transparent 70%);
-  opacity: 0.3;
+  opacity: 0.2;
+  /* Subtler */
+  filter: blur(80px);
+  /* More blur */
   pointer-events: none;
 }
 
@@ -738,22 +741,24 @@ h6 {
 }
 
 .hero-title {
-  font-size: 3.5em;
+  font-size: 4em;
+  /* Larger */
   font-weight: 800;
   color: var(--text);
-  margin: 0 0 0.5em;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  margin: 0 0 0.4em;
+  letter-spacing: -0.03em;
+  /* Tighter letter spacing for premium feel */
+  line-height: 1.1;
 }
 
 .hero-title-accent {
-  background: linear-gradient(135deg, var(--accent) 0%, #ff8ba7 50%, var(--accent) 100%);
-  background-size: 200% auto;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+  /* Simpler, cleaner gradient */
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: gradientFlow 3s linear infinite, titleScale 6s ease-in-out infinite;
-  text-shadow: 0 10px 40px rgba(var(--accent-rgb), 0.25);
+  /* Removed animation for cleaner look */
+  text-shadow: 0 10px 40px rgba(var(--accent-rgb), 0.2);
 }
 
 @keyframes titleScale {
@@ -794,26 +799,125 @@ h6 {
   margin-bottom: 64px;
 }
 
-.hero-highlights {
+/* Hero Visual (Mac Window Mockup) */
+.hero-visual {
   margin: 0 auto;
-  max-width: 1000px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  max-width: 800px;
+  perspective: 2000px;
 }
 
-.hero-highlight {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 32px 24px;
-  text-align: left;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  position: relative;
+.window-mockup {
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow:
+    0 20px 60px -10px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+  /* Simulated border */
   overflow: hidden;
+  transform: rotateX(2deg) rotateY(0deg);
+  /* Slight default tilt */
+  transition: transform 0.5s ease;
+}
+
+.window-header {
+  height: 36px;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.window-controls {
+  position: absolute;
+  left: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.control.red {
+  background: #ff5f56;
+}
+
+.control.yellow {
+  background: #ffbd2e;
+}
+
+.control.green {
+  background: #27c93f;
+}
+
+.window-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-semi);
+  opacity: 0.7;
+}
+
+.window-content {
+  padding: 40px 50px;
+  text-align: left;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.window-content .line {
+  display: block;
+}
+
+.token.keyword {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.token.highlight {
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  padding: 2px 4px;
+  border-radius: 4px;
+  color: var(--accent);
+}
+
+.token.comment {
+  color: var(--text-semi);
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background: var(--accent);
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Tilt effect applied by JS */
+.premium-tilt {
+  transform-style: preserve-3d;
+}
+
+gap: 12px;
+position: relative;
+overflow: hidden;
 }
 
 .hero-highlight:hover {
