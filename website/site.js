@@ -22,6 +22,15 @@ const currentThemeDisplay = document.getElementById('current-theme-name');
 
 let currentTheme = window.THEME_DEFAULT || 'petal';
 
+// Initialize with default theme
+document.addEventListener('DOMContentLoaded', () => {
+  // Determine active theme (prioritize window.THEME_DEFAULT if available)
+  // If logic above set currentTheme, we just use it.
+  if (currentTheme) {
+    setTheme(currentTheme);
+  }
+});
+
 // 修改后的设置函数
 function setTheme(themeName) {
   const write = document.getElementById('write');
@@ -271,19 +280,28 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal-on-scroll').forEach(el => revealObserver.observe(el));
 
-// 2. 3D Card Tilt Effect
+// 2. 3D Card Tilt Effect (Optimized with rAF)
 const premiumCards = document.querySelectorAll('.premium-card');
 premiumCards.forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateX = (y - centerY) / 10;
-    const rotateY = (centerX - x) / 10;
+  let ticking = false;
 
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+  card.addEventListener('mousemove', e => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        // Reduce rotation intensity for smoother feel
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        ticking = false;
+      });
+      ticking = true;
+    }
   });
 
   card.addEventListener('mouseleave', () => {
@@ -291,25 +309,37 @@ premiumCards.forEach(card => {
   });
 });
 
-// 3. Magnetic Download Button
+// 3. Magnetic Download Button (Optimized with rAF)
 const magneticBtn = document.getElementById('btn-download');
 if (magneticBtn) {
-  document.addEventListener('mousemove', e => {
-    const rect = magneticBtn.getBoundingClientRect();
-    const mX = e.clientX;
-    const mY = e.clientY;
-    const bX = rect.left + rect.width / 2;
-    const bY = rect.top + rect.height / 2;
-    const dist = Math.sqrt(Math.pow(mX - bX, 2) + Math.pow(mY - bY, 2));
+  let ticking = false;
 
-    if (dist < 100) {
-      const x = (mX - bX) * 0.4;
-      const y = (mY - bY) * 0.4;
-      magneticBtn.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
-      magneticBtn.style.boxShadow = `0 12px 30px var(--accent-2)`;
-    } else {
-      magneticBtn.style.transform = '';
-      magneticBtn.style.boxShadow = '';
+  document.addEventListener('mousemove', e => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const rect = magneticBtn.getBoundingClientRect();
+        const mX = e.clientX;
+        const mY = e.clientY;
+        const bX = rect.left + rect.width / 2;
+        const bY = rect.top + rect.height / 2;
+        const dist = Math.sqrt(Math.pow(mX - bX, 2) + Math.pow(mY - bY, 2));
+
+        // Only animate if close enough (performance optimization)
+        if (dist < 150) {
+          const x = (mX - bX) * 0.3;
+          const y = (mY - bY) * 0.3;
+          magneticBtn.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+          magneticBtn.style.boxShadow = `0 12px 30px var(--accent-2)`;
+        } else {
+          // Only reset if currently transformed (check style presence to avoid unnecessary layout thrashing)
+          if (magneticBtn.style.transform) {
+            magneticBtn.style.transform = '';
+            magneticBtn.style.boxShadow = '';
+          }
+        }
+        ticking = false;
+      });
+      ticking = true;
     }
   });
 }

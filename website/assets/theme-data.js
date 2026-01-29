@@ -1,20 +1,20 @@
 // Auto-generated from scripts/theme-list.js
 window.THEME_CONFIG = {
   "petal": {
-    "name": "🌸 花瓣 (Petal)",
+    "name": "🌸 花瓣",
     "accent": "#e8859b",
     "bg": "#fdf9fa",
     "text": "#333333"
   },
   "petal-dark": {
-    "name": "🔮 花瓣·暗夜",
+    "name": "🌸 花瓣·暗夜",
     "accent": "#ffaac8",
     "bg": "#332c32",
     "text": "#eeeeee",
     "hue": 350
   },
   "mist": {
-    "name": "☁️ 雾蓝 (Mist)",
+    "name": "☁️ 雾蓝",
     "accent": "#92A8B3",
     "bg": "#F2F4F5",
     "text": "#333333"
@@ -27,7 +27,7 @@ window.THEME_CONFIG = {
     "hue": 240
   },
   "verdant": {
-    "name": "🍃 草木 (Verdant)",
+    "name": "🍃 草木",
     "accent": "#A0B0A7",
     "bg": "#F2F5F3",
     "text": "#333333"
@@ -40,7 +40,7 @@ window.THEME_CONFIG = {
     "hue": 160
   },
   "stone": {
-    "name": "🧱 暖石 (Stone)",
+    "name": "🧱 暖石",
     "accent": "#B1A49E",
     "bg": "#F5F3F1",
     "text": "#333333"
@@ -52,7 +52,7 @@ window.THEME_CONFIG = {
     "text": "#eeeeee"
   },
   "ripple": {
-    "name": "🌊 涟漪 (Ripple)",
+    "name": "🌊 涟漪",
     "accent": "#5fa8b2",
     "bg": "#fcfdfe",
     "text": "#333333"
@@ -64,7 +64,7 @@ window.THEME_CONFIG = {
     "text": "#eeeeee"
   },
   "cinnabar": {
-    "name": "🧧 丹红 (Cinnabar)",
+    "name": "🧧 丹红",
     "accent": "#d74b4b",
     "bg": "#fbf2f2",
     "text": "#333333"
@@ -77,28 +77,28 @@ window.THEME_CONFIG = {
     "hue": 25
   },
   "sage": {
-    "name": "🌿 鼠尾草 (Sage)",
+    "name": "🌿 鼠尾草",
     "accent": "#8a9a5b",
     "bg": "#fcfef8",
     "text": "#333333"
   },
   "sage-dark": {
-    "name": "🍃 鼠尾草·暗夜",
+    "name": "🌿 鼠尾草·暗夜",
     "accent": "#b0b98c",
     "bg": "#2b2f28",
     "text": "#eeeeee",
     "hue": 115
   },
   "spring": {
-    "name": "🌸 薰衣草紫 (Spring)",
+    "name": "🪻 紫语",
     "accent": "#A873C4",
     "bg": "#fcf9fd",
     "text": "#333333"
   },
   "spring-dark": {
-    "name": "🔮 薰衣草紫·暗夜",
+    "name": "🔮 紫语·暗夜",
     "accent": "#bfa9f5",
-    "bg": "#2e2a33",
+    "bg": "#3B3640",
     "text": "#eeeeee"
   }
 };
