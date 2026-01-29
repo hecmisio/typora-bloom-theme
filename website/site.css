@@ -915,10 +915,7 @@ h6 {
   transform-style: preserve-3d;
 }
 
-gap: 12px;
-position: relative;
-overflow: hidden;
-}
+
 
 .hero-highlight:hover {
   transform: translateY(-6px);
