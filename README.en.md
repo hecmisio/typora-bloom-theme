@@ -32,8 +32,11 @@ Bloom features **8 Light and 8 Dark** palettes. From the morning glow of "Petal 
 ### 🌈 OKLCH: Perceptual Science Meets Aesthetics
 We have fully migrated to the **OKLCH color space**. Unlike traditional RGB, OKLCH strictly follows the laws of human visual perception. This allows Bloom to maintain consistent visual lightness and weight across all theme variations.
 
-### 🧊 Glassmorphism callouts
+### 🧊 Glassmorphism Callouts
 In v1.3.1, we evolved callouts into a **"Frosted Glass"** aesthetic. Using `color-mix` for dynamic transparency, these alerts feature 12px rounded corners and a subtle breathing border—turning information into elegant footnotes.
+
+### 🍎 Unified Aesthetics (v1.3.4 New)
+We have achieved a **Unified Aesthetic** across **Code Fences**, **HTML Blocks**, and **YAML Frontmatter**. They now share the iconic 18px rounded corners, Mac-style "Red-Yellow-Green" dots, and a consistent background logic, eliminating visual fragmentation.
 
 ### 📐 8px Rhythm: Atomic Spacing System
 A rigorous **8px atomic spacing system** brings a sense of "air" to your documents. The restraint in headings, the negative space in paragraphs, and the breath of code blocks all achieve a dynamic visual balance.
@@ -78,6 +81,14 @@ npm run dev
 # Harvest (Build)
 npm run build
 ```
+
+---
+
+## 📃 Changelog
+
+- **v1.3.4**: **Unified Aesthetics Batch**. Unified visual language for Code, HTML, and YAML; Native GitHub Alert syntax support; Fixed dark mode Mermaid visibility and macOS title bar contrast.
+- **v1.3.3**: Fixed macOS title bar contrast and refactored Dark Mermaid variables.
+- **v1.3.1**: Upgraded Glassmorphism Alert system.
 
 ---
 

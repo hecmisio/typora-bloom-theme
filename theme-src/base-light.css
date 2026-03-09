@@ -236,40 +236,40 @@ content,
 #write blockquote[data-type="alert-note"],
 #write .md-alert-note {
   --alert-color: var(--info);
-  background: color-mix(in srgb, var(--alert-color), var(--bg) 92%);
-  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 80%);
+  background: color-mix(in srgb, var(--alert-color), var(--bg) 88%) !important;
+  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 70%) !important;
 }
 
 /* TIP (Green) */
 #write blockquote[data-type="alert-tip"],
 #write .md-alert-tip {
   --alert-color: var(--success);
-  background: color-mix(in srgb, var(--alert-color), var(--bg) 92%);
-  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 80%);
+  background: color-mix(in srgb, var(--alert-color), var(--bg) 88%) !important;
+  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 70%) !important;
 }
 
 /* WARNING (Orange) */
 #write blockquote[data-type="alert-warning"],
 #write .md-alert-warning {
   --alert-color: var(--warning);
-  background: color-mix(in srgb, var(--alert-color), var(--bg) 88%);
-  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 75%);
+  background: color-mix(in srgb, var(--alert-color), var(--bg) 85%) !important;
+  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 65%) !important;
 }
 
 /* IMPORTANT (Purple) */
 #write blockquote[data-type="alert-important"],
 #write .md-alert-important {
   --alert-color: var(--important);
-  background: color-mix(in srgb, var(--alert-color), var(--bg) 90%);
-  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 80%);
+  background: color-mix(in srgb, var(--alert-color), var(--bg) 88%) !important;
+  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 70%) !important;
 }
 
 /* CAUTION (Red) */
 #write blockquote[data-type="alert-caution"],
 #write .md-alert-caution {
   --alert-color: var(--error);
-  background: color-mix(in srgb, var(--alert-color), var(--bg) 88%);
-  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 75%);
+  background: color-mix(in srgb, var(--alert-color), var(--bg) 85%) !important;
+  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 65%) !important;
 }
 
 /* Lists */
@@ -345,7 +345,10 @@ content,
   background: rgba(var(--accent-rgb), 0.02);
 }
 
-/* Code */
+/* ==========================================================================
+   Code & HTML Blocks (Unified Aesthetics)
+   ========================================================================== */
+
 #write code {
   font-family: var(--font-mono);
   font-size: 0.88em;
@@ -359,13 +362,14 @@ content,
 
 #write pre.md-fences,
 #write pre[mdtype="fences"],
-#write .md-fences {
-  background: var(--code-bg);
+#write .md-fences,
+#write [mdtype="html-block"],
+#typora-yaml-frontmatter {
+  background: var(--code-bg) !important;
   color: var(--code-text);
-  border: 1px solid rgba(var(--accent-rgb), 0.18);
-  border-radius: 16px;
-  padding: 3.2em 1.4em 1.4em;
-  /* Increased top padding for dots */
+  border: 1px solid rgba(var(--accent-rgb), 0.18) !important;
+  border-radius: 16px !important;
+  padding: 3.2em 1.4em 1.4em !important;
   margin: 2em 0;
   overflow: auto;
   box-shadow: 0 18px 50px rgba(var(--text-rgb), 0.12);
@@ -373,12 +377,24 @@ content,
   font-size: 14.5px;
   line-height: 1.6;
   position: relative;
+  transition: all 0.2s ease;
 }
 
-/* Mac-style Window Controls */
+/* Ensure consistent hover for all blocks */
+#write pre.md-fences:hover,
+#write [mdtype="html-block"]:hover,
+#typora-yaml-frontmatter:hover {
+  background: var(--code-bg) !important;
+  border-color: rgba(var(--accent-rgb), 0.32) !important;
+  box-shadow: 0 20px 60px rgba(var(--text-rgb), 0.15);
+}
+
+/* Mac-style Window Controls for all blocks */
 #write pre.md-fences::before,
 #write pre[mdtype="fences"]::before,
-#write .md-fences::before {
+#write .md-fences::before,
+#write [mdtype="html-block"]::before,
+#typora-yaml-frontmatter::before {
   content: "";
   position: absolute;
   top: 14px;
@@ -389,6 +405,17 @@ content,
   background: var(--code-dot-red);
   box-shadow: 18px 0 0 var(--code-dot-yellow), 36px 0 0 var(--code-dot-green);
   z-index: 2;
+}
+
+#write [mdtype="html-block"],
+#typora-yaml-frontmatter {
+  padding-top: 3.2em !important;
+}
+
+/* YAML Specific tweaks */
+#typora-yaml-frontmatter {
+  border-left: 1px solid rgba(var(--accent-rgb), 0.18) !important;
+  margin-bottom: 3em;
 }
 
 #write pre.md-fences code,

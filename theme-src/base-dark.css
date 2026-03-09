@@ -236,46 +236,57 @@ content,
 #write blockquote[data-type="alert-note"],
 #write .md-alert-note {
   --alert-color: var(--info);
-  background: color-mix(in srgb, var(--alert-color), var(--bg) 92%);
-  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 75%);
+  background: color-mix(in srgb, var(--alert-color), var(--bg) 85%) !important;
+  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 60%) !important;
 }
 
 /* TIP (Green) */
 #write blockquote[data-type="alert-tip"],
 #write .md-alert-tip {
   --alert-color: var(--success);
-  background: color-mix(in srgb, var(--alert-color), var(--bg) 92%);
-  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 75%);
+  background: color-mix(in srgb, var(--alert-color), var(--bg) 85%) !important;
+  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 60%) !important;
 }
 
 /* WARNING (Orange) */
 #write blockquote[data-type="alert-warning"],
 #write .md-alert-warning {
   --alert-color: var(--warning);
-  background: color-mix(in srgb, var(--alert-color), var(--bg) 88%);
-  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 70%);
+  background: color-mix(in srgb, var(--alert-color), var(--bg) 82%) !important;
+  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 60%) !important;
 }
 
 /* IMPORTANT (Purple) */
 #write blockquote[data-type="alert-important"],
 #write .md-alert-important {
   --alert-color: var(--important);
-  background: color-mix(in srgb, var(--alert-color), var(--bg) 90%);
-  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 75%);
+  background: color-mix(in srgb, var(--alert-color), var(--bg) 85%) !important;
+  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 60%) !important;
 }
 
 /* CAUTION (Red) */
 #write blockquote[data-type="alert-caution"],
 #write .md-alert-caution {
   --alert-color: var(--error);
-  background: color-mix(in srgb, var(--alert-color), var(--bg) 88%);
-  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 70%);
+  background: color-mix(in srgb, var(--alert-color), var(--bg) 82%) !important;
+  border-color: color-mix(in srgb, var(--alert-color), var(--bg) 60%) !important;
 }
 
 /* --- HTML EMBED CONTRAST FIX --- */
 #write span:not([class]), 
 #write div:not([class]) {
   color: inherit;
+}
+
+/* Prevent unwanted white background on hover for HTML blocks in dark mode */
+#write div:hover,
+#write span:hover,
+#write [mdtype="html-block"]:hover {
+  background-color: transparent !important;
+}
+
+#write span[style*="background"]:hover {
+  background-color: inherit !important;
 }
 
 /* --- MERMAID DARK MODE FIX --- */
@@ -393,7 +404,10 @@ content,
   background: rgba(var(--accent-rgb), 0.05);
 }
 
-/* Code */
+/* ==========================================================================
+   Code & HTML Blocks (Unified Aesthetics)
+   ========================================================================== */
+
 #write code {
   font-family: var(--font-mono);
   font-size: 0.9em;
@@ -407,12 +421,17 @@ content,
 
 #write pre.md-fences,
 #write pre[mdtype="fences"],
-#write .md-fences {
-  background: var(--code-bg);
-  color: var(--code-text);
-  border: 1px solid rgba(var(--accent-rgb), 0.14);
-  border-radius: 18px;
-  padding: 3.3em 1.5em 1.5em;
+#write .md-fences,
+#write [mdtype="html-block"],
+#typora-yaml-frontmatter,
+.md-meta-block {
+  background: var(--code-bg) !important;
+  background-color: var(--code-bg) !important;
+  background-image: none !important;
+  color: var(--code-text) !important;
+  border: 1px solid rgba(var(--accent-rgb), 0.14) !important;
+  border-radius: 18px !important;
+  padding: 3.3em 1.5em 1.5em !important;
   margin: 2.2em 0;
   overflow: auto;
   box-shadow: 0 20px 58px rgba(var(--black-rgb), 0.48);
@@ -420,12 +439,27 @@ content,
   font-size: 14.5px;
   line-height: 1.65;
   position: relative;
+  transition: all 0.2s ease;
 }
 
-/* Mac-style Window Controls */
+/* Ensure consistent hover for all blocks */
+#write pre.md-fences:hover,
+#write [mdtype="html-block"]:hover,
+#typora-yaml-frontmatter:hover,
+.md-meta-block:hover {
+  background: var(--code-bg) !important;
+  background-color: var(--code-bg) !important;
+  border-color: rgba(var(--accent-rgb), 0.24) !important;
+  box-shadow: 0 25px 70px rgba(var(--black-rgb), 0.55);
+}
+
+/* Mac-style Window Controls for all blocks */
 #write pre.md-fences::before,
 #write pre[mdtype="fences"]::before,
-#write .md-fences::before {
+#write .md-fences::before,
+#write [mdtype="html-block"]::before,
+#typora-yaml-frontmatter::before,
+.md-meta-block::before {
   content: "";
   position: absolute;
   top: 14px;
@@ -437,6 +471,20 @@ content,
   box-shadow: 18px 0 0 var(--code-dot-yellow), 36px 0 0 var(--code-dot-green);
   z-index: 2;
   opacity: 0.9;
+}
+
+#write [mdtype="html-block"],
+#typora-yaml-frontmatter,
+.md-meta-block {
+  padding-top: 3.3em !important; /* Force same header space */
+}
+
+/* YAML Specific tweaks */
+#typora-yaml-frontmatter,
+.md-meta-block {
+  border-left: 1px solid rgba(var(--accent-rgb), 0.14) !important;
+  margin-bottom: 3em;
+  display: block !important;
 }
 
 #write pre.md-fences code,

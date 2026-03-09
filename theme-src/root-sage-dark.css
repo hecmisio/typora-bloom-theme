@@ -31,7 +31,10 @@
 
     /* Neutrals - Sage Dark Base (Deep Olive Tint) */
     --bg: oklch(20% 0.02 115);
+    
     --surface: oklch(28% 0.02 115);
+    --title-bar-bg: var(--bg);
+    --title-bar-text: var(--text);
   --title-bar-bg: var(--bg);
   --title-bar-text: var(--text);    --surface-2: oklch(34% 0.03 115);
 
