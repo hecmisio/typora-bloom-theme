@@ -208,70 +208,68 @@ content,
   font-size: 12px;
   font-weight: 600;
   color: var(--alert-color);
-  opacity: 0.72;
+  opacity: 0.85;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 #write blockquote[data-type^="alert-"] .md-alert-icon,
-#write blockquote[data-type^="alert-"] .md-alert-title-icon,
-#write blockquote[data-type^="alert-"] .md-alert-icon::before,
-#write blockquote[data-type^="alert-"] .md-alert-title-icon::before {
-  display: none;
+#write blockquote[data-type^="alert-"] .md-alert-title-icon {
+  display: inline-block;
+  margin-right: 0.5em;
+  transform: translateY(1px);
 }
 
-/* --- ALERTS & CALLOUTS --- */
-/* Common Alert Styles */
-#write blockquote[data-type] {
-  border-radius: 8px;
-  padding: 1em 1em 1em 1.2em;
-  margin: 1.5em 0;
+/* --- ALERTS & CALLOUTS (GitHub Style Support) --- */
+#write blockquote[data-type],
+#write .md-alert {
+  border-radius: 12px;
+  padding: 1.1em 1.25em;
+  margin: 1.8em 0;
   border: 1px solid transparent;
   position: relative;
   transition: all 0.2s ease;
-}
-
-#write blockquote[data-type] p {
-  margin: 0;
+  border-left: 4.5px solid var(--alert-color);
 }
 
 /* NOTE (Blue) */
-#write blockquote[data-type="alert-note"] {
+#write blockquote[data-type="alert-note"],
+#write .md-alert-note {
   --alert-color: var(--info);
-  background: color-mix(in srgb, var(--alert-color), var(--bg) 90%);
+  background: color-mix(in srgb, var(--alert-color), var(--bg) 92%);
   border-color: color-mix(in srgb, var(--alert-color), var(--bg) 80%);
-  border-left: 4px solid var(--alert-color);
 }
 
 /* TIP (Green) */
-#write blockquote[data-type="alert-tip"] {
+#write blockquote[data-type="alert-tip"],
+#write .md-alert-tip {
   --alert-color: var(--success);
-  background: color-mix(in srgb, var(--alert-color), var(--bg) 90%);
+  background: color-mix(in srgb, var(--alert-color), var(--bg) 92%);
   border-color: color-mix(in srgb, var(--alert-color), var(--bg) 80%);
-  border-left: 4px solid var(--alert-color);
 }
 
 /* WARNING (Orange) */
-#write blockquote[data-type="alert-warning"] {
+#write blockquote[data-type="alert-warning"],
+#write .md-alert-warning {
   --alert-color: var(--warning);
   background: color-mix(in srgb, var(--alert-color), var(--bg) 88%);
   border-color: color-mix(in srgb, var(--alert-color), var(--bg) 75%);
-  border-left: 4px solid var(--alert-color);
 }
 
 /* IMPORTANT (Purple) */
-#write blockquote[data-type="alert-important"] {
+#write blockquote[data-type="alert-important"],
+#write .md-alert-important {
   --alert-color: var(--important);
   background: color-mix(in srgb, var(--alert-color), var(--bg) 90%);
   border-color: color-mix(in srgb, var(--alert-color), var(--bg) 80%);
-  border-left: 4px solid var(--alert-color);
 }
 
 /* CAUTION (Red) */
-#write blockquote[data-type="alert-caution"] {
+#write blockquote[data-type="alert-caution"],
+#write .md-alert-caution {
   --alert-color: var(--error);
   background: color-mix(in srgb, var(--alert-color), var(--bg) 88%);
   border-color: color-mix(in srgb, var(--alert-color), var(--bg) 75%);
-  border-left: 4px solid var(--alert-color);
 }
 
 /* Lists */

@@ -36,7 +36,8 @@
 
     --bg: oklch(28% 0.02 350);
     --surface: oklch(34% 0.02 350);
-    --surface-2: oklch(40% 0.02 350);
+  --title-bar-bg: var(--bg);
+  --title-bar-text: var(--text);    --surface-2: oklch(40% 0.02 350);
 
     --text: oklch(98% 0.01 350);
     --text-rgb: 255, 245, 248;

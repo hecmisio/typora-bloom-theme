@@ -32,7 +32,8 @@
     /* Neutrals - Ripple Dark Base (Cool Teal Tint) */
     --bg: oklch(20% 0.02 195);
     --surface: oklch(28% 0.02 195);
-    --surface-2: oklch(34% 0.03 195);
+  --title-bar-bg: var(--bg);
+  --title-bar-text: var(--text);    --surface-2: oklch(34% 0.03 195);
 
     --text: oklch(96% 0.01 195);
     --text-rgb: 240, 246, 248;
