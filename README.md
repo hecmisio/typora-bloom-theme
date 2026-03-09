@@ -1,90 +1,91 @@
-# Bloom · Typora Theme
+# 🌸 Bloom · 文字的绽放与成长
 
 <p align="center">
-  <a href="https://typora-bloom-theme.webkubor.online">
-    <img src="website/assets/favicon.svg" alt="Bloom" width="120" />
-  </a>
+  <img src="website/assets/banner.png" alt="Bloom Banner" width="100%" />
 </p>
 
-官网预览：<https://typora-bloom-theme.webkubor.online>
-
-Bloom（绽放）是一套为**长期写作**设计的 Typora 主题。它追求安静、克制与温柔的表达——不过度装饰，不喧宾夺主，让文字始终成为视线的中心。
-
-目前包含 **16 套精心调配的莫兰迪配色**（8 套浅色 + 8 套深色）：
-- **浅色系**：花瓣 (Petal), 雾蓝 (Mist), 草木 (Verdant), 暖石 (Stone), 琥珀 (Amber), 薰衣草紫 (Spring), 涟漪 (Ripple), 水墨 (Ink)
-- **深色系**：花瓣暗夜 (Petal Dark), 雾蓝暗夜 (Mist Dark), 草木暗夜 (Verdant Dark), 暖石暗夜 (Stone Dark), 琥珀暗夜 (Amber Dark), 薰衣草紫暗夜 (Spring Dark), 涟漪暗夜 (Ripple Dark), 水墨暗夜 (Ink Dark)
-
----
-
-## 📚 参考资料 Reference
-
-- [Typora Write Custom Theme (中文)](https://theme.typora.io/doc/zh/Write-Custom-Theme/) - 官方主题开发文档
-- [Typora Theme Gallery](https://theme.typora.io/) - 官方主题库
-
-## 📄 协议 License
-
-## 主题系列 (Theme Variants)
-
-所有主题均基于 **OKLCH 色彩空间** 重新设计，统一莫兰迪低饱和风格，极致护眼。
-
-### 🎨 配色方案总览
-
-| 分类 | 主题 | 背景 (Bg) | 强调色 (Accent) | 文字 (Text) | 风格描述 |
-|:---|:---|:---|:---|:---|:---|
-| **🌤 浅色 (8)** | **花瓣 Petal** | `L98% C0.01 H350` | `L64% C0.22 H350` | `L25% C0.02 H350` | 暖粉白 + 玫瑰粉 · 柔和温润 |
-| | **雾蓝 Mist** | `L96% C0.01 H240` | `L50% C0.08 H240` | `L25% C0.02 H240` | 冷浅灰 + 深雾蓝 · 深邃克制 |
-| | **草木 Verdant** | `L96% C0.01 H160` | `L50% C0.07 H160` | `L25% C0.02 H160` | 极浅淡绿 + 豆沙绿 · 治愈草木色 |
-| | **暖石 Stone** | `L96% C0.01 H60` | `L50% C0.06 H40` | `L25% C0.02 H40` | 暖米白 + 红棕土 · 温润如陶瓷 |
-| | **琥珀橙 Amber Orange** | `L98% C0.01 H65` | `L60% C0.14 H65` | `L25% C0.02 H65` | 现代琥珀橙，清爽有活力的写作体验 |
-| | **鼠尾草 Sage** | `L97% C0.01 H115` | `L62% C0.11 H115` | `L25% C0.02 H115` | 温暖橄榄绿，怀旧且富有生命力 |
-| | **薰衣草紫 Spring** | `L96% C0.01 H285` | `L65% C0.16 H285` | `L25% C0.02 H285` | 丝滑薰衣草紫 · 更纯净的紫色调 |
-| | **涟漪 Ripple** | `L96% C0.01 H195` | `L55% C0.09 H195` | `L25% C0.02 H195` | 清冷青碧 + 湖面微澜 · 高级冷调 |
-| | **丹红 Cinnabar** | `L97% C0.005 H25` | `L55% C0.18 H25` | `L25% C0.02 H25` | 朱砂/丹红 · 东方极简与富贵的高级感 |
-| **🌙 深色 (8)** | **花瓣暗夜 Petal Dark** | `L20% C0.02 H350` | `L75% C0.18 H350` | `L98% C0.01 H350` | 深玫瑰黑 + 玫瑰粉 · 安静的夜间粉调 |
-| | **雾蓝暗夜 Mist Dark** | `L20% C0.02 H240` | `L72% C0.12 H240` | `L96% C0.01 H240` | 莫兰迪雾蓝暗色版，护眼且深邃 |
-| | **草木暗夜 Verdant Dark** | `L18% C0.02 H160` | `L72% C0.12 H160` | `L96% C0.01 H160` | 深墨绿 + 莫兰迪绿 · 幽静的暗夜森林 |
-| | **暖石暗夜 Stone Dark** | `L20% C0.02 H30` | `L75% C0.12 H30` | `L96% C0.01 H30` | 深暖棕 + 红棕土 · 沉稳的陶土色 |
-| | **鼠尾草暗夜 Sage Dark** | `L20% C0.02 H115` | `L72% C0.12 H115` | `L96% C0.01 H115` | 深苔藓绿 + 橄榄绿 · 静谧的森林夜色 |
-| | **薰衣草紫暗夜 Spring Dark** | `L18% C0.02 H285` | `L75% C0.16 H285` | `L96% C0.01 H285` | 深紫黑 + 薰衣草紫 · 浪漫的夜间花海 |
-| | **涟漪暗夜 Ripple Dark** | `L18% C0.02 H195` | `L70% C0.10 H195` | `L96% C0.01 H195` | 深青黑 + 幽蓝荧光 · 神秘科技感 |
-| | **丹红暗夜 Cinnabar Dark** | `L20% C0.02 H25` | `L65% C0.18 H25` | `L95% C0.02 H25` | 漆器红 + 暖灰黑 · 高贵且极具视觉张力 |
+<p align="center">
+  <img src="https://img.shields.io/github/v/release/webkubor/typora-Bloom-theme?style=flat-square&color=A873C4" alt="Release" />
+  <img src="https://img.shields.io/github/license/webkubor/typora-Bloom-theme?style=flat-square&color=92a8b3" alt="License" />
+  <img src="https://img.shields.io/github/stars/webkubor/typora-Bloom-theme?style=flat-square&color=cc584d" alt="Stars" />
+  <img src="https://img.shields.io/badge/Typora-Compatible-5fa8b2?style=flat-square" alt="Typora" />
+  <a href="README.en.md"><img src="https://img.shields.io/badge/Document-English-A873C4?style=flat-square" alt="English Document" /></a>
+</p>
 
 ---
 
-## 视觉与设计
+**Bloom（绽放）** 是一套专为**长期写作**设计的 Premium Typora 主题。
 
-### ✨ 全新 Glassmorphism 提示框
-v1.3.1 引入了全新的 **磨砂质感 Alert 系统**。告别生硬色块，拥抱 12px 圆角与半透明光效。
-- **智能适配**：Note / Tip / Warning / Caution / Important 五种状态自动适配全部 16 款主题色调。
-- **视觉层级**：利用 `color-mix` 技术动态计算背景与边框深度，确保在深浅模式下均有完美的阅读体验。
+在信息喧嚣的时代，我们回归文字本身。Bloom 追求安静、克制与温柔的表达。它不过度装饰，不喧宾夺主，只是在那层薄薄的数字纸张背后，为你的思考铺就一方温润的土壤。
 
-### 设计原则
-1. **文字优先**：所有设计都应为内容让路，不抢表达。
-2. **长期可用**：不追求第一眼的惊艳，而追求数小时使用后的舒适。
-3. **感知均匀**：利用 OKLCH 色彩空间，确保不同色调在视觉亮度上保持一致。
-4. **层级分明**：标题、引用、代码块采用层级递进，而非跳色区分。
+> *“所有伟大的文字，都值得在最适宜的光线里，慢慢呼吸。”*
 
-### 细节把控
-- **排版**：行距偏松，标题不过度放大，避免“PPT 感”。
-- **图标**：风格简洁、线性，UI 元素尽量退后。
-- **动效**：微妙的平滑过渡，让写作体验更具呼吸感。
+[官网预览](https://typora-bloom-theme.webkubor.online) | [实时演示](https://typora-bloom-theme.webkubor.online/showcase.html)
 
 ---
 
-## 安装方式
+## ✨ 灵魂特性
 
-1. 打开 Typora，进入 **偏好设置 → 外观 → 打开主题文件夹**。
-2. 将 `dist/` 目录下的 `.css` 文件复制到该文件夹中。
-3. 如果存在 `bloom/` 文件夹（图标资源），也请一并复制。
-4. 在 Typora **主题** 菜单中选择对应名称即可。
+### 🎨 莫兰迪的呼吸：16 套色系矩阵
+Bloom 内置 **8 浅 8 深** 共 16 套莫兰迪配色方案。从晨曦般的“花瓣粉”到静谧如深海的“涟漪暗夜”，每一款颜色都经过色彩感知实验，确保在长时间写作中，眼睛与心灵都能得到妥帖的安放。
 
-> [!TIP]
-> 推荐从 [Releases](https://github.com/webkubor/typora-Bloom-theme/releases/latest) 下载打包好的 `Bloom-theme.zip`，解压即用。
+### 🌈 OKLCH：感知的科学美学
+我们全量采用了 **OKLCH 色彩模型** 进行调色。不同于传统的 RGB 调色，OKLCH 严格遵循人类视觉感知的亮度规律，这使得 Bloom 在切换不同配色方案时，视觉的轻重感始终如一。
+
+### 🧊 磨砂质感：Glassmorphism 提示框
+在 v1.3.1 中，我们将 Alert 提示框进化为一种**“磨砂玻璃”**质感。利用 `color-mix` 技术动态生成的半透明色块，拥有 12px 的圆角与微妙的呼吸感边框。信息不再是生硬的打断，而是文字流中的优雅注脚。
+
+### 📐 8px 律动：原子间距系统
+严谨的 **8px 原子间距系统** 赋予了文档一种“空气感”。标题的克制、段落的留白、代码块的呼吸，都在微妙的比例中达成了视觉上的动态平衡。
 
 ---
 
-## 致谢
+## 🎨 主题画廊
+
+| 🌤 浅色系 · 晨曦 | 🌙 深色系 · 沉思 |
+| :--- | :--- |
+| **花瓣 (Petal)** - 暖粉白，温润如瓷 | **花瓣暗夜 (Petal Dark)** - 深玫瑰黑 |
+| **雾蓝 (Mist)** - 清冷高级的北欧灰调 | **雾蓝暗夜 (Mist Dark)** - 深邃护眼 |
+| **草木 (Verdant)** - 治愈系豆沙绿 | **草木暗夜 (Verdant Dark)** - 暗夜森林 |
+| **水墨 (Ink)** - 东方极简，丹红点缀 | **水墨暗夜 (Ink Dark)** - 漆器质感 |
+| ... *更多：暖石, 琥珀, 紫语, 涟漪* | ... *以及对应的暗色版* |
+
+---
+
+## 🚀 安装与启程
+
+1.  **获取源码**：前往 [Releases](https://github.com/webkubor/typora-Bloom-theme/releases/latest) 下载 `Bloom-theme.zip` 并解压。
+2.  **寻踪路径**：在 Typora 中通过 `偏好设置` -> `外观` -> `打开主题文件夹`。
+3.  **安置灵魂**：将解压后的所有 `bloom-*.css` 文件以及 `bloom/` 文件夹整体复制。
+4.  **开启创作**：在 Typora 菜单栏 `主题` 中挑选你此时此刻的心境。
+
+---
+
+## 🛠 开发者指南
+
+若你愿参与这方土地的耕耘：
+
+- **`theme-src/`**: 源码之根。
+- **`scripts/`**: 自动化构建工具。
+
+```bash
+# 播种 (安装依赖)
+pnpm install
+
+# 育苗 (实时开发预览)
+npm run dev
+
+# 结果 (构建发布包)
+npm run build
+```
+
+---
+
+## 💖 关于初心
 
 这个主题诞生于我成为父亲之后。我开始更加在意时间、陪伴，以及那些会被反复翻阅的文字。
 
-感谢所有使用、反馈与分享 Bloom 的人。如果这个主题在某个清晨或夜晚让你愿意多写几行字，那它的意义就已经成立了。
+如果这个主题能让你在喧嚣的世界中，在一个清晨或深夜，愿意安静地多写几行文字，那它的意义就已经成立了。
+
+**License**: [MIT](LICENSE)  
+**Author**: [webkubor](https://github.com/webkubor)
