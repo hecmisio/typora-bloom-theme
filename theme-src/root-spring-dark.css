@@ -34,11 +34,10 @@
     /* Lightened from 18% to 24% for better readability */
     --bg: oklch(24% 0.03 285);
     
-    --surface: oklch(30% 0.03 285);
+        --surface: oklch(30% 0.03 285);
     --title-bar-bg: var(--bg);
     --title-bar-text: var(--text);
-  --title-bar-bg: var(--bg);
-  --title-bar-text: var(--text);    --surface-2: oklch(36% 0.04 285);
+    --surface-2: oklch(36% 0.04 285);
 
     --text: oklch(96% 0.01 285);
     --text-rgb: 245, 240, 248;

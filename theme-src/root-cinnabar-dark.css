@@ -32,11 +32,10 @@
     /* Neutrals - Cinnabar Dark Base (Warm Lacquer Tint) */
     --bg: oklch(20% 0.02 25);
     
-    --surface: oklch(28% 0.02 25);
+        --surface: oklch(28% 0.02 25);
     --title-bar-bg: var(--bg);
     --title-bar-text: var(--text);
-  --title-bar-bg: var(--bg);
-  --title-bar-text: var(--text);    --surface-2: oklch(34% 0.03 25);
+    --surface-2: oklch(34% 0.03 25);
 
     --text: oklch(96% 0.01 25);
     --text-rgb: 250, 240, 240;

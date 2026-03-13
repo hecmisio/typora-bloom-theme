@@ -47,7 +47,7 @@ content,
 #write {
   max-width: 880px;
   line-height: 1.85;
-  /* 略微增加行高提升可读性 */
+  /* 鐣ュ井澧炲姞琛岄珮鎻愬崌鍙鎬?*/
   letter-spacing: 0.015em;
   font-size: 16px;
   color: var(--text);
@@ -279,13 +279,13 @@ content,
 }
 
 /* Prevent unwanted white background on hover for HTML blocks in dark mode */
-#write div:hover,
-#write span:hover,
+#write div:not([class]):hover,
+#write span:not([class]):hover,
 #write [mdtype="html-block"]:hover {
   background-color: transparent !important;
 }
 
-#write span[style*="background"]:hover {
+#write span:not([class])[style*="background"]:hover {
   background-color: inherit !important;
 }
 
@@ -589,7 +589,7 @@ content,
   color: var(--code-ink);
 }
 
-/* 防止嵌套多层 pre/code 造成重复背景 */
+/* 闃叉宓屽澶氬眰 pre/code 閫犳垚閲嶅鑳屾櫙 */
 #write pre.md-fences pre,
 #write pre.md-fences pre code,
 #write pre.md-fences .cm-s-inner .CodeMirror-lines,
@@ -1085,44 +1085,3 @@ a:hover {
   box-shadow: none !important;
 }
 
-/* --- Mermaid Diagram Support for Dark Themes (Issue #1) --- */
-:root {
-  --mermaid-theme: night;
-}
-
-#write .mermaid {
-  background: rgba(var(--white-rgb), 0.02) !important;
-  border-radius: 12px;
-  padding: 10px;
-}
-
-#write .mermaid text {
-  fill: var(--text) !important;
-  font-family: var(--font-sans) !important;
-}
-
-/* 
-   We rely on --mermaid-theme: night for internal coloring (lines, actors).
-   Replacements below are minimal overrides only if needed for high contrast text 
-   or background blending. 
-*/
-
-#write .mermaid .node rect,
-#write .mermaid .node circle,
-#write .mermaid .node polygon,
-#write .mermaid .node path {
-  fill: var(--bg) !important;
-  stroke: var(--accent) !important;
-  stroke-width: 1.5px !important;
-}
-
-/* Ensure text is always readable */
-#write .mermaid text.actor {
-  fill: var(--text) !important;
-}
-
-/* Edge Paths */
-#write .mermaid .edgePath .path {
-  stroke: var(--text-semi) !important;
-  stroke-width: 1.5px !important;
-}
