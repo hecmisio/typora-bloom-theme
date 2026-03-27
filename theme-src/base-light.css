@@ -112,40 +112,6 @@ content,
   color: rgba(var(--text-rgb), 0.8);
 }
 
-#write h1::after,
-#write h2::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.5em;
-  width: 76px;
-  height: 3px;
-  background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.45), transparent);
-  border-radius: 999px;
-}
-
-#write h3::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.38em;
-  width: 44px;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.32), transparent);
-  border-radius: 999px;
-}
-
-#write h4::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.34em;
-  width: 32px;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.22), transparent);
-  border-radius: 999px;
-}
-
 #write hr {
   border: 0;
   height: 1px;
