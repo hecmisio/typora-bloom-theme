@@ -120,40 +120,6 @@ content,
   color: rgba(var(--ink-rgb), 0.82);
 }
 
-#write h1::after,
-#write h2::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.52em;
-  width: 78px;
-  height: 3px;
-  background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.5), transparent);
-  border-radius: 999px;
-}
-
-#write h3::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.4em;
-  width: 48px;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.35), transparent);
-  border-radius: 999px;
-}
-
-#write h4::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.35em;
-  width: 36px;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.25), transparent);
-  border-radius: 999px;
-}
-
 #write hr {
   border: 0;
   height: 2px;
